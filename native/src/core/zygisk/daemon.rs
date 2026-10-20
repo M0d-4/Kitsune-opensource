@@ -1,7 +1,8 @@
 use crate::consts::MODULEROOT;
 use crate::daemon::{MagiskD, to_user_id};
 use crate::ffi::{
-    ZygiskRequest, ZygiskStateFlags, fork_dont_care, get_magisk_tmp, update_deny_flags,
+    ZygiskRequest, ZygiskStateFlags, fork_dont_care, get_magisk_tmp, sulist_enforced,
+    update_deny_flags,
 };
 use crate::resetprop::{get_prop, set_prop};
 use crate::socket::{IpcRead, UnixSocketExt};
@@ -199,7 +200,11 @@ impl MagiskD {
         let mut flags: u32 = 0;
         update_deny_flags(uid, &process, &mut flags);
         if self.get_manager_uid(to_user_id(uid)) == uid {
-            flags |= ZygiskStateFlags::ProcessIsMagiskApp.repr
+            flags |= ZygiskStateFlags::ProcessIsMagiskApp.repr;
+            // The manager must always keep access to Magisk in SuList mode
+            if sulist_enforced() {
+                flags &= !ZygiskStateFlags::ProcessOnDenyList.repr;
+            }
         }
         if self.uid_granted_root(uid) {
             flags |= ZygiskStateFlags::ProcessGrantedRoot.repr

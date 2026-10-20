@@ -19,16 +19,18 @@
     <string name="hide">پنهان کردن</string>
     <string name="home_package">پکیج</string>
     <string name="home_app_title">برنامه</string>
-    <string name="home_notice_content">Magisk را فقط از صفحه رسمی GitHub دانلود کنید. فایل‌ها از منابع ناشناس می‌توانند مخرب باشند!</string>
+    <string name="home_notice_content">Kitsune Mask را فقط از صفحه رسمی GitHub دانلود کنید. فایل‌ها از منابع ناشناس می‌توانند مخرب باشند!</string>
     <string name="home_follow_title">ما را دنبال کنید</string>
     <string name="home_support_title">حمایت ما</string>
     <string name="home_item_source">منبع</string>
-    <string name="home_support_content">این برنامه (Magisk) رایگان و متن باز است و همیشه خواهد ماند. اگرچه شما میتواند با دونیت خود نشان دهد که به ما اهمیت می دهید.</string>
+    <string name="home_support_content">این برنامه (Kitsune Mask) رایگان و متن باز است و همیشه خواهد ماند. اگرچه شما میتواند با دونیت خود نشان دهد که به ما اهمیت می دهید.</string>
     <string name="home_installed_version">نصب شده</string>
     <string name="home_latest_version">آخرین نسخه</string>
     <string name="invalid_update_channel">کانال بروزرسانی نامعتبر است</string>
-    <string name="uninstall_magisk_title">حذف Magisk</string>
-    <string name="uninstall_magisk_msg">همه ماژول ها غیرفعال/حذف می شوند!\nروت حذف می شود!\nداده های شما اگر از قبل رمزگذارری نشده بودند رمز نگاری میشوند!</string>
+    <string name="uninstall_magisk_title">حذف Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"همه ماژول ها غیرفعال/حذف می شوند!
+روت حذف می شود!
+داده های شما اگر از قبل رمزگذارری نشده بودند رمز نگاری میشوند!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">حفظ رمزگذاری اجباری</string>
@@ -41,7 +43,9 @@
     <string name="manager_download_install">برای دانلود و نصب فشار دهید</string>
     <string name="direct_install">نصب مستقیم (توصیه می شود)</string>
     <string name="install_inactive_slot">نصب در حافظه غیر فعال (بعد OTA)</string>
-    <string name="install_inactive_slot_msg">بعد از راه اندازی مجدد دستگاه شما مجبور به راه اندازی در حافظه غیرفعال فعلی می شود! \nفقط پس از انجام OTA از این گزینه استفاده کنید. \nادامه می دهید؟</string>
+    <string name="install_inactive_slot_msg">"بعد از راه اندازی مجدد دستگاه شما مجبور به راه اندازی در حافظه غیرفعال فعلی می شود! 
+فقط پس از انجام OTA از این گزینه استفاده کنید. 
+ادامه می دهید؟"</string>
     <string name="setup_title">تنظیمات اضافی</string>
     <string name="reboot_delay_toast">راه اندازی مجدد در 5 ثانیه…</string>
     <string name="flash_screen_title">نصب و راه اندازی</string>
@@ -78,7 +82,7 @@
 
     <!--Logs-->
     <string name="log_data_none">شما هیچ لاگی ندارید, سعی کنید برنامه های که به روت دسترسی میگیرند را استفاده کنید.</string>
-    <string name="log_data_magisk_none">لاگ های مربوط به Magisk خالی است.</string>
+    <string name="log_data_magisk_none">لاگ های مربوط به Kitsune Mask خالی است.</string>
     <string name="menuSaveLog">ذخیره کردن لاگ</string>
     <string name="menuClearLog">پاک کردن لاگ</string>
     <string name="logs_cleared">لاگ با موفقیت پاک شد.</string>
@@ -88,7 +92,7 @@
     <string name="selinux_context">متن SELinux: %s</string>
     <string name="supp_group">گروه تکمیلی: %s</string>
 
-    <!-- MagiskHide -->
+    <!-- KMHide -->
     <string name="show_system_app">نشان دادن برنامه های سیستمی</string>
     <string name="show_os_app">نمایش برنامه‌های سیستم عامل</string>
     <string name="hide_filter_hint">فیلتر کردن با نام</string>
@@ -123,23 +127,23 @@
     <string name="settings_dark_mode_dark">همیشه تاریک</string>
     <string name="settings_download_path_title">مسیر دانلود</string>
     <string name="settings_download_path_message">فایل ها در %1$s ذخیره خواهند شد.</string>
-    <string name="settings_hide_app_title">مخفی کردن برنامه Magisk</string>
+    <string name="settings_hide_app_title">مخفی کردن برنامه Kitsune Mask</string>
     <string name="settings_hide_app_summary">نصب یک برنامه پروکسی با شناسه بسته تصادفی و برچسب سفارشی</string>
-    <string name="settings_restore_app_title">بازگردانی برنامه Magisk</string>
+    <string name="settings_restore_app_title">بازگردانی برنامه Kitsune Mask</string>
     <string name="settings_restore_app_summary">آشکار کردن برنامه و بازگرداندن APK اصلی</string>
     <string name="language">زبان</string>
     <string name="system_default">(پیش فرض سیستم)</string>
     <string name="settings_check_update_title">چک کردن بروز رسانی ها</string>
-    <string name="settings_check_update_summary"> برسی کردن به صورت دوره ای برای به روزرسانی در پس زمینه</string>
+    <string name="settings_check_update_summary">برسی کردن به صورت دوره ای برای به روزرسانی در پس زمینه</string>
     <string name="settings_update_channel_title">کانال بروزرسانی</string>
     <string name="settings_update_stable">پایدار</string>
     <string name="settings_update_beta">آزمایشی</string>
     <string name="settings_update_debug">اشکال‌زدایی</string>
     <string name="settings_update_custom">شخصی سازی شده</string>
     <string name="settings_update_custom_msg">اضافه کردن یک URL سفارشی</string>
-    <string name="settings_zygisk_summary">اجرای بخش‌هایی از Magisk در سرویس Zygote</string>
+    <string name="settings_zygisk_summary">اجرای بخش‌هایی از Kitsune Mask در سرویس Zygote</string>
     <string name="settings_denylist_title">اعمال لیست منع</string>
-    <string name="settings_denylist_summary">فرآیندهای موجود در لیست منع تمام تغییرات Magisk را از دست خواهند داد</string>
+    <string name="settings_denylist_summary">فرآیندهای موجود در لیست منع تمام تغییرات Kitsune Mask را از دست خواهند داد</string>
     <string name="settings_denylist_config_title">پیکربندی لیست منع</string>
     <string name="settings_denylist_config_summary">انتخاب فرآیندهایی که باید در لیست منع قرار گیرند</string>
     <string name="settings_hosts_title">نصب بدون حذف یا تغییر در فایل ها</string>
@@ -180,13 +184,13 @@
     <string name="isolate_summary">هر سشن روت namespace جداگانه خود را دارد</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk بروزرسانی های</string>
+    <string name="update_channel">Kitsune Mask بروزرسانی های</string>
     <string name="progress_channel">اعلان پیشرفت</string>
     <string name="updated_channel">به‌روزرسانی کامل شد</string>
     <string name="download_complete">دانلود کامل شد</string>
     <string name="download_file_error">خطا در دانلود فایل</string>
-    <string name="magisk_update_title">بروزرسانی Magisk در دسترس است!</string>
-    <string name="updated_title">Magisk به‌روزرسانی شد</string>
+    <string name="magisk_update_title">بروزرسانی Kitsune Mask در دسترس است!</string>
+    <string name="updated_title">Kitsune Mask به‌روزرسانی شد</string>
     <string name="updated_text">برای باز کردن برنامه لمس کنید</string>
 
     <!--Toasts, Dialogs-->
@@ -200,7 +204,7 @@
     <string name="flashing">ر حال فلش کردن…</string>    <string name="done">تمام!</string>
     <string name="done_action">انجام عملیات %1$s به پایان رسید</string>
     <string name="failure">ناموفق</string>
-    <string name="hide_app_title">در حال مخفی کردن برنامه Magisk…</string>
+    <string name="hide_app_title">در حال مخفی کردن برنامه Kitsune Mask…</string>
     <string name="open_link_failed_toast">هیچ برنامه ای برای باز کردن لینک یافت نشد</string>
     <string name="complete_uninstall">کامل کردن حذف</string>
     <string name="restore_img">بازیابی تصاویر</string>
@@ -209,16 +213,18 @@
     <string name="restore_fail">نسخه پشتیبان استک موجود نیست!</string>
     <string name="setup_fail">نصب انجام نشد</string>
     <string name="env_fix_title">به تنظیمات اضافی نیاز دارد</string>
-    <string name="env_fix_msg">دستگاه شما به پیکربندی اضافی نیاز دارد تا Magisk به درستی کار کند. آیا می‌خواهید ادامه دهید و راه‌اندازی مجدد انجام شود؟</string>
-    <string name="env_full_fix_msg">دستگاه شما نیاز به نصب دوباره Magisk دارد تا به درستی کار کند. لطفاً Magisk را از داخل برنامه دوباره نصب کنید، حالت Recovery نمی‌تواند اطلاعات دستگاه را به درستی بگیرد.</string>
+    <string name="env_fix_msg">دستگاه شما به پیکربندی اضافی نیاز دارد تا Kitsune Mask به درستی کار کند. آیا می‌خواهید ادامه دهید و راه‌اندازی مجدد انجام شود؟</string>
+    <string name="env_full_fix_msg">دستگاه شما نیاز به نصب دوباره Kitsune Mask دارد تا به درستی کار کند. لطفاً Kitsune Mask را از داخل برنامه دوباره نصب کنید، حالت Recovery نمی‌تواند اطلاعات دستگاه را به درستی بگیرد.</string>
     <string name="setup_msg">راه اندازی محیط نصب…</string>
-    <string name="unsupport_magisk_title">نسخه پشتیبانی نشده Magisk</string>
-    <string name="unsupport_magisk_msg">این نسخه از برنامه از نسخه‌های Magisk پایین‌تر از %1$s پشتیبانی نمی‌کند.\n\nبرنامه طوری رفتار می‌کند که انگار Magisk نصب نشده است. لطفاً هرچه سریع‌تر Magisk را به‌روزرسانی کنید.</string>
+    <string name="unsupport_magisk_title">نسخه پشتیبانی نشده Kitsune Mask</string>
+    <string name="unsupport_magisk_msg">"این نسخه از برنامه از نسخه‌های Kitsune Mask پایین‌تر از %1$s پشتیبانی نمی‌کند.
+
+برنامه طوری رفتار می‌کند که انگار Kitsune Mask نصب نشده است. لطفاً هرچه سریع‌تر Kitsune Mask را به‌روزرسانی کنید."</string>
     <string name="unsupport_general_title">وضعیت غیرعادی</string>
     <string name="unsupport_system_app_msg">اجرای این برنامه به عنوان برنامه سیستمی پشتیبانی نمی‌شود. لطفاً آن را به برنامه کاربری بازگردانید.</string>
-    <string name="unsupport_other_su_msg">یک باینری "su" غیر از Magisk شناسایی شد. لطفاً هر راهکار روت دیگری را حذف کنید و/یا Magisk را دوباره نصب کنید.</string>
-    <string name="unsupport_external_storage_msg">Magisk روی حافظه خارجی نصب شده است. لطفاً برنامه را به حافظه داخلی منتقل کنید.</string>
-    <string name="unsupport_nonroot_stub_msg">برنامه مخفی Magisk نمی‌تواند ادامه دهد زیرا دسترسی روت از بین رفته است. لطفاً APK اصلی را بازگردانید.</string>
+    <string name="unsupport_other_su_msg">یک باینری su غیر از Kitsune Mask شناسایی شد. لطفاً هر راهکار روت دیگری را حذف کنید و/یا Kitsune Mask را دوباره نصب کنید.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask روی حافظه خارجی نصب شده است. لطفاً برنامه را به حافظه داخلی منتقل کنید.</string>
+    <string name="unsupport_nonroot_stub_msg">برنامه مخفی Kitsune Mask نمی‌تواند ادامه دهد زیرا دسترسی روت از بین رفته است. لطفاً APK اصلی را بازگردانید.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">برای فعال کردن این قابلیت ، اجازه دسترسی به حافظه بدهید</string>
     <string name="post_notifications_denied">برای فعال‌سازی این قابلیت، مجوز اعلان‌ها را بدهید</string>

@@ -11,7 +11,7 @@
     <string name="invalid_update_channel">ช่องทางการอัปเดตไม่ถูกต้อง</string>
     <string name="keep_force_encryption">เก็บค่าบังคับการเข้ารหัส</string>
     <string name="keep_dm_verity">เก็บค่า AVB 2.0/dm-verity</string>
-    <string name="uninstall_magisk_title">ถอนการติดตั้ง Magisk</string>
+    <string name="uninstall_magisk_title">ถอนการติดตั้ง Kitsune Mask</string>
     <string name="uninstall_magisk_msg">โมดูลทั้งหมดจะถูกปิดการใช้งาน/ถูกลบ, สิทธิการเข้าถึง Root จะถูกลบ และข้อมูลของคุณอาจถูกเข้ารหัส</string>
     <string name="update">อัปเดต</string>
 
@@ -34,11 +34,11 @@
     <string name="app_changelog">สิ่งที่เพิ่มใหม่</string>
 
     <!-- System Components, Notifications -->
-    <string name="update_channel">การอัปเดต Magisk</string>
+    <string name="update_channel">การอัปเดต Kitsune Mask</string>
     <string name="progress_channel">สถานะ</string>
     <string name="download_complete">ดาวน์โหลดสำเร็จ</string>
     <string name="download_file_error">เกิดข้อผิดพลาดในการดาวน์โหลดไฟล์</string>
-    <string name="magisk_update_title">มีการอัปเดต Magisk!</string>
+    <string name="magisk_update_title">มีการอัปเดต Kitsune Mask!</string>
 
     <!--Toasts, Dialogs-->
     <string name="repo_install_title">ติดตั้ง %1$s %2$s(%3$d)</string>
@@ -50,7 +50,9 @@
     <string name="open_link_failed_toast">ไม่พบแอปพลิเคชันสำหรับเปิดลิ้งค์</string>
     <string name="direct_install">การติดตั้งโดยตรง (แนะนำ)</string>
     <string name="install_inactive_slot">ติดตั้งไปยัง Slot ที่ไม่ใช้งาน (หลังจาก OTA)</string>
-    <string name="install_inactive_slot_msg">อุปกรณ์ของคุณจะถูกบังคับให้บู๊ตไป Slot ที่ไม่ใช่งานหลังจากรีบูต!\nใช้ตัวเลือกนี้หลังจาก OTA เสร็จเท่านั้น\nดำเนินการต่อ?</string>
+    <string name="install_inactive_slot_msg">"อุปกรณ์ของคุณจะถูกบังคับให้บู๊ตไป Slot ที่ไม่ใช่งานหลังจากรีบูต!
+ใช้ตัวเลือกนี้หลังจาก OTA เสร็จเท่านั้น
+ดำเนินการต่อ?"</string>
     <string name="complete_uninstall">ถอนการติดตั้งแบบสมบูรณ์</string>
     <string name="restore_img">กู้คืน Images</string>
     <string name="restore_img_msg">กำลังกู้คืน…</string>
@@ -91,7 +93,7 @@
     <string name="settings_ns_requester">Inherit Namespace</string>
     <string name="settings_ns_isolate">Isolated Namespace</string>
     <string name="global_summary">All root sessions use the global mount namespace.</string>
-    <string name="requester_summary">Root sessions will inherit their requester\'s namespace.</string>
+    <string name="requester_summary">"Root sessions will inherit their requester's namespace."</string>
     <string name="isolate_summary">Each root session will have its own isolated namespace.</string>
 
     <!--Superuser-->

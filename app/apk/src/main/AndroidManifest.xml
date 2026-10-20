@@ -17,6 +17,63 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.module.ModuleInstallActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/install"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-zip-compressed" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/zip" />
+                <data android:mimeType="application/x-zip-compressed" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.webui.WebUIActivity"
+            android:autoRemoveFromRecents="true"
+            android:exported="false"
+            android:launchMode="standard"
+            android:theme="@style/Main" />
+
+        <receiver
+            android:name=".ui.widget.ModuleActionWidgetProvider"
+            android:exported="false"
+            android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.topjohnwu.magisk.action.WIDGET_SWITCH_TAB" />
+                <action android:name="com.topjohnwu.magisk.action.WIDGET_LAUNCH_ITEM" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/module_action_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".ui.widget.ModuleActionWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <!-- Receives the binder of the app-list hiding service (system_server (uid 1000) reaches it even though it is not exported) -->
+        <provider
+            android:name=".ui.applist.ServiceProvider"
+            android:authorities="${applicationId}.applist.ServiceProvider"
+            android:exported="false" />
+
     </application>
 
 </manifest>

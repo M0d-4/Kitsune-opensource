@@ -19,16 +19,18 @@
     <string name="hide">הסתרה</string>
     <string name="home_package">חבילה</string>
     <string name="home_app_title">יישום</string>
-    <string name="home_notice_content">יש להוריד את Magisk רק מהדף הרשמי של GitHub. קבצים ממקורות לא ידועים יכולים להיות זדוניים!</string>
+    <string name="home_notice_content">יש להוריד את Kitsune Mask רק מהדף הרשמי של GitHub. קבצים ממקורות לא ידועים יכולים להיות זדוניים!</string>
     <string name="home_support_title">תמיכה בנו</string>
     <string name="home_follow_title">עקבו אחרינו</string>
     <string name="home_item_source">מקור</string>
-    <string name="home_support_content">Magisk היה ותמיד יהיה בקוד פתוח. עם זאת באפשרותך להראות לנו שאכפת לך על ידי שליחת תרומה קטנה.</string>
+    <string name="home_support_content">Kitsune Mask היה ותמיד יהיה בקוד פתוח. עם זאת באפשרותך להראות לנו שאכפת לך על ידי שליחת תרומה קטנה.</string>
     <string name="home_installed_version">מותקנת</string>
     <string name="home_latest_version">אחרונה</string>
     <string name="invalid_update_channel">ערוץ עדכון לא חוקי</string>
-    <string name="uninstall_magisk_title">הסרת Magisk</string>
-    <string name="uninstall_magisk_msg">כל המודולים יושבתו/יוסרו!\nגישת Root תושבת!\nהנתונים שלך עשויים להיות מוצפנים אם לא הוצפנו כבר!</string>
+    <string name="uninstall_magisk_title">הסרת Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"כל המודולים יושבתו/יוסרו!
+גישת Root תושבת!
+הנתונים שלך עשויים להיות מוצפנים אם לא הוצפנו כבר!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">שמירה על הצפנה בכח</string>
@@ -41,7 +43,9 @@
     <string name="manager_download_install">לחיצה להורדה והתקנה</string>
     <string name="direct_install">התקנה ישירה (מומלץ)</string>
     <string name="install_inactive_slot">התקנה לסלוט לא פעיל (לאחר OTA)</string>
-    <string name="install_inactive_slot_msg">ההתקן שלך ייאלץ אתחול לסלוט הלא פעיל הנוכחי שלך לאחר הפעלה מחדש!\nיש להשתמש באפשרות זו רק לאחר ביצוע OTA בלבד.\nלהמשיך?</string>
+    <string name="install_inactive_slot_msg">"ההתקן שלך ייאלץ אתחול לסלוט הלא פעיל הנוכחי שלך לאחר הפעלה מחדש!
+יש להשתמש באפשרות זו רק לאחר ביצוע OTA בלבד.
+להמשיך?"</string>
     <string name="setup_title">התקנה נוספת</string>
     <string name="reboot_delay_toast">מאתחל בעוד 5 שניות…</string>
     <string name="flash_screen_title">התקנה</string>
@@ -77,7 +81,7 @@
 
     <!--Logs-->
     <string name="log_data_none">אין Log, יש לנסות להשתמש יותר ביישומי הRoot שלך</string>
-    <string name="log_data_magisk_none">Log Magisk ריק, זה מוזר</string>
+    <string name="log_data_magisk_none">Log Kitsune Mask ריק, זה מוזר</string>
     <string name="menuSaveLog">שמירת Log</string>
     <string name="menuClearLog">ניקוי Log כעת</string>
     <string name="logs_cleared">Log נוקה בהצלחה</string>
@@ -89,7 +93,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">הצגת יישומי מערכת</string>
     <string name="show_os_app">הצגת יישומי מערכת הפעלה</string>
     <string name="hide_filter_hint">סינון לפי שם</string>
@@ -124,9 +128,9 @@
     <string name="settings_dark_mode_dark">תמיד כהה</string>
     <string name="settings_download_path_title">נתיב הורדה</string>
     <string name="settings_download_path_message">הקבצים ישמרו אל %1$s</string>
-    <string name="settings_hide_app_title">הסתרת היישום Magisk</string>
+    <string name="settings_hide_app_title">הסתרת היישום Kitsune Mask</string>
     <string name="settings_hide_app_summary">התקנת יישום מתווך עם מזהה חבילה אקראי ותווית שם מותאמת אישית</string>
-    <string name="settings_restore_app_title">שיחזור היישום Magisk</string>
+    <string name="settings_restore_app_title">שיחזור היישום Kitsune Mask</string>
     <string name="settings_restore_app_summary">ביטול הסתרת היישום ושיחזור אל ה-APK המקורי</string>
     <string name="language">שפה</string>
     <string name="system_default">(ברירת מחדל מערכת)</string>
@@ -137,9 +141,9 @@
     <string name="settings_update_beta">בטא</string>
     <string name="settings_update_custom">מותאם אישית</string>
     <string name="settings_update_custom_msg">הזנת כתובת מותאמת אישית</string>
-    <string name="settings_zygisk_summary">הפעל חלקים של Magisk בדמון zygote</string>
+    <string name="settings_zygisk_summary">הפעל חלקים של Kitsune Mask בדמון zygote</string>
     <string name="settings_denylist_title">אכיפת רשימת דחייה</string>
-    <string name="settings_denylist_summary">כל השינויים של Magisk יוחזרו לתהליכים ברשימת הדחייה</string>
+    <string name="settings_denylist_summary">כל השינויים של Kitsune Mask יוחזרו לתהליכים ברשימת הדחייה</string>
     <string name="settings_denylist_config_title">הגדרת רשימת הדחייה</string>
     <string name="settings_denylist_config_summary">בחירת התהליכים שייכללו ברשימת הדחייה</string>
     <string name="settings_hosts_title">hosts חסרי מערכת</string>
@@ -178,13 +182,13 @@
     <string name="isolate_summary">לכל חיבור Root יהיה מרחב שם מבודד</string>
 
     <!--Notifications-->
-    <string name="update_channel">עדכוני Magisk</string>
+    <string name="update_channel">עדכוני Kitsune Mask</string>
     <string name="progress_channel">התראות התקדמות</string>
     <string name="updated_channel">העדכון הושלם</string>
     <string name="download_complete">ההורדה הושלמה</string>
     <string name="download_file_error">שגיאה בהורדת קובץ</string>
-    <string name="magisk_update_title">עדכון Magisk זמין!</string>
-    <string name="updated_title">עדכון Magisk</string>
+    <string name="magisk_update_title">עדכון Kitsune Mask זמין!</string>
+    <string name="updated_title">עדכון Kitsune Mask</string>
     <string name="updated_text">הקשה כדי לפתוח יישום</string>
 
     <!--Toasts, Dialogs-->
@@ -198,7 +202,7 @@
     <string name="flashing">צורב…</string>    <string name="done">בוצע!</string>
     <string name="done_action">בוצעה ריצת פעולה של %1$s</string>
     <string name="failure">נכשל!</string>
-    <string name="hide_app_title">מסתיר את יישום Magisk…</string>
+    <string name="hide_app_title">מסתיר את יישום Kitsune Mask…</string>
     <string name="open_link_failed_toast">לא נמצאו יישומים לפתיחת קישור זה</string>
     <string name="complete_uninstall">הסרה מלאה</string>
     <string name="restore_img">שיחזור תמונות</string>
@@ -207,20 +211,22 @@
     <string name="restore_fail">גיבוי מקורי אינו קיים!</string>
     <string name="setup_fail">ההתקנה כשלה</string>
     <string name="env_fix_title">דורש התקנה נוספת</string>
-    <string name="env_fix_msg">ההתקן שלך זקוק להתקנה נוספת כדי ש-Magisk יפעל כראוי. האם ברצונך להמשיך ולהפעיל מחדש?</string>
-    <string name="env_full_fix_msg">ההתקן שלך זקוק לצריבה מחדש של Magisk כדי לעבוד כראוי. נא להתקין מחדש את Magisk בתוך היישום, מצב הRecovery אינו יכול לקבל מידע נכון על ההתקן.</string>
+    <string name="env_fix_msg">ההתקן שלך זקוק להתקנה נוספת כדי ש-Kitsune Mask יפעל כראוי. האם ברצונך להמשיך ולהפעיל מחדש?</string>
+    <string name="env_full_fix_msg">ההתקן שלך זקוק לצריבה מחדש של Kitsune Mask כדי לעבוד כראוי. נא להתקין מחדש את Kitsune Mask בתוך היישום, מצב הRecovery אינו יכול לקבל מידע נכון על ההתקן.</string>
     <string name="setup_msg">הגדרת סביבת ריצה…</string>
-    <string name="unsupport_magisk_title">גרסת Magisk אינה נתמכת</string>
-    <string name="unsupport_magisk_msg">גרסה זו של היישום אינה תומכת ביישום  Magisk הנמוך מ- %1$s.\n\nהיישום יתנהג כאילו Magisk אינו מותקן,יש לשדרג את Magisk במהירות האפשריות.</string>
+    <string name="unsupport_magisk_title">גרסת Kitsune Mask אינה נתמכת</string>
+    <string name="unsupport_magisk_msg">"גרסה זו של היישום אינה תומכת ביישום Kitsune Mask הנמוך מ- %1$s.
+
+היישום יתנהג כאילו Kitsune Mask אינו מותקן,יש לשדרג את Kitsune Mask במהירות האפשריות."</string>
     <string name="unsupport_general_title">מצב לא תקין</string>
     <string name="unsupport_system_app_msg">הפעלת יישום זה כיישום מערכת אינה נתמך. נא להשיב את היישום כיישום משתמש.</string>
-    <string name="unsupport_other_su_msg">התגלתה פקודת \"su\" שאינה שייכת ליישום Magisk נא להסיר את הפקודה שאינה נתמכת.</string>
-    <string name="unsupport_external_storage_msg">Magisk מותקן באחסון החיצוני. נא להעביר את היישום לאחסון הפנימי.</string>
+    <string name="unsupport_other_su_msg">התגלתה פקודת \"su\" שאינה שייכת ליישום Kitsune Mask נא להסיר את הפקודה שאינה נתמכת.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask מותקן באחסון החיצוני. נא להעביר את היישום לאחסון הפנימי.</string>
     <string name="unsupport_nonroot_stub_msg">היישום אינו יכול להמשיך לעבוד במצב הנסתר מכיוון שגישת הRoot אבדה. נא לשחזר אותו חזרה ל-APK המקורי.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">הענת הרשאת אחסון להפעלת פונקציה זו</string>
     <string name="post_notifications_denied">הענקת הרשאה להתראות כדי להפעיל פונקציה זו</string>
-    <string name="install_unknown_denied">יש לאפשר "התקנה ממקורות לא ידועים" בכדי להפעיל פונקציה זו</string>
+    <string name="install_unknown_denied">יש לאפשר התקנה ממקורות לא ידועים בכדי להפעיל פונקציה זו</string>
     <string name="add_shortcut_title">הוספת קיצור דרך למסך הבית</string>
     <string name="add_shortcut_msg">לאחר הסתרת היישום הזה, השם והסמליל שלה עשויים להיות קשים לזיהוי. האם ברצונך להוסיף קיצור דרך יפה למסך הבית?</string>
     <string name="app_not_found">לא נמצא יישום לטיפול בפעולה זו</string>

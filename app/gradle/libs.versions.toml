@@ -32,6 +32,7 @@ wire-runtime = { module = "com.squareup.wire:wire-runtime", version.ref = "wire"
 activity = { module = "androidx.activity:activity", version = "1.13.0" }
 core-ktx = { module = "androidx.core:core-ktx", version = "1.19.0" }
 core-splashscreen = { module = "androidx.core:core-splashscreen", version = "1.2.0" }
+webkit = { module = "androidx.webkit:webkit", version = "1.14.0" }
 profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version = "1.4.1" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }

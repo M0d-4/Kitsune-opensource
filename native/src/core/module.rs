@@ -1,6 +1,6 @@
 use crate::consts::{MODULEMNT, MODULEROOT, MODULEUPGRADE, WORKERDIR};
 use crate::daemon::MagiskD;
-use crate::ffi::{ModuleInfo, exec_module_scripts, exec_script, get_magisk_tmp};
+use crate::ffi::{DbEntryKey, ModuleInfo, exec_module_scripts, exec_script, get_magisk_tmp};
 use crate::mount::setup_module_mount;
 use crate::resetprop::load_prop_file;
 use base::{
@@ -698,7 +698,83 @@ pub fn remove_modules() {
     cstr!(MODULEROOT).remove_all().log_ok();
 }
 
-fn collect_modules(zygisk_enabled: bool, open_zygisk: bool) -> Vec<ModuleInfo> {
+const APPLIST_PAYLOAD: &str = "/data/adb/applist/payload";
+const APPLIST_MODULE: &str = ".applist";
+
+/// Build a built-in Zygisk module out of the app-list hiding payload.
+///
+/// The payload is a ZygoteLoader module (native stub + classes.dex). ZygoteLoader reads
+/// `classes.dex` through the module directory fd handed out by Zygisk, so the payload is exposed
+/// as a hidden entry (`.applist`) in the module root. It is a symlink, which keeps it out of the
+/// regular module iteration (and out of the module list shown in the app).
+fn open_applist_module() -> Option<ModuleInfo> {
+    let payload = Path::new(APPLIST_PAYLOAD);
+    if !payload.join("module.prop").exists() {
+        warn!("applist-hide: no payload found");
+        return None;
+    }
+
+    let link = Path::new(MODULEROOT).join(APPLIST_MODULE);
+    if let Ok(meta) = std::fs::symlink_metadata(&link) {
+        if meta.is_dir() {
+            std::fs::remove_dir_all(&link).ok();
+        } else {
+            std::fs::remove_file(&link).ok();
+        }
+    }
+    if let Err(e) = std::os::unix::fs::symlink(payload, &link) {
+        error!("applist-hide: cannot link payload: {e}");
+        return None;
+    }
+
+    fn open_lib(abi: &str) -> i32 {
+        use std::os::unix::fs::OpenOptionsExt;
+        std::fs::OpenOptions::new()
+            .read(true)
+            .custom_flags(libc::O_CLOEXEC)
+            .open(Path::new(APPLIST_PAYLOAD).join("zygisk").join(format!("{abi}.so")))
+            .map(IntoRawFd::into_raw_fd)
+            .unwrap_or(-1)
+    }
+
+    #[allow(unused_mut, unused_assignments)]
+    let (mut z32, mut z64) = (-1, -1);
+    #[cfg(target_arch = "arm")]
+    {
+        z32 = open_lib("armeabi-v7a");
+    }
+    #[cfg(target_arch = "aarch64")]
+    {
+        z32 = open_lib("armeabi-v7a");
+        z64 = open_lib("arm64-v8a");
+    }
+    #[cfg(target_arch = "x86")]
+    {
+        z32 = open_lib("x86");
+    }
+    #[cfg(target_arch = "x86_64")]
+    {
+        z32 = open_lib("x86");
+        z64 = open_lib("x86_64");
+    }
+    #[cfg(target_arch = "riscv64")]
+    {
+        z64 = open_lib("riscv64");
+    }
+
+    if z32 < 0 && z64 < 0 {
+        warn!("applist-hide: payload has no zygisk library for this ABI");
+        return None;
+    }
+    info!("applist-hide: enabled, injecting built-in module");
+    Some(ModuleInfo {
+        name: APPLIST_MODULE.to_string(),
+        z32,
+        z64,
+    })
+}
+
+fn collect_modules(zygisk_enabled: bool, open_zygisk: bool, applist: bool) -> Vec<ModuleInfo> {
     let mut modules = Vec::new();
 
     #[allow(unused_mut)] // It's possible that z32 and z64 are unused
@@ -780,6 +856,10 @@ fn collect_modules(zygisk_enabled: bool, open_zygisk: bool) -> Vec<ModuleInfo> {
     })
     .log_ok();
 
+    if zygisk_enabled && open_zygisk && applist {
+        modules.extend(open_applist_module());
+    }
+
     if zygisk_enabled && open_zygisk {
         let mut use_memfd = true;
         let mut convert_to_memfd = |fd: i32| -> i32 {
@@ -825,11 +905,12 @@ impl MagiskD {
         upgrade_modules().ok();
 
         let zygisk = self.zygisk_enabled.load(Ordering::Acquire);
-        let modules = collect_modules(zygisk, false);
+        let applist = self.get_db_setting(DbEntryKey::ApplistHide) > 0;
+        let modules = collect_modules(zygisk, false, false);
         exec_module_scripts(cstr!("post-fs-data"), &modules);
 
         // Recollect modules (module scripts could remove itself)
-        let modules = collect_modules(zygisk, true);
+        let modules = collect_modules(zygisk, true, applist);
         self.apply_modules(&modules);
 
         self.module_list.set(modules).ok();

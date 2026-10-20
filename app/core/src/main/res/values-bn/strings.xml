@@ -29,7 +29,9 @@
     <string name="home_latest_version">সর্বশেষ</string>
     <string name="invalid_update_channel">অবৈধ আপডেট চ্যানেল</string>
     <string name="uninstall_magisk_title">ম্যাজিস্ক আনইনস্টল করুন</string>
-    <string name="uninstall_magisk_msg">সমস্ত মডিউল নিষ্ক্রিয়/মুছে ফেলা হবে!\nরুট সরানো হবে!\nম্যাজিস্ক ব্যবহারের মাধ্যমে এনক্রিপ্ট করা যে কোনও অভ্যন্তরীণ স্টোরেজ পুনরায় এনক্রিপ্ট করা হবে!</string>
+    <string name="uninstall_magisk_msg">"সমস্ত মডিউল নিষ্ক্রিয়/মুছে ফেলা হবে!
+রুট সরানো হবে!
+ম্যাজিস্ক ব্যবহারের মাধ্যমে এনক্রিপ্ট করা যে কোনও অভ্যন্তরীণ স্টোরেজ পুনরায় এনক্রিপ্ট করা হবে!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">এনক্রিপশন সংরক্ষণ করুন</string>
@@ -42,7 +44,7 @@
     <string name="manager_download_install">ডাউনলোড এবং ইনস্টল করুন</string>
     <string name="direct_install">সরাসরি ইনস্টল</string>
     <string name="install_inactive_slot">নিষ্ক্রিয় স্লটে ইনস্টল করুন (OTA এর পরে)</string>
-    <string name="install_inactive_slot_msg">রিবুট করার পরে আপনার ডিভাইসটিকে বর্তমান নিষ্ক্রিয় স্লটে বুট করতে বাধ্য করা হবে!\It হয়ে গেলেই এই বিকল্পটি ব্যবহার করুন।\চালিয়ে রাখবেন?</string>
+    <string name="install_inactive_slot_msg">রিবুট করার পরে আপনার ডিভাইসটিকে বর্তমান নিষ্ক্রিয় স্লটে বুট করতে বাধ্য করা হবে!It হয়ে গেলেই এই বিকল্পটি ব্যবহার করুন।চালিয়ে রাখবেন?</string>
     <string name="setup_title">অতিরিক্ত সেটআপ</string>
     <string name="reboot_delay_toast">৫ সেকেন্ডের মধ্যে রিবুট হচ্ছে...</string>
     <string name="flash_screen_title">স্থাপন</string>
@@ -87,7 +89,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">সিস্টেম অ্যাপ দেখান</string>
     <string name="show_os_app">ওএস অ্যাপ দেখান</string>
     <string name="hide_filter_hint">নাম অনুসারে ফিল্টার করুন</string>
@@ -200,7 +202,9 @@
     <string name="env_fix_msg">ম্যাজিস্ক সঠিকভাবে কাজ করার জন্য আপনার ডিভাইসের অতিরিক্ত সেটআপ প্রয়োজন। আপনি কি এগিয়ে যেতে এবং রিবুট করতে চান?</string>
     <string name="setup_msg">চলমান পরিবেশ সেটআপ…</string>
     <string name="unsupport_magisk_title">অসমর্থিত ম্যাজিস্ক সংস্করণ</string>
-    <string name="unsupport_magisk_msg">অ্যাপটির এই সংস্করণটি %1$s-এর চেয়ে কম ম্যাগিস্ক সংস্করণগুলিকে সমর্থন করে না৷\n\nঅ্যাপটি এমন আচরণ করবে যেন কোনও ম্যাজিস্ক ইনস্টল করা নেই, দয়া করে যত তাড়াতাড়ি সম্ভব ম্যাজিস্ক আপগ্রেড করুন।</string>
+    <string name="unsupport_magisk_msg">"অ্যাপটির এই সংস্করণটি %1$s-এর চেয়ে কম ম্যাগিস্ক সংস্করণগুলিকে সমর্থন করে না৷
+
+অ্যাপটি এমন আচরণ করবে যেন কোনও ম্যাজিস্ক ইনস্টল করা নেই, দয়া করে যত তাড়াতাড়ি সম্ভব ম্যাজিস্ক আপগ্রেড করুন।"</string>
     <string name="unsupport_general_title">অস্বাভাবিক অবস্থা</string>
     <string name="unsupport_system_app_msg">এই অ্যাপটিকে একটি সিস্টেম অ্যাপ হিসেবে চালানো সমর্থিত নয়। অনুগ্রহ করে অ্যাপটিকে একটি ব্যবহারকারী অ্যাপে ফিরিয়ে দিন।</string>
     <string name="unsupport_other_su_msg">ম্যাজিস্ক থেকে নয় একটি \"su\" বাইনারি সনাক্ত করা হয়েছে। অনুগ্রহ করে কোনো প্রতিযোগী রুট সমাধান সরান এবং/অথবা ম্যাজিস্ক পুনরায় ইনস্টল করুন।</string>
@@ -209,7 +213,7 @@
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">এই কার্যকারিতা সক্ষম করতে স্টোরেজ অনুমতি দিন</string>
     <string name="post_notifications_denied">নোটিফিকেশন এর অনোমতি দিন</string>
-    <string name="install_unknown_denied">এই কার্যকারিতা সক্ষম করতে "অজানা অ্যাপগুলি ইনস্টল করুন" এর অনুমতি দিন</string>
+    <string name="install_unknown_denied">এই কার্যকারিতা সক্ষম করতে অজানা অ্যাপগুলি ইনস্টল করুন এর অনুমতি দিন</string>
     <string name="add_shortcut_title">হোম স্ক্রিনে শর্টকাট যোগ করুন</string>
     <string name="add_shortcut_msg">এই অ্যাপটি লুকানোর পরে, এর নাম এবং আইকন চিনতে অসুবিধা হতে পারে। আপনি কি হোম স্ক্রিনে একটি সুন্দর শর্টকাট যোগ করতে চান?</string>
     <string name="app_not_found">এই ক্রিয়াটি পরিচালনা করার জন্য কোনো অ্যাপ পাওয়া যায়নি</string>

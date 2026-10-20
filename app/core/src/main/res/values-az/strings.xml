@@ -20,15 +20,15 @@
     <string name="home_package">Paket</string>
     <string name="home_app_title">Tətbiq</string>
 
-    <string name="home_notice_content">Magiski YALNIZ rəsmi GitHub səhifəsindən endirin. Bilinməyən mənbələrdəki fayllar zərərli ola bilər!</string>
+    <string name="home_notice_content">Kitsune Maski YALNIZ rəsmi GitHub səhifəsindən endirin. Bilinməyən mənbələrdəki fayllar zərərli ola bilər!</string>
     <string name="home_support_title">Bizə Dəstək ol</string>
     <string name="home_follow_title">Bizi İzləyin</string>
     <string name="home_item_source">Mənbə</string>
-    <string name="home_support_content">Magisk pulsuzdur və həmişə belə qalacaq. Amma istəsən bizə dəstək ola bilərsən.</string>
+    <string name="home_support_content">Kitsune Mask pulsuzdur və həmişə belə qalacaq. Amma istəsən bizə dəstək ola bilərsən.</string>
     <string name="home_installed_version">Qurulan</string>
     <string name="home_latest_version">Ən son versiya</string>
     <string name="invalid_update_channel">Keçərsiz yeniləmə kanalı</string>
-    <string name="uninstall_magisk_title">Magisk\'i sil</string>
+    <string name="uninstall_magisk_title">"Kitsune Mask'i sil"</string>
     <string name="uninstall_magisk_msg">Bütün modullar ləğv olunacaq/silinəcək. Root silinəcək, və əgər hal-hazırda deyilsə, bütün məlumatlarınız potensiyal olaraq şifrələnəcək.</string>
 
     <!--Install-->
@@ -41,8 +41,10 @@
     <string name="install_start">Başlat</string>
     <string name="manager_download_install">Endirmək və quraşdırmaq üçün bas</string>
     <string name="direct_install">Birbaşa Quraşdır (Tövsiyyə olunur)</string>
-    <string name="install_inactive_slot">Aktiv olmayan Slot\'a quraşdır (OTA\'dan sonra)</string>
-    <string name="install_inactive_slot_msg">Cihazınız yenidən başladıqdan sonra aktiv olmayan slotda başlamağa MƏCBUR ediləcək!\nBu seçimi ancaq OTA bitdikdən sonra tətbiq edin.\nDavam edilsin?</string>
+    <string name="install_inactive_slot">"Aktiv olmayan Slot'a quraşdır (OTA'dan sonra)"</string>
+    <string name="install_inactive_slot_msg">"Cihazınız yenidən başladıqdan sonra aktiv olmayan slotda başlamağa MƏCBUR ediləcək!
+Bu seçimi ancaq OTA bitdikdən sonra tətbiq edin.
+Davam edilsin?"</string>
     <string name="setup_title">Əlavə Sazlamalar</string>
     <string name="reboot_delay_toast">5 saniyəyə yenidən başlayacaq…</string>
     <string name="flash_screen_title">Quraşdırılma</string>
@@ -79,7 +81,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Qeyd yoxdur, root icazəli tətbiqlərdən daha çox istifadə edin</string>
-    <string name="log_data_magisk_none">Qəribədir, Magisk qeydləri boşdur</string>
+    <string name="log_data_magisk_none">Qəribədir, Kitsune Mask qeydləri boşdur</string>
     <string name="menuSaveLog">Qeydləri saxla</string>
     <string name="menuClearLog">Qeydləri sil</string>
     <string name="logs_cleared">Qeydlər silindi</string>
@@ -90,7 +92,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Sistem tətbiqlərini göstər</string>
     <string name="show_os_app">Əməliyyat sistemi tətbiqlərini göstər</string>
     <string name="hide_filter_hint">Adla sırala</string>
@@ -108,8 +110,8 @@
     <string name="module_state_restore">Bərpa et</string>
     <string name="module_action_install_external">Yaddaşdan yüklə</string>
     <string name="update_available">Yeniləmə Mövcuddur</string>
-    <string name="suspend_text_riru">%1$s açıq olduğundan Magisk modulu dayandırıldı</string>
-    <string name="suspend_text_zygisk">%1$s qapalı olduğu üçün Magisk modulu dayandırıldı</string>
+    <string name="suspend_text_riru">%1$s açıq olduğundan Kitsune Mask modulu dayandırıldı</string>
+    <string name="suspend_text_zygisk">%1$s qapalı olduğu üçün Kitsune Mask modulu dayandırıldı</string>
     <string name="zygisk_module_unloaded">Zygisk modulu uyğunsuzluq səbəbindən açılmadı</string>
     <string name="module_empty">Yüklü modul yoxdur</string>
     <string name="confirm_install">%1$s modulu yüklənsin?</string>
@@ -122,10 +124,10 @@
     <string name="settings_dark_mode_system">Sistemə Uyğun</string>
     <string name="settings_dark_mode_dark">Həmişə Qaranlıq</string>
     <string name="settings_download_path_title">Endirmə yolu</string>
-    <string name="settings_download_path_message">Fayllar %1$s\'a yerləşdiriləcək</string>
-    <string name="settings_hide_app_title">Magisk tətbiqini gizlət</string>
-    <string name="settings_hide_app_summary">Təsadüfi paket ID\'si ilə proxy yüklə və özəl tətbiq adı yaz</string>
-    <string name="settings_restore_app_title">Magisk tətbiqini bərpa et</string>
+    <string name="settings_download_path_message">"Fayllar %1$s'a yerləşdiriləcək"</string>
+    <string name="settings_hide_app_title">Kitsune Mask tətbiqini gizlət</string>
+    <string name="settings_hide_app_summary">"Təsadüfi paket ID'si ilə proxy yüklə və özəl tətbiq adı yaz"</string>
+    <string name="settings_restore_app_title">Kitsune Mask tətbiqini bərpa et</string>
     <string name="settings_restore_app_summary">Tətbiqi üzə çıxar və orijinal APKnı bərpa et</string>
     <string name="language">Dil</string>
     <string name="system_default">(Sistem Dili)</string>
@@ -135,10 +137,10 @@
     <string name="settings_update_stable">Sabit</string>
     <string name="settings_update_beta">Beta</string>
     <string name="settings_update_custom">Özəl</string>
-    <string name="settings_update_custom_msg">Özəl kanal URL\'si daxil et</string>
-    <string name="settings_zygisk_summary">Magiskin bəzi hissələrini zygote daemonda aç</string>
+    <string name="settings_update_custom_msg">"Özəl kanal URL'si daxil et"</string>
+    <string name="settings_zygisk_summary">Kitsune Maskin bəzi hissələrini zygote daemonda aç</string>
     <string name="settings_denylist_title">İstisnaları Məcbur İşlət</string>
-    <string name="settings_denylist_summary">İstisnalar siyahısındakı proseslər Magisk əlavələrini tərsinə çevirəcək</string>
+    <string name="settings_denylist_summary">İstisnalar siyahısındakı proseslər Kitsune Mask əlavələrini tərsinə çevirəcək</string>
     <string name="settings_denylist_config_title">İstisnaları Ayarla</string>
     <string name="settings_denylist_config_summary">İstisnalara yerləşdiriləcək prosesi seçin</string>
     <string name="settings_hosts_title">Sistemsiz hostlar</string>
@@ -174,13 +176,13 @@
     <string name="isolate_summary">Hər kök giriş üçün ayrıca kök adlarfəzası olacaq</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk Yeniləmələri</string>
+    <string name="update_channel">Kitsune Mask Yeniləmələri</string>
     <string name="progress_channel">İrəliləmə Bildirişləri</string>
     <string name="updated_channel">Yeniləmə Bitdi</string>
     <string name="download_complete">Endirmə Bitdi</string>
     <string name="download_file_error">Faylı endirmək münkün olmadı</string>
-    <string name="magisk_update_title">Magisk Yeniləməsi Var!</string>
-    <string name="updated_title">Magisk Yeniləndi</string>
+    <string name="magisk_update_title">Kitsune Mask Yeniləməsi Var!</string>
+    <string name="updated_title">Kitsune Mask Yeniləndi</string>
     <string name="updated_text">Tətbiqi açmaq üçün toxun</string>
 
     <!--Toasts, Dialogs-->
@@ -193,7 +195,7 @@
     <string name="flashing">Flashlanır...</string>
     <string name="done">Bitdi!</string>
     <string name="failure">Alınmadı!</string>
-    <string name="hide_app_title">Magisk tətbiqi gizlədilir…</string>
+    <string name="hide_app_title">Kitsune Mask tətbiqi gizlədilir…</string>
     <string name="open_link_failed_toast">Keçidi açaçaq tətbiq yoxdur</string>
     <string name="complete_uninstall">Tamamilə sil</string>
     <string name="restore_img">Nüsxələri Bərpa et</string>
@@ -202,19 +204,21 @@
     <string name="restore_fail">Bərpa üçün nüxsələr mövcud deyil!</string>
     <string name="setup_fail">Qurma uğursuz oldu</string>
     <string name="env_fix_title">Əlavə yükləməyə ethiyac var</string>
-    <string name="env_fix_msg">Cihazınız Magiskin düzgün işləməsi üçün əlavə yükləməyə ehtiyac duyur. Yenidən başlatmaq istəyirsiniz?</string>
+    <string name="env_fix_msg">Cihazınız Kitsune Maskin düzgün işləməsi üçün əlavə yükləməyə ehtiyac duyur. Yenidən başlatmaq istəyirsiniz?</string>
     <string name="setup_msg">Yüklənir…</string>
-    <string name="unsupport_magisk_title">Bu Magisk versiyası dəstəklənmir</string>
-    <string name="unsupport_magisk_msg">Tətbiqin bu versiyası Magiskin %1$s versiyasından aşağıları dəstəkləmir.\n\nTətbiq sanki Magisk heç yoxmuş kimi davranacaq, lütfən Magiski yüksəldin.</string>
+    <string name="unsupport_magisk_title">Bu Kitsune Mask versiyası dəstəklənmir</string>
+    <string name="unsupport_magisk_msg">"Tətbiqin bu versiyası Kitsune Maskin %1$s versiyasından aşağıları dəstəkləmir.
+
+Tətbiq sanki Kitsune Mask heç yoxmuş kimi davranacaq, lütfən Kitsune Maski yüksəldin."</string>
     <string name="unsupport_general_title">Anormal Hal</string>
     <string name="unsupport_system_app_msg">Bu tətbiqi sistem tətbiqi kimi açmaq olmur. Onu yenidən istifadəçi tətbiqi etməlisiniz.</string>
-    <string name="unsupport_other_su_msg">Magiskdən olmayan \"su\" tapıldı. Lütfən digər kök tətbiqi silin yaxud Magiski yenidən quraşdırın.</string>
-    <string name="unsupport_external_storage_msg">Magisk xarici yaddaşa qurulub. Lütfən tətbiqi daxili yaddaşa keçirin.</string>
-    <string name="unsupport_nonroot_stub_msg">Gizli Magisk tətbiqi kök itirildiyinə görə işləməyəcək. Orijinal APKnı geri qaytarın.</string>
+    <string name="unsupport_other_su_msg">Kitsune Maskdən olmayan \"su\" tapıldı. Lütfən digər kök tətbiqi silin yaxud Kitsune Maski yenidən quraşdırın.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask xarici yaddaşa qurulub. Lütfən tətbiqi daxili yaddaşa keçirin.</string>
+    <string name="unsupport_nonroot_stub_msg">Gizli Kitsune Mask tətbiqi kök itirildiyinə görə işləməyəcək. Orijinal APKnı geri qaytarın.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Bu funksiyanı işə salmaq üçün yaddaş icazəsi verin</string>
     <string name="post_notifications_denied">Bu funksiyanı işə salmaq üçün bildiriş icazəsi verin</string>
-    <string name="install_unknown_denied">"bilinməyən tətbiqləri quraşdır"\ı açsanız bu funksiya işə düşəcək</string>
+    <string name="install_unknown_denied">bilinməyən tətbiqləri quraşdırı açsanız bu funksiya işə düşəcək</string>
     <string name="add_shortcut_title">Ana ekranda qısayol yarat</string>
     <string name="add_shortcut_msg">Tətbiqi gizlətdikdən sonra tapmaq çətin olmasın deyə ana ekranda qısayol yaradılsın?</string>
     <string name="app_not_found">Bu işi görəcək heçbir tətbiq yoxdur</string>

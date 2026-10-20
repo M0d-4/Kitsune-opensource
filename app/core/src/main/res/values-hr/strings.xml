@@ -21,12 +21,14 @@
 
     <string name="home_support_title">Podržite nas</string>
     <string name="home_item_source">Izvor</string>
-    <string name="home_support_content">Magisk je i uvijek će biti besplatan i otvoren. Međutim, možete nam pokazati da vam je stalo slanjem male donacije.</string>
+    <string name="home_support_content">Kitsune Mask je i uvijek će biti besplatan i otvoren. Međutim, možete nam pokazati da vam je stalo slanjem male donacije.</string>
     <string name="home_installed_version">Instalirana</string>
     <string name="home_latest_version">Najnovija</string>
     <string name="invalid_update_channel">Nevažeći kanal ažuriranja</string>
-    <string name="uninstall_magisk_title">Deinstaliraj Magisk</string>
-    <string name="uninstall_magisk_msg">Svi će moduli biti onemogućeni/uklonjeni!\nRoot će biti uklonjen!\nVaši su podaci potencijalno šifrirani, ako već nisu!</string>
+    <string name="uninstall_magisk_title">Deinstaliraj Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Svi će moduli biti onemogućeni/uklonjeni!
+Root će biti uklonjen!
+Vaši su podaci potencijalno šifrirani, ako već nisu!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Zadrži prisilno šifirannje</string>
@@ -39,7 +41,9 @@
     <string name="manager_download_install">Dodirnite za preuzimanje i instalaciju</string>
     <string name="direct_install">Izravna instalacija (preporučeno)</string>
     <string name="install_inactive_slot">Instaliraj u neaktivni utor (Nakon OTA)</string>
-    <string name="install_inactive_slot_msg">Vaš će se uređaj prisiliti pokrenuti s trenutnog neaktivnog mjesta nakon ponovnog pokretanja!\nKoristite tu opciju samo nakon što je OTA dovršena.\nContinue?</string>
+    <string name="install_inactive_slot_msg">"Vaš će se uređaj prisiliti pokrenuti s trenutnog neaktivnog mjesta nakon ponovnog pokretanja!
+Koristite tu opciju samo nakon što je OTA dovršena.
+Continue?"</string>
     <string name="setup_title">Dodatno postavljanje</string>
     <string name="reboot_delay_toast">Ponovno pokretanje za 5 sekundi…</string>
     <string name="flash_screen_title">Instalacija</string>
@@ -75,7 +79,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Nemate zapisnika, pokušajte više upotrebljavati svoje aplikacije s omogućenim SU.</string>
-    <string name="log_data_magisk_none">Zapisnici Magiska su prazni, to je čudno.</string>
+    <string name="log_data_magisk_none">Zapisnici Kitsune Maska su prazni, to je čudno.</string>
     <string name="menuSaveLog">Spremi zapisnik</string>
     <string name="menuClearLog">Izbriši zapisnik</string>
     <string name="logs_cleared">Zapisnik uspješno izbrisan.</string>
@@ -84,7 +88,7 @@
 
     <!--SafetyNet-->
 
-    <!-- MagiskHide -->
+    <!-- KMHide -->
     <string name="show_system_app">Prikaži sistemske aplikacije</string>
     <string name="hide_filter_hint">Filtriraj prema nazivu</string>
     <string name="hide_search">Traži</string>
@@ -149,11 +153,11 @@
     <string name="isolate_summary">Svaka root sesija ima svoj vlastiti imenski prostor</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk Ažuriranja</string>
+    <string name="update_channel">Kitsune Mask Ažuriranja</string>
     <string name="progress_channel">Obavijesti o napretku</string>
     <string name="download_complete">Preuzimanje završeno</string>
     <string name="download_file_error">Pogreška pri preuzimanju datoteke</string>
-    <string name="magisk_update_title">Dostupno je Magisk ažuriranje!</string>
+    <string name="magisk_update_title">Dostupno je Kitsune Mask ažuriranje!</string>
 
     <!--Toasts, Dialogs-->
     <string name="yes">Da</string>
@@ -174,7 +178,7 @@
     <string name="setup_fail">Postavljanje nije uspjelo</string>
     <string name="env_fix_title">Zahtijeva dodatno postavljanje</string>
     <string name="setup_msg">Postavljanje okruženja za pokretanje…</string>
-    <string name="unsupport_magisk_title">Nepodržana Magisk verzija</string>
+    <string name="unsupport_magisk_title">Nepodržana Kitsune Mask verzija</string>
     <string name="external_rw_permission_denied">Odobrite dopuštenje za pohranu da biste omogućili ovu funkciju</string>
     <string name="add_shortcut_title">Dodaj prečac na početni zaslon</string>
     <string name="app_not_found">Nije pronađena nijedna aplikacijaza obradu ove radnju</string>

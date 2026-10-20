@@ -6,13 +6,13 @@
     <string name="logs">Записник</string>
     <string name="settings">Поставки</string>
     <string name="install">Инсталирај</string>
-    <string name="unsupport_magisk_title">Неподдржана верзија на Magisk</string>
+    <string name="unsupport_magisk_title">Неподдржана верзија на Kitsune Mask</string>
 
     <!--Status Fragment-->
     <string name="invalid_update_channel">Невалиден канал за ажурирања</string>
     <string name="keep_force_encryption">Задржи ја присилната енкрипција</string>
     <string name="keep_dm_verity">Задржи AVB 2.0/dm-verity</string>
-    <string name="uninstall_magisk_title">Деинсталирај го Magisk</string>
+    <string name="uninstall_magisk_title">Деинсталирај го Kitsune Mask</string>
     <string name="uninstall_magisk_msg">Сите модули ќе бидат оневозможени/oтстранети. Рут привилегиите ќе бидат отстранети, а вашите податоци може да се енкриптираат ако моментално не се.</string>
     <string name="update">Ажурирај</string>
 
@@ -35,17 +35,19 @@
     <string name="app_changelog">Листа на промени</string>
 
     <!-- System Components, Notifications -->
-    <string name="update_channel">Magisk Ажурирања</string>
+    <string name="update_channel">Kitsune Mask Ажурирања</string>
     <string name="progress_channel">Известувања за прогресот</string>
     <string name="download_complete">Преземањето е завршено</string>
     <string name="download_file_error">Грешка при преземање на фајлот</string>
-    <string name="magisk_update_title">Достапно е ажурирање на Magisk!</string>
+    <string name="magisk_update_title">Достапно е ажурирање на Kitsune Mask!</string>
 
     <!-- Installation -->
     <string name="manager_download_install">Притисни за преземање и инсталирање.</string>
     <string name="direct_install">Директна инсталација (Препорачано)</string>
     <string name="install_inactive_slot">Инсталирај во неактивен слот (по ОТА)</string>
-    <string name="install_inactive_slot_msg">Вашиот уред ќе биде ПРИНУДЕН да се подигне на тековниот неактивен слот по рестартирањето!\nОваа опција користете ја само откако OTA ажурирање е направено.\nПродолжи?</string>
+    <string name="install_inactive_slot_msg">"Вашиот уред ќе биде ПРИНУДЕН да се подигне на тековниот неактивен слот по рестартирањето!
+Оваа опција користете ја само откако OTA ажурирање е направено.
+Продолжи?"</string>
     <string name="setup_title">Дополнителни подесувања</string>
     <string name="reboot_delay_toast">Рестартирање за 5 секунди…</string>
 
@@ -128,7 +130,7 @@
     <string name="pid">PID: %1$d</string>
     <string name="target_uid">Целен UID: %1$d</string>
 
-    <!-- MagiskHide -->
+    <!-- KMHide -->
     <string name="show_system_app">Прикажи ги системските апликации</string>
 
 </resources>

@@ -5,6 +5,9 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.topjohnwu.magisk.core.di.ServiceLocator
 import com.topjohnwu.magisk.ui.deny.DenyListViewModel
+import com.topjohnwu.magisk.ui.deny.SuListViewModel
+import com.topjohnwu.magisk.ui.applist.AppListViewModel
+import com.topjohnwu.magisk.ui.flash.BulkFlashViewModel
 import com.topjohnwu.magisk.ui.flash.FlashViewModel
 import com.topjohnwu.magisk.ui.home.HomeViewModel
 import com.topjohnwu.magisk.ui.install.InstallViewModel
@@ -22,7 +25,10 @@ val VMFactory: ViewModelProvider.Factory = viewModelFactory {
     initializer { SuperuserGrantViewModel(ServiceLocator.policyDB) }
     initializer { InstallViewModel(ServiceLocator.networkService, ServiceLocator.firmwareCrawler) }
     initializer { DenyListViewModel() }
+    initializer { SuListViewModel() }
+    initializer { AppListViewModel() }
     initializer { FlashViewModel() }
+    initializer { BulkFlashViewModel() }
     initializer { ActionViewModel() }
     initializer { ModuleViewModel() }
     initializer { SettingsViewModel() }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bulk_flash_fail_count_fmt">%1$d failed</string>
+    <string name="bulk_flash_failed">Installation failed!</string>
+    <string name="bulk_flash_installing">Installing modules...</string>
+    <string name="bulk_flash_no_modules">! No modules selected</string>
+    <string name="bulk_flash_partial">Some modules failed to install</string>
+    <string name="bulk_flash_progress_fmt">%1$d / %2$d modules</string>
+    <string name="bulk_flash_success">All modules installed successfully!</string>
+    <string name="bulk_flash_success_count_fmt">%1$d successful</string>
+    <string name="bulk_flash_title">Bulk Module Installation</string>
+    <string name="bulk_progress">%1$d of %2$d finished</string>
+    <string name="bulk_queued">%1$d modules queued</string>
+    <string name="bulk_summary">%1$d installed, %2$d failed</string>
+</resources>

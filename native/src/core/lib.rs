@@ -91,6 +91,9 @@ pub mod ffi {
         ZygiskConfig,
         BootloopCount,
         SuManager,
+        SulistConfig,
+        SulistAutoGrant,
+        ApplistHide,
     }
 
     #[repr(i32)]
@@ -171,6 +174,8 @@ pub mod ffi {
         fn denylist_cli(args: &mut Vec<String>) -> i32;
         fn denylist_handler(client: i32);
         fn scan_deny_apps();
+        fn sulist_enforced() -> bool;
+        fn is_sulist_target(uid: i32) -> bool;
 
         include!("include/sqlite.hpp");
 

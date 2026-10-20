@@ -9,6 +9,7 @@ import com.topjohnwu.magisk.core.Info
 import com.topjohnwu.magisk.core.R
 import com.topjohnwu.magisk.core.ktx.toast
 import com.topjohnwu.magisk.core.utils.RootUtils
+import com.topjohnwu.magisk.ui.component.PendingRebootState
 import com.topjohnwu.magisk.ui.navigation.Route
 import com.topjohnwu.magisk.view.Shortcuts
 import com.topjohnwu.superuser.Shell
@@ -22,12 +23,44 @@ class SettingsViewModel : BaseViewModel() {
     private val _denyListEnabled = MutableStateFlow(Config.denyList)
     val denyListEnabled: StateFlow<Boolean> = _denyListEnabled.asStateFlow()
 
+    private val _suListEnabled = MutableStateFlow(Config.sulist)
+    val suListEnabled: StateFlow<Boolean> = _suListEnabled.asStateFlow()
+
     val zygiskMismatch get() = Config.zygisk != Info.isZygiskEnabled
 
     var authenticate: (onSuccess: () -> Unit) -> Unit = { it() }
 
     fun navigateToDenyList() {
         navigateTo(Route.DenyList)
+    }
+
+    fun navigateToModuleReview() {
+        navigateTo(Route.ModuleReview)
+    }
+
+    fun navigateToAppList() {
+        navigateTo(Route.AppList)
+    }
+
+    fun navigateToSuList() {
+        navigateTo(Route.SuList)
+    }
+
+    fun toggleSuList(enabled: Boolean) {
+        _suListEnabled.value = enabled
+        val cmd = if (enabled) "enable" else "disable"
+        Shell.cmd("magisk --denylist sulist $cmd").submit { result ->
+            if (result.isSuccess) {
+                Config.sulist = enabled
+                // Enabling SuList also turns the DenyList machinery on
+                if (enabled) {
+                    Config.denyList = true
+                    _denyListEnabled.value = true
+                }
+            } else {
+                _suListEnabled.value = !enabled
+            }
+        }
     }
 
     fun requestAddShortcut() {
@@ -56,6 +89,9 @@ class SettingsViewModel : BaseViewModel() {
     fun withAuth(action: () -> Unit) = authenticate(action)
 
     fun notifyZygiskChange() {
-        if (zygiskMismatch) showSnackbar(R.string.reboot_apply_change)
+        if (zygiskMismatch) {
+            PendingRebootState.mark()
+            showSnackbar(R.string.reboot_apply_change)
+        }
     }
 }

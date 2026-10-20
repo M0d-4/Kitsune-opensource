@@ -29,7 +29,9 @@
     <string name="home_latest_version">नवीनतम</string>
     <string name="invalid_update_channel">अमान्य अपडेट चैनल</string>
     <string name="uninstall_magisk_title">मैजिस्क को अनइंस्टॉल करें</string>
-    <string name="uninstall_magisk_msg">सभी मॉड्यूल्स को निष्क्रिय/हटा दिया जाएगा!\n रूट को हटा दिया जाएगा!\n आपका डेटा संभावित रूप से एन्क्रिप्ट किया गया है यदि पहले से नहीं है!</string>
+    <string name="uninstall_magisk_msg">"सभी मॉड्यूल्स को निष्क्रिय/हटा दिया जाएगा!
+ रूट को हटा दिया जाएगा!
+ आपका डेटा संभावित रूप से एन्क्रिप्ट किया गया है यदि पहले से नहीं है!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">फ़ोर्स एन्क्रिप्शन को संरक्षित रखें</string>
@@ -42,7 +44,9 @@
     <string name="manager_download_install">डाउनलोड और इंस्टॉल करने के लिए दबाएं</string>
     <string name="direct_install">प्रत्यक्ष इंस्टॉल (अनुशंसित)</string>
     <string name="install_inactive_slot">निष्क्रिय स्लॉट में इंस्टॉल करें (OTA के बाद)</string>
-    <string name="install_inactive_slot_msg">आपका डिवाइस रीबूट होने के बाद वर्तमान निष्क्रिय स्लॉट में बूट करने के लिए मजबूर किया जाएगा!\n इस विकल्प का उपयोग सिर्फ OTA हो जाने के बाद करें।\n जारी रखें?</string>
+    <string name="install_inactive_slot_msg">"आपका डिवाइस रीबूट होने के बाद वर्तमान निष्क्रिय स्लॉट में बूट करने के लिए मजबूर किया जाएगा!
+ इस विकल्प का उपयोग सिर्फ OTA हो जाने के बाद करें।
+ जारी रखें?"</string>
     <string name="setup_title">अतिरिक्त सेटअप</string>
     <string name="reboot_delay_toast">5 सेकंड में रिबूट हो रहा है...</string>
     <string name="flash_screen_title">इंस्टॉलेशन</string>
@@ -60,16 +64,16 @@
 
 
 
-    <string name="su_allow_toast"> %1$s को सुपरयूज़र अधिकार प्रदान किया गया</string>
-    <string name="su_deny_toast"> %1$s को सुपरयूज़र अधिकार से इंकार किया गया</string>
-    <string name="su_snack_grant"> %1$s को सुपरयूज़र अधिकार प्रदान किए गए </string>
-    <string name="su_snack_deny"> %1$s के सुपरयूज़र अधिकारों को अस्वीकार कर दिया गया है</string>
-    <string name="su_snack_notif_on"> %1$s की सूचनाएं सक्षम हैं</string>
-    <string name="su_snack_notif_off"> %1$s की सूचनाएं अक्षम हैं</string>
-    <string name="su_snack_log_on"> %1$s की लॉगिंग सक्षम है</string>
-    <string name="su_snack_log_off"> %1$s की लॉगिंग अक्षम है</string>
+    <string name="su_allow_toast">%1$s को सुपरयूज़र अधिकार प्रदान किया गया</string>
+    <string name="su_deny_toast">%1$s को सुपरयूज़र अधिकार से इंकार किया गया</string>
+    <string name="su_snack_grant">%1$s को सुपरयूज़र अधिकार प्रदान किए गए</string>
+    <string name="su_snack_deny">%1$s के सुपरयूज़र अधिकारों को अस्वीकार कर दिया गया है</string>
+    <string name="su_snack_notif_on">%1$s की सूचनाएं सक्षम हैं</string>
+    <string name="su_snack_notif_off">%1$s की सूचनाएं अक्षम हैं</string>
+    <string name="su_snack_log_on">%1$s की लॉगिंग सक्षम है</string>
+    <string name="su_snack_log_off">%1$s की लॉगिंग अक्षम है</string>
     <string name="su_revoke_title">अधिकार वापस लें?</string>
-    <string name="su_revoke_msg"> %1$s के अधिकारों को रद्द करने की पुष्टि करें?</string>
+    <string name="su_revoke_msg">%1$s के अधिकारों को रद्द करने की पुष्टि करें?</string>
     <string name="toast">पॉप-अप सूचना</string>
     <string name="none">कोई नहीं</string>
 
@@ -88,7 +92,7 @@
 
     <!--SafetyNet-->
 
-    <!-- MagiskHide -->
+    <!-- KMHide -->
     <string name="show_system_app">सिस्टम ऐप्स दिखाएं</string>
     <string name="show_os_app">OS एप्लिकेशन दिखाएं</string>
     <string name="hide_filter_hint">नाम से फ़िल्टर करें</string>
@@ -101,7 +105,7 @@
     <string name="reboot_bootloader">बूटलोडर रिबूट</string>
     <string name="reboot_download">डाउनलोड मोड रिबूट</string>
     <string name="reboot_edl">EDL रिबूट</string>
-    <string name="module_version_author"> %2$s के द्वारा %1$s</string>
+    <string name="module_version_author">%2$s के द्वारा %1$s</string>
     <string name="module_state_remove">हटाएँ</string>
     <string name="module_state_restore">रिस्टोर करें</string>
     <string name="module_action_install_external">स्टोरेज से इनस्टॉल करें</string>
@@ -156,7 +160,7 @@
     <string name="multiuser_mode">बहु उपयोगकर्ता मोड</string>
     <string name="settings_owner_only">केवल डिवाइस का मालिक</string>
     <string name="settings_owner_manage">डिवाइस मालिक द्वारा प्रबंधित</string>
-    <string name="settings_user_independent"> स्वत्रंत उपयोगकर्ता</string>
+    <string name="settings_user_independent">स्वत्रंत उपयोगकर्ता</string>
     <string name="owner_only_summary">केवल मालिक के पास ही रूट की पहुँच है</string>
     <string name="owner_manage_summary">केवल मालिक रूट एक्सेस का प्रबंधन कर सकते हैं और अनुरोध संकेत प्राप्त कर सकते हैं</string>
     <string name="user_independent_summary">प्रत्येक उपयोगकर्ता का अपना अलग रूट नियम होता है</string>
@@ -201,7 +205,9 @@
     <string name="env_fix_msg">मैजिस्क के ठीक से काम करने के लिए आपके डिवाइस को अतिरिक्त सेटअप की आवश्यकता है। क्या आप आगे बढ़ना और रिबूट करना चाहते हैं?</string>
     <string name="setup_msg">वातावरण सेटअप चल रहा है...</string>
     <string name="unsupport_magisk_title">असमर्थित मैजिस्क संस्करण</string>
-    <string name="unsupport_magisk_msg">ऐप का यह संस्करण %1$s से कम के मैजिस्क संस्करणों का समर्थन नहीं करता है।\n\nऐप ऐसा व्यवहार करेगा जैसे कोई मैजिस्क इंस्टॉल नहीं है, कृपया जितनी जल्दी हो सके मैजिस्क को अपग्रेड करें।</string>
+    <string name="unsupport_magisk_msg">"ऐप का यह संस्करण %1$s से कम के मैजिस्क संस्करणों का समर्थन नहीं करता है।
+
+ऐप ऐसा व्यवहार करेगा जैसे कोई मैजिस्क इंस्टॉल नहीं है, कृपया जितनी जल्दी हो सके मैजिस्क को अपग्रेड करें।"</string>
     <string name="unsupport_general_title">असामान्य अवस्था</string>
     <string name="unsupport_system_app_msg">इस ऐप को सिस्टम ऐप के रूप में चलाना समर्थित नहीं है। कृपया ऐप को उपयोगकर्ता ऐप पर वापस लाएं।</string>
     <string name="unsupport_other_su_msg">एक \"su\" बाइनरी का पता चला है जो मैजिस्क से नहीं है। कृपया कोई प्रतिस्पर्धी मूल समाधान निकालें और/या मैजिस्क को फिर से स्थापित करें।</string>
@@ -209,7 +215,7 @@
     <string name="unsupport_nonroot_stub_msg">छिपा हुआ मैजिक ऐप काम करना जारी नहीं रख सकता क्योंकि रूट खो गया था। कृपया मूल APK को पुनर्स्थापित करें।</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">इसका उपयोग करने के लिए स्टोरेज अनुमति प्रदान करें</string>
-    <string name="install_unknown_denied">इस कार्यक्षमता को सक्षम करने के लिए "अज्ञात ऐप्स इंस्टॉल करें" की अनुमति दें</string>
+    <string name="install_unknown_denied">इस कार्यक्षमता को सक्षम करने के लिए अज्ञात ऐप्स इंस्टॉल करें की अनुमति दें</string>
     <string name="add_shortcut_title">होम स्क्रीन पर शॉर्टकट जोड़ें</string>
     <string name="add_shortcut_msg">इस ऐप को छिपाने के बाद इसका नाम और आइकन पहचानना मुश्किल हो सकता है। क्या आप होम स्क्रीन पर एक सुंदर शॉर्टकट जोड़ना चाहते हैं?</string>
     <string name="app_not_found">इस एक्शन को संभालने के लिए कोई एप्लिकेशन नहीं मिली</string>

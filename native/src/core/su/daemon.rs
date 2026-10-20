@@ -1,7 +1,7 @@
 use super::db::RootSettings;
 use crate::daemon::{AID_APP_START, AID_ROOT, MagiskD, to_app_id, to_user_id};
 use crate::db::{DbSettings, MultiuserMode};
-use crate::ffi::{SuPolicy, SuRequest, exec_root_shell};
+use crate::ffi::{SuPolicy, SuRequest, exec_root_shell, is_sulist_target, sulist_enforced};
 use crate::socket::IpcRead;
 use base::{LoggedResult, ResultExt, WriteExt, debug, error, exit_on_error, libc, warn};
 use std::os::fd::IntoRawFd;
@@ -205,6 +205,17 @@ impl MagiskD {
             // If it's the manager, allow it silently
             if to_app_id(uid) == to_app_id(mgr_uid) {
                 return Ok(Arc::new(SuInfo::allow(uid)));
+            }
+
+            // SuList mode: only listed apps can use root. Other system uids (e.g. adb shell)
+            // are not affected as they never go through the zygote unmount path.
+            if sulist_enforced() && to_app_id(uid) >= AID_APP_START {
+                if !is_sulist_target(uid) {
+                    return Ok(Arc::new(SuInfo::deny(uid)));
+                }
+                if cfg.sulist_auto_grant {
+                    return Ok(Arc::new(SuInfo::allow(uid)));
+                }
             }
 
             // Finally, the SuInfo

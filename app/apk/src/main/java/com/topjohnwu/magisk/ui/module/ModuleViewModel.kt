@@ -33,6 +33,7 @@ data class ModuleItem(
 ) {
     val showNotice: Boolean
     val showAction: Boolean
+    val showWebUI: Boolean
     val noticeText: TextHolder
     val isUpdated = module.updated
     val updateReady get() = module.outdated && !isRemoved && isEnabled
@@ -46,6 +47,7 @@ data class ModuleItem(
             (Info.isZygiskEnabled && isRiru) ||
             (!Info.isZygiskEnabled && isZygisk)
         showAction = module.hasAction && !showNotice
+        showWebUI = module.hasWebUI && !showNotice
         noticeText =
             when {
                 zygiskUnloaded -> CoreR.string.zygisk_module_unloaded.asText()

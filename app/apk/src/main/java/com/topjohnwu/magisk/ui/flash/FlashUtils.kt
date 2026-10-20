@@ -14,6 +14,11 @@ object FlashUtils {
     const val EXTRA_FLASH_ACTION = "flash_action"
     const val EXTRA_FLASH_URI = "flash_uri"
 
+    /** Opens the action screen of a module (used by the module action widget). */
+    const val INTENT_MODULE_ACTION = "com.topjohnwu.magisk.intent.MODULE_ACTION"
+    const val EXTRA_MODULE_ID = "module_id"
+    const val EXTRA_MODULE_NAME = "module_name"
+
     fun installIntent(context: Context, file: Uri): PendingIntent {
         val intent = Intent(context, MainActivity::class.java).apply {
             component = MainActivity::class.java.cmp(context.packageName)

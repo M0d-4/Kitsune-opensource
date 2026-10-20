@@ -9,6 +9,7 @@ setupMainApk()
 android {
     buildFeatures {
         compose = true
+        aidl = true
     }
 
     compileOptions {
@@ -52,6 +53,7 @@ dependencies {
     implementation(libs.compose.material3.adaptive.navigation.suite)
     implementation(libs.window.core)
     implementation(libs.material)
+    implementation(libs.webkit)
 
     // Navigation3
     implementation(libs.navigation3.runtime)

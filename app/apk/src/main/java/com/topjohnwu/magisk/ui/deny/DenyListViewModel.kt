@@ -51,7 +51,12 @@ data class DenyAppState(
     }
 }
 
-class DenyListViewModel : AsyncLoadViewModel() {
+class SuListViewModel : DenyListViewModel(sulist = true)
+
+open class DenyListViewModel(sulist: Boolean = false) : AsyncLoadViewModel() {
+
+    private val cli = if (sulist) "$cli sulist" else "magisk --denylist"
+
 
     private val _loading = MutableStateFlow(true)
     val loading: StateFlow<Boolean> = _loading.asStateFlow()
@@ -127,7 +132,7 @@ class DenyListViewModel : AsyncLoadViewModel() {
     fun toggleAll(app: DenyAppState) {
         val willCheck = !app.isChecked
         if (!willCheck) {
-            Shell.cmd("magisk --denylist rm ${app.info.packageName}").submit()
+            Shell.cmd("$cli rm ${app.info.packageName}").submit()
         }
         _allApps.update { apps ->
             apps.map { currentApp ->
@@ -136,13 +141,13 @@ class DenyListViewModel : AsyncLoadViewModel() {
                         if (willCheck) {
                             if (!proc.isEnabled) {
                                 val (name, pkg) = proc.process
-                                Shell.cmd("magisk --denylist add $pkg '$name'").submit()
+                                Shell.cmd("$cli add $pkg '$name'").submit()
                             }
                             proc.copy(isEnabled = true)
                         } else {
                             if (proc.process.isIsolated && proc.isEnabled) {
                                 val (name, pkg) = proc.process
-                                Shell.cmd("magisk --denylist rm $pkg '$name'").submit()
+                                Shell.cmd("$cli rm $pkg '$name'").submit()
                             }
                             proc.copy(isEnabled = false)
                         }
@@ -159,7 +164,7 @@ class DenyListViewModel : AsyncLoadViewModel() {
         val newEnabled = !proc.isEnabled
         val arg = if (newEnabled) "add" else "rm"
         val (name, pkg) = proc.process
-        Shell.cmd("magisk --denylist $arg $pkg '$name'").submit()
+        Shell.cmd("$cli $arg $pkg '$name'").submit()
 
         _allApps.update { apps ->
             apps.map { currentApp ->
@@ -184,7 +189,7 @@ class DenyListViewModel : AsyncLoadViewModel() {
         _loading.value = true
         val apps = withContext(Dispatchers.Default) {
             val pm = AppContext.packageManager
-            val denyList = Shell.cmd("magisk --denylist ls").exec().out
+            val denyList = Shell.cmd("$cli ls").exec().out
                 .map { CmdlineListItem(it) }
             val apps = pm.getInstalledApplications(MATCH_UNINSTALLED_PACKAGES).run {
                 asFlow()

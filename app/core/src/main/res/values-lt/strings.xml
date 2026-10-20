@@ -20,16 +20,18 @@
     <string name="home_package">Paketas</string>
     <string name="home_app_title">Programėlė</string>
 
-    <string name="home_notice_content">Magisk siųskites TIK iš oficialiojo GitHub puslapio. Failai iš nežinomų šaltinių gali būti kenkėjiški!</string>
+    <string name="home_notice_content">Kitsune Mask siųskites TIK iš oficialiojo GitHub puslapio. Failai iš nežinomų šaltinių gali būti kenkėjiški!</string>
     <string name="home_support_title">Palaikykite mus</string>
     <string name="home_follow_title">Sekite mus</string>
     <string name="home_item_source">Pirminis kodas</string>
-    <string name="home_support_content">Magisk yra ir visada bus nemokamas, atvirojo kodo. Tačiau galite paaukoti pinigų, jei norite parodyti, kad jums rūpi.</string>
+    <string name="home_support_content">Kitsune Mask yra ir visada bus nemokamas, atvirojo kodo. Tačiau galite paaukoti pinigų, jei norite parodyti, kad jums rūpi.</string>
     <string name="home_installed_version">Įdiegta versija</string>
     <string name="home_latest_version">Naujausia versija</string>
     <string name="invalid_update_channel">Neteisingas naujinimų kanalas</string>
-    <string name="uninstall_magisk_title">Pašalinti Magisk</string>
-    <string name="uninstall_magisk_msg">Visi moduliai bus išjungti/pašalinti!\nRoot prieiga bus pašalinta!\nVidinė atmintis, iššifruota su Magisk, bus iš naujo užšifruota!</string>
+    <string name="uninstall_magisk_title">Pašalinti Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Visi moduliai bus išjungti/pašalinti!
+Root prieiga bus pašalinta!
+Vidinė atmintis, iššifruota su Kitsune Mask, bus iš naujo užšifruota!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Neišjungti priverstinio šifravimo</string>
@@ -42,7 +44,9 @@
     <string name="manager_download_install">Spustelėkite, kad atsisiųstumėte ir įdiegtumėte</string>
     <string name="direct_install">Tiesioginis įdiegimas (rekomenduojama)</string>
     <string name="install_inactive_slot">Įdiegti į antrąją vietą (po OTA naujinimo)</string>
-    <string name="install_inactive_slot_msg">Jūsų įremginys bus PRIVERSTAS pasileisti į dabartinę neaktyvią vietą po paleidimo iš naujo!\nNaudokite šią parinktį, kai OTA naujinimas yra baigtas.\nTęsti?</string>
+    <string name="install_inactive_slot_msg">"Jūsų įremginys bus PRIVERSTAS pasileisti į dabartinę neaktyvią vietą po paleidimo iš naujo!
+Naudokite šią parinktį, kai OTA naujinimas yra baigtas.
+Tęsti?"</string>
     <string name="setup_title">Išplėstinė sąranka</string>
     <string name="reboot_delay_toast">Paleidžiama iš naujo po 5 sekundžių…</string>
     <string name="flash_screen_title">Įdiegimas</string>
@@ -79,7 +83,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Žurnalas tuščias</string>
-    <string name="log_data_magisk_none">Magisk žurnalas yra tuščias, keistoka</string>
+    <string name="log_data_magisk_none">Kitsune Mask žurnalas yra tuščias, keistoka</string>
     <string name="menuSaveLog">Išsaugoti žurnalą</string>
     <string name="menuClearLog">Valyti žurnalą</string>
     <string name="logs_cleared">Žurnalas išvalytas</string>
@@ -88,7 +92,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Rodyti sistemos programėles</string>
     <string name="show_os_app">Rodyti OS programėles</string>
     <string name="hide_filter_hint">Filtruoti pagal pavadinimą</string>
@@ -121,9 +125,9 @@
     <string name="settings_dark_mode_dark">Visada tamsi</string>
     <string name="settings_download_path_title">Atsisiuntimo kelias</string>
     <string name="settings_download_path_message">Failai bus išsaugoti %1$s</string>
-    <string name="settings_hide_app_title">Slėpti Magisk programėlę</string>
+    <string name="settings_hide_app_title">Slėpti Kitsune Mask programėlę</string>
     <string name="settings_hide_app_summary">Įdiegti įgaliotąją programėlę su atsitiktiniu paketo ID ir kitu pavadinimu</string>
-    <string name="settings_restore_app_title">Atkurti Magisk programėlę</string>
+    <string name="settings_restore_app_title">Atkurti Kitsune Mask programėlę</string>
     <string name="settings_restore_app_summary">Atkurti programėlę ir originalų APK</string>
     <string name="language">Kalba</string>
     <string name="system_default">(Sistemos numatytoji)</string>
@@ -134,9 +138,9 @@
     <string name="settings_update_beta">Beta</string>
     <string name="settings_update_custom">Tinkintas</string>
     <string name="settings_update_custom_msg">Įdėkite tinkinto kanalo URL</string>
-    <string name="settings_zygisk_summary">Vykdyti Magisk dalis zygote tarnyboje</string>
+    <string name="settings_zygisk_summary">Vykdyti Kitsune Mask dalis zygote tarnyboje</string>
     <string name="settings_denylist_title">Aktyvinti DenyList</string>
-    <string name="settings_denylist_summary">Visos procesų, esančių denylist, Magisk modifikacijos bus atkurtos</string>
+    <string name="settings_denylist_summary">Visos procesų, esančių denylist, Kitsune Mask modifikacijos bus atkurtos</string>
     <string name="settings_denylist_config_title">Konfigūruoti DenyList</string>
     <string name="settings_denylist_config_summary">Pasirinkite procesus, kuriuos norite įtraukti į denylist</string>
     <string name="settings_hosts_title">Basisteminis hosts</string>
@@ -172,13 +176,13 @@
     <string name="isolate_summary">Kiekviena root sesija turės savo izoliuotą pavadinimų erdvę</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk naujinimai</string>
+    <string name="update_channel">Kitsune Mask naujinimai</string>
     <string name="progress_channel">Progreso pranešimai</string>
     <string name="updated_channel">Naujinimas baigtas</string>
     <string name="download_complete">Atsisiuntimas baigtas</string>
     <string name="download_file_error">Klaida atsisiunčiant failą</string>
-    <string name="magisk_update_title">Prieinamas Magisk naujinimas!</string>
-    <string name="updated_title">Magisk atnaujintas</string>
+    <string name="magisk_update_title">Prieinamas Kitsune Mask naujinimas!</string>
+    <string name="updated_title">Kitsune Mask atnaujintas</string>
     <string name="updated_text">Bakstelėkite, kad atidarytumėte programėlę</string>
 
     <!--Toasts, Dialogs-->
@@ -191,7 +195,7 @@
     <string name="flashing">Diegiama…</string>
     <string name="done">Baigta!</string>
     <string name="failure">Nepavyko!</string>
-    <string name="hide_app_title">Slepiama Magisk programėlė…</string>
+    <string name="hide_app_title">Slepiama Kitsune Mask programėlė…</string>
     <string name="open_link_failed_toast">Nerasta programėlių nuorodos atidarymui</string>
     <string name="complete_uninstall">Visiškas pašalinimas</string>
     <string name="restore_img">Atkurti vaizdą</string>
@@ -200,16 +204,18 @@
     <string name="restore_fail">Nėra atsarginės kopijos!</string>
     <string name="setup_fail">Sąranka nepavyko</string>
     <string name="env_fix_title">Reikalinga išplėstinė sąranka</string>
-    <string name="env_fix_msg">Jūsų įrenginiui reikalinga išplėstinė sąranka, kad Magisk veiktų tinkamai. Norite tęsti ir įrenginį paleisti iš naujo?</string>
-    <string name="env_full_fix_msg">Jūsų įrenginiui reikia iš naujo įdiegti Magisk, kad jis veiktų tinkamai. Iš naujo įdiekite Magisk su programėle, atkūrimo režimas negali gauti teisingos įrenginio informacijos.</string>
+    <string name="env_fix_msg">Jūsų įrenginiui reikalinga išplėstinė sąranka, kad Kitsune Mask veiktų tinkamai. Norite tęsti ir įrenginį paleisti iš naujo?</string>
+    <string name="env_full_fix_msg">Jūsų įrenginiui reikia iš naujo įdiegti Kitsune Mask, kad jis veiktų tinkamai. Iš naujo įdiekite Kitsune Mask su programėle, atkūrimo režimas negali gauti teisingos įrenginio informacijos.</string>
     <string name="setup_msg">Vykdoma Running aplinkos sąranka…</string>
-    <string name="unsupport_magisk_title">Nepalaikoma Magisk versija</string>
-    <string name="unsupport_magisk_msg">Ši programėlės versija nepalaiko Magisk versijų, žemesnių už %1$s.\n\nProgramėlė veiks taip, lyg Magisk yra neįdiegtas. Kuo greičiau atnaujinkite Magisk.</string>
+    <string name="unsupport_magisk_title">Nepalaikoma Kitsune Mask versija</string>
+    <string name="unsupport_magisk_msg">"Ši programėlės versija nepalaiko Kitsune Mask versijų, žemesnių už %1$s.
+
+Programėlė veiks taip, lyg Kitsune Mask yra neįdiegtas. Kuo greičiau atnaujinkite Kitsune Mask."</string>
     <string name="unsupport_general_title">Nenormali būsena</string>
     <string name="unsupport_system_app_msg">Šios programėlės vykdymas kaip sistemos programėlės yra nepalaikomas. Nustatykite ją atgal į naudotojo programėlę.</string>
-    <string name="unsupport_other_su_msg">Aptiktas dvejetainis failas \"su\" ne iš Magisk. Pašalinkite pašalinį root teisių tiekėją ir/arba iš naujo įdiekite Magisk.</string>
-    <string name="unsupport_external_storage_msg">Magisk yra įdiegtas išorinėje saugykloje. Perkelkite programėlę į vidinę saugyklą.</string>
-    <string name="unsupport_nonroot_stub_msg">Paslėpta Magisk programėlė negali tęsti darbo, nes root teisės buvo prarastos. Atkurkite originalų APk.</string>
+    <string name="unsupport_other_su_msg">Aptiktas dvejetainis failas \"su\" ne iš Kitsune Mask. Pašalinkite pašalinį root teisių tiekėją ir/arba iš naujo įdiekite Kitsune Mask.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask yra įdiegtas išorinėje saugykloje. Perkelkite programėlę į vidinę saugyklą.</string>
+    <string name="unsupport_nonroot_stub_msg">Paslėpta Kitsune Mask programėlė negali tęsti darbo, nes root teisės buvo prarastos. Atkurkite originalų APk.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Suteikti prieigą prie saugyklos</string>
     <string name="post_notifications_denied">Suteikti prieigą prie pranešimų</string>

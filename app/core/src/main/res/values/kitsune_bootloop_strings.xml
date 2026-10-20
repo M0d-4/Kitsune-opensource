@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_bootloop_title">Bootloop Protection</string>
+    <string name="settings_bootloop_summary">Protect device from bootloops</string>
+    <string name="settings_bootloop_enabled">Auto-disable modules on bootloop</string>
+</resources>

@@ -19,15 +19,18 @@
     <string name="home_package">Pakke</string>
     <string name="home_app_title">Program</string>
 
-    <string name="home_notice_content">Kun last ned Magisk fra den offisielle GitHub siden. Filer fra ukjente kilder kan være skadelige!</string>
+    <string name="home_notice_content">Kun last ned Kitsune Mask fra den offisielle GitHub siden. Filer fra ukjente kilder kan være skadelige!</string>
     <string name="home_support_title">Kronerulling</string>
     <string name="home_item_source">Kildekode</string>
-    <string name="home_support_content">Magisk er og vil alltid forbli fritt.\nDu kan vise at du setter pris på programmet ved å sende en slant.</string>
+    <string name="home_support_content">"Kitsune Mask er og vil alltid forbli fritt.
+Du kan vise at du setter pris på programmet ved å sende en slant."</string>
     <string name="home_installed_version">Installert</string>
     <string name="home_latest_version">Seneste</string>
     <string name="invalid_update_channel">Ugyldig installasjonskanal</string>
-    <string name="uninstall_magisk_title">Avinstaller Magisk</string>
-    <string name="uninstall_magisk_msg">Alle moduler vil bli avskrudd/fjernet.\nRot-tigang vil bli fjernet!\nKrypter din data hvis den ikke er det allerede.</string>
+    <string name="uninstall_magisk_title">Avinstaller Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Alle moduler vil bli avskrudd/fjernet.
+Rot-tigang vil bli fjernet!
+Krypter din data hvis den ikke er det allerede."</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Bevar påvunget kryptering</string>
@@ -40,7 +43,8 @@
     <string name="manager_download_install">Trykk for å laste ned og installere</string>
     <string name="direct_install">Direkte installasjon (anbefalt)</string>
     <string name="install_inactive_slot">Installer til inaktiv plass (etter OTA)</string>
-    <string name="install_inactive_slot_msg">Din enhet vil bli tvunget til å starte opp i inaktiv plass etter omstart!\nKun bruk dette etter at OTA er ferdig.\Fortsett?</string>
+    <string name="install_inactive_slot_msg">"Din enhet vil bli tvunget til å starte opp i inaktiv plass etter omstart!
+Kun bruk dette etter at OTA er ferdig.Fortsett?"</string>
     <string name="setup_title">Ytterligere oppsett</string>
     <string name="reboot_delay_toast">Starter på ny om 5 sek …</string>
     <string name="flash_screen_title">Installasjon</string>
@@ -77,7 +81,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Ingen loggføring. Prøv å bruke superbrukerprogrammene dine oftere.</string>
-    <string name="log_data_magisk_none">Magisk-loggene er tomme, det er rart</string>
+    <string name="log_data_magisk_none">Kitsune Mask-loggene er tomme, det er rart</string>
     <string name="menuSaveLog">Lagre logg</string>
     <string name="menuClearLog">Tøm logg nå</string>
     <string name="logs_cleared">Loggføring tømt</string>
@@ -86,7 +90,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Vis systemprogrammer</string>
     <string name="show_os_app">Vis systemprogrammer</string>
     <string name="hide_filter_hint">Filtrer etter navn</string>
@@ -113,9 +117,9 @@
     <string name="settings_dark_mode_dark">Alltid mørk</string>
     <string name="settings_download_path_title">Nedlastingssti</string>
     <string name="settings_download_path_message">Filer vil lagres i %1$s</string>
-    <string name="settings_hide_app_title">Skjul Magisk-programmet</string>
+    <string name="settings_hide_app_title">Skjul Kitsune Mask-programmet</string>
     <string name="settings_hide_app_summary">Installer et mellomtjenerprogram med tilfeldig pakke-ID og egendefinert program-etikett</string>
-    <string name="settings_restore_app_title">Gjenopprett Magisk-programmet</string>
+    <string name="settings_restore_app_title">Gjenopprett Kitsune Mask-programmet</string>
     <string name="settings_restore_app_summary">Opphev skjuling av programmet og gjenopprett det tilbake til opprinnelig APK</string>
     <string name="language">Språk</string>
     <string name="system_default">(Systemforvalg)</string>
@@ -159,11 +163,11 @@
     <string name="isolate_summary">Hver rot-økt får eget isolert navnerom</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk-oppgraderinger</string>
+    <string name="update_channel">Kitsune Mask-oppgraderinger</string>
     <string name="progress_channel">Framdriftsmerknader</string>
     <string name="download_complete">Nedlasting fullført</string>
     <string name="download_file_error">Kunne ikke laste ned fil</string>
-    <string name="magisk_update_title">Ny versjon av Magisk tilgjengelig.</string>
+    <string name="magisk_update_title">Ny versjon av Kitsune Mask tilgjengelig.</string>
 
     <!--Toasts, Dialogs-->
     <string name="yes">Ja</string>
@@ -175,7 +179,7 @@
     <string name="flashing">Innbrenner …</string>
     <string name="done">Ferdig!</string>
     <string name="failure">Mislykket!</string>
-    <string name="hide_app_title">Skjuler Magisk-programmet …</string>
+    <string name="hide_app_title">Skjuler Kitsune Mask-programmet …</string>
     <string name="open_link_failed_toast">Ingen programmer kunne åpne lenken</string>
     <string name="complete_uninstall">Fullfør avinstallasjon</string>
     <string name="restore_img">Gjenopprett avtrykk</string>
@@ -184,14 +188,16 @@
     <string name="restore_fail">Fabrikk-sikkerhetskopi finnes ikke!</string>
     <string name="setup_fail">Oppsett mislyktes</string>
     <string name="env_fix_title">Krever ytterligere oppsett</string>
-    <string name="env_fix_msg">Enheten din krever ytterligere oppsett for at Magisk skal fungere rett. Fortsett med omstart?</string>
+    <string name="env_fix_msg">Enheten din krever ytterligere oppsett for at Kitsune Mask skal fungere rett. Fortsett med omstart?</string>
     <string name="setup_msg">Kjører oppsett av miljø…</string>
-    <string name="unsupport_magisk_title">Ustøttet Magisk-versjon</string>
-    <string name="unsupport_magisk_msg">Denne versjonen av programmet støtter ikke Magisk før versjon %1$s.\n\nProgrammet vil oppføre seg som om Magisk ikke er installert. Oppgrader Magisk så snart som mulig.</string>
+    <string name="unsupport_magisk_title">Ustøttet Kitsune Mask-versjon</string>
+    <string name="unsupport_magisk_msg">"Denne versjonen av programmet støtter ikke Kitsune Mask før versjon %1$s.
+
+Programmet vil oppføre seg som om Kitsune Mask ikke er installert. Oppgrader Kitsune Mask så snart som mulig."</string>
     <string name="unsupport_general_title">Unormal tilstand</string>
     <string name="unsupport_system_app_msg">Kjøring av dette programmet som systemprogram støttes ikke. Gjør om programmet til et brukerprogram igjen.</string>
-    <string name="unsupport_other_su_msg">En \"su\"-kommando som ikke tilhører Magisk ble oppdaget. Fjern dette andre ustøttede opphavet.</string>
-    <string name="unsupport_external_storage_msg">Magisk er installert på eksternlagring. Flytt det til internlagring.</string>
+    <string name="unsupport_other_su_msg">En \"su\"-kommando som ikke tilhører Kitsune Mask ble oppdaget. Fjern dette andre ustøttede opphavet.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask er installert på eksternlagring. Flytt det til internlagring.</string>
     <string name="unsupport_nonroot_stub_msg">Programmet kan ikke fortsette å fungere i skjult tilstand siden rot-tilgang gikk tapt. Gjenopprett det tilbake til opprinnelig APK.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Innvilg lagringstilgang for å skru på denne funksjonaliteten</string>

@@ -20,16 +20,18 @@
     <string name="home_package">Pachet</string>
     <string name="home_app_title">Aplicație</string>
 
-    <string name="home_notice_content">Descarcă Magisk NUMAI de pe pagina oficială GitHub. Fișierele din surse necunoscute pot fi rău intenționate!</string>
+    <string name="home_notice_content">Descarcă Kitsune Mask NUMAI de pe pagina oficială GitHub. Fișierele din surse necunoscute pot fi rău intenționate!</string>
     <string name="home_support_title">Sprijină-ne</string>
     <string name="home_follow_title">Urmărește-ne</string>
     <string name="home_item_source">Sursă</string>
-    <string name="home_support_content">Magisk este și va fi întotdeauna gratuit și open-source. Cu toate acestea, ne poți arăta că îți pasă făcând o donație.</string>
+    <string name="home_support_content">Kitsune Mask este și va fi întotdeauna gratuit și open-source. Cu toate acestea, ne poți arăta că îți pasă făcând o donație.</string>
     <string name="home_installed_version">Versiune instalată</string>
     <string name="home_latest_version">Ultima versiune</string>
     <string name="invalid_update_channel">Canal de actualizare nevalid</string>
-    <string name="uninstall_magisk_title">Dezinstalează Magisk</string>
-    <string name="uninstall_magisk_msg">Toate modulele vor fi dezactivate/eliminate!\nRootul va fi eliminat!\nOrice spațiu de stocare intern necriptat prin folosirea Magisk va fi recriptat!</string>
+    <string name="uninstall_magisk_title">Dezinstalează Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Toate modulele vor fi dezactivate/eliminate!
+Rootul va fi eliminat!
+Orice spațiu de stocare intern necriptat prin folosirea Kitsune Mask va fi recriptat!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Păstrează criptarea forțată</string>
@@ -42,7 +44,9 @@
     <string name="manager_download_install">Apasă pentru a descărca și a instala</string>
     <string name="direct_install">Instalează direct (Recomandat)</string>
     <string name="install_inactive_slot">Instalează în slotul inactiv (După OTA)</string>
-    <string name="install_inactive_slot_msg">Dispozitivul va fi FORȚAT să booteze în slotul actual inactiv după repornire!\nFolosește această opțiune numai după terminarea OTA.\nContinui?</string>
+    <string name="install_inactive_slot_msg">"Dispozitivul va fi FORȚAT să booteze în slotul actual inactiv după repornire!
+Folosește această opțiune numai după terminarea OTA.
+Continui?"</string>
     <string name="setup_title">Configurare suplimentară</string>
     <string name="reboot_delay_toast">Repornire în 5 secunde…</string>
     <string name="flash_screen_title">Instalare</string>
@@ -79,7 +83,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Nu există jurnale, încearcă să folosești ceva mai mult aplicațiile care folosesc root</string>
-    <string name="log_data_magisk_none">Jurnalele Magisk sunt goale, asta-i ciudat</string>
+    <string name="log_data_magisk_none">Jurnalele Kitsune Mask sunt goale, asta-i ciudat</string>
     <string name="menuSaveLog">Salvează jurnalul</string>
     <string name="menuClearLog">Golește jurnalul acum</string>
     <string name="logs_cleared">Jurnal golit cu succes</string>
@@ -91,7 +95,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Afișează aplicațiile de sistem</string>
     <string name="show_os_app">Afișează aplicațiile SO-ului</string>
     <string name="hide_filter_hint">Filtrează după nume</string>
@@ -125,9 +129,9 @@
     <string name="settings_dark_mode_dark">Mereu întunecat</string>
     <string name="settings_download_path_title">Cale de descărcare</string>
     <string name="settings_download_path_message">Fișierele vor fi salvate în %1$s</string>
-    <string name="settings_hide_app_title">Ascunde aplicația Magisk</string>
+    <string name="settings_hide_app_title">Ascunde aplicația Kitsune Mask</string>
     <string name="settings_hide_app_summary">Instalează o aplicație proxy cu ID aleatoriu pentru pachet și etichetă personalizată pentru aplicație</string>
-    <string name="settings_restore_app_title">Restaurează aplicația Magisk</string>
+    <string name="settings_restore_app_title">Restaurează aplicația Kitsune Mask</string>
     <string name="settings_restore_app_summary">Dezvăluie aplicația și restaurează APK-ul original</string>
     <string name="language">Limbă</string>
     <string name="system_default">(Implicită a sistemului)</string>
@@ -138,9 +142,9 @@
     <string name="settings_update_beta">Beta</string>
     <string name="settings_update_custom">Personalizat</string>
     <string name="settings_update_custom_msg">Inserează un URL pentru canal personalizat</string>
-    <string name="settings_zygisk_summary">Rulează părți ale Magisk în daemonul zygote</string>
+    <string name="settings_zygisk_summary">Rulează părți ale Kitsune Mask în daemonul zygote</string>
     <string name="settings_denylist_title">Impune lista de refuzări</string>
-    <string name="settings_denylist_summary">Procesele din lista de refuzări vor avea toate modificările Magisk anulate</string>
+    <string name="settings_denylist_summary">Procesele din lista de refuzări vor avea toate modificările Kitsune Mask anulate</string>
     <string name="settings_denylist_config_title">Configurează lista de refuzări</string>
     <string name="settings_denylist_config_summary">Selectează procesele care vor fi incluse în lista de refuzări</string>
     <string name="settings_hosts_title">Fișier hosts în afara partiției system</string>
@@ -181,13 +185,13 @@
     <string name="isolate_summary">Fiecare sesiune de root va avea propriul spațiu de nume izolat</string>
 
     <!--Notifications-->
-    <string name="update_channel">Actualizări Magisk</string>
+    <string name="update_channel">Actualizări Kitsune Mask</string>
     <string name="progress_channel">Notificări de progres</string>
     <string name="updated_channel">Actualizare finalizată</string>
     <string name="download_complete">Descărcare finalizată</string>
     <string name="download_file_error">Eroare la descărcarea fișierului</string>
-    <string name="magisk_update_title">Actualizare Magisk disponibilă!</string>
-    <string name="updated_title">Magisk actualizat</string>
+    <string name="magisk_update_title">Actualizare Kitsune Mask disponibilă!</string>
+    <string name="updated_title">Kitsune Mask actualizat</string>
     <string name="updated_text">Atinge pentru a deschide aplicația</string>
 
     <!--Toasts, Dialogs-->
@@ -200,7 +204,7 @@
     <string name="flashing">Se scrie în memoria flash…</string>
     <string name="done">Terminat!</string>
     <string name="failure">Eșec!</string>
-    <string name="hide_app_title">Se ascunde aplicația Magisk…</string>
+    <string name="hide_app_title">Se ascunde aplicația Kitsune Mask…</string>
     <string name="open_link_failed_toast">Nu a fost găsită nicio aplicație pentru a deschide linkul</string>
     <string name="complete_uninstall">Finalizează dezinstalarea</string>
     <string name="restore_img">Restaurează imagini</string>
@@ -209,16 +213,18 @@
     <string name="restore_fail">Nu există backup stock!</string>
     <string name="setup_fail">Configurare eșuată</string>
     <string name="env_fix_title">Necesită configurare suplimentară</string>
-    <string name="env_fix_msg">Dispozitivul are nevoie de configurare suplimentară pentru ca Magisk să funcționeze corect. Vrei să continui și să repornești?</string>
-    <string name="env_full_fix_msg">Dispozitivul are nevoie de rescrierea în memoria flash a Magisk pentru a funcționa corect. Te rugăm să reinstalezi Magisk în cadrul aplicației, modul de recuperare nu poate obține informații corecte despre dispozitiv.</string>
+    <string name="env_fix_msg">Dispozitivul are nevoie de configurare suplimentară pentru ca Kitsune Mask să funcționeze corect. Vrei să continui și să repornești?</string>
+    <string name="env_full_fix_msg">Dispozitivul are nevoie de rescrierea în memoria flash a Kitsune Mask pentru a funcționa corect. Te rugăm să reinstalezi Kitsune Mask în cadrul aplicației, modul de recuperare nu poate obține informații corecte despre dispozitiv.</string>
     <string name="setup_msg">Rulează configurarea mediului…</string>
-    <string name="unsupport_magisk_title">Versiune Magisk nesuportată</string>
-    <string name="unsupport_magisk_msg">Această versiune a aplicației nu suportă versiunile Magisk mai mici de %1$s.\n\nAplicația se va comporta ca și cum Magisk nu este instalat, te rugăm să actualizezi Magisk cât mai curând posibil.</string>
+    <string name="unsupport_magisk_title">Versiune Kitsune Mask nesuportată</string>
+    <string name="unsupport_magisk_msg">"Această versiune a aplicației nu suportă versiunile Kitsune Mask mai mici de %1$s.
+
+Aplicația se va comporta ca și cum Kitsune Mask nu este instalat, te rugăm să actualizezi Kitsune Mask cât mai curând posibil."</string>
     <string name="unsupport_general_title">Stare anormală</string>
     <string name="unsupport_system_app_msg">Rularea acestei aplicații ca aplicație de sistem nu este suportată. Te rugăm să readuci aplicația într-o aplicație de utilizator.</string>
-    <string name="unsupport_other_su_msg">A fost detectat un binar „su” care nu provine de la Magisk. Te rugăm să elimini orice soluție root concurentă și/sau să reinstalezi Magisk.</string>
-    <string name="unsupport_external_storage_msg">Magisk este instalat în spațiul de stocare extern. Te rugăm să muți aplicația în spațiul de stocare intern.</string>
-    <string name="unsupport_nonroot_stub_msg">Aplicația Magisk ascunsă nu poate continua să funcționeze deoarece rootul a fost pierdut. Te rugăm să restaurezi APK-ul original.</string>
+    <string name="unsupport_other_su_msg">A fost detectat un binar „su” care nu provine de la Kitsune Mask. Te rugăm să elimini orice soluție root concurentă și/sau să reinstalezi Kitsune Mask.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask este instalat în spațiul de stocare extern. Te rugăm să muți aplicația în spațiul de stocare intern.</string>
+    <string name="unsupport_nonroot_stub_msg">Aplicația Kitsune Mask ascunsă nu poate continua să funcționeze deoarece rootul a fost pierdut. Te rugăm să restaurezi APK-ul original.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Acordă permisiunea de stocare pentru a activa această funcționalitate</string>
     <string name="post_notifications_denied">Acordă permisiunea de notificări pentru a activa această funcționalitate</string>

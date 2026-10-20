@@ -85,6 +85,7 @@ import com.topjohnwu.magisk.core.Info
 import com.topjohnwu.magisk.core.download.DownloadEngine
 import com.topjohnwu.magisk.core.download.Subject
 import com.topjohnwu.magisk.core.ktx.reboot
+import com.topjohnwu.magisk.ui.component.PendingRebootBanner
 import com.topjohnwu.magisk.core.ktx.toast
 import com.topjohnwu.magisk.core.tasks.AppMigration
 import com.topjohnwu.magisk.core.tasks.MagiskInstaller
@@ -250,6 +251,7 @@ fun HomeScreen(
     Scaffold(
         modifier = modifier,
         topBar = {
+          Column {
             TopAppBar(
                 title = { Text(stringResource(CoreR.string.section_home)) },
                 scrollBehavior = scrollBehavior,
@@ -267,6 +269,8 @@ fun HomeScreen(
                     }
                 }
             )
+            PendingRebootBanner()
+          }
         }
     ) { padding ->
         AdaptiveColumns(
@@ -311,8 +315,6 @@ fun HomeScreen(
                     color = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.padding(start = 16.dp, top = 8.dp, bottom = 4.dp)
                 )
-
-                SupportCard(onLinkClicked = viewModel::onLinkPressed)
 
                 Text(
                     text = stringResource(CoreR.string.home_follow_title),
@@ -801,8 +803,11 @@ private data class LinkInfo(val label: Int, val icon: Int, val url: String)
 private data class DeveloperInfo(val name: String, val links: List<LinkInfo>)
 
 private val developers = listOf(
-    DeveloperInfo("topjohnwu", listOf(
-        LinkInfo(CoreR.string.twitter, CoreR.drawable.ic_twitter, "https://x.com/topjohnwu"),
+    DeveloperInfo("Kitsune Mask", listOf(
+        LinkInfo(CoreR.string.link_kitsune_ufork, CoreR.drawable.ic_favorite, "https://t.me/KitsuneUfork"),
+        LinkInfo(CoreR.string.link_kitsune_discussion, CoreR.drawable.ic_favorite, "https://t.me/Kitsune_Discussion"),
+    )),
+    DeveloperInfo("topjohnwu (Magisk)", listOf(
         LinkInfo(CoreR.string.github, CoreR.drawable.ic_github, Const.Url.SOURCE_CODE_URL),
     )),
     DeveloperInfo("vvb2060", listOf(

@@ -20,16 +20,18 @@
     <string name="home_package">Balíček</string>
     <string name="home_app_title">App</string>
 
-    <string name="home_notice_content">Magisk sťahujte IBA z oficiálnej stránky na GitHube. Súbory z neznámych zdrojov môžu byť škodlivé!</string>
+    <string name="home_notice_content">Kitsune Mask sťahujte IBA z oficiálnej stránky na GitHube. Súbory z neznámych zdrojov môžu byť škodlivé!</string>
     <string name="home_support_title">Podporte nás</string>
     <string name="home_follow_title">Sledujte nás</string>
     <string name="home_item_source">Zdroj</string>
-    <string name="home_support_content">Magisk je a vždy bude slobodný a s otvoreným kódom. Môžete nám však dať najavo, že vám na nás záleží, tým, že nám prispejete.</string>
+    <string name="home_support_content">Kitsune Mask je a vždy bude slobodný a s otvoreným kódom. Môžete nám však dať najavo, že vám na nás záleží, tým, že nám prispejete.</string>
     <string name="home_installed_version">Nainštalované</string>
     <string name="home_latest_version">Posledná</string>
     <string name="invalid_update_channel">Neplatný aktualizačný kanál</string>
-    <string name="uninstall_magisk_title">Odinštalovať Magisk</string>
-    <string name="uninstall_magisk_msg">Všetky moduly budú zakázané/odstránené!\nRoot bude odstránený!\nAkékoľvek interné úložisko nešifrované pomocou Magisku bude znovu zašifrované!</string>
+    <string name="uninstall_magisk_title">Odinštalovať Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Všetky moduly budú zakázané/odstránené!
+Root bude odstránený!
+Akékoľvek interné úložisko nešifrované pomocou Kitsune Masku bude znovu zašifrované!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Ponechať vynútené šifrovanie</string>
@@ -42,7 +44,9 @@
     <string name="manager_download_install">Stlačte pre stiahnutie a inštaláciu</string>
     <string name="direct_install">Priama inštalácia (Odporúča sa)</string>
     <string name="install_inactive_slot">Inštalovať na neaktívny slot (Po OTA)</string>
-    <string name="install_inactive_slot_msg">Vaše zariadenie bude po reštarte PRINÚTENÉ nabootovať do aktuálne neaktívneho slotu!\nTúto voľbu použite iba po skončení OTA.\nPokračovať?</string>
+    <string name="install_inactive_slot_msg">"Vaše zariadenie bude po reštarte PRINÚTENÉ nabootovať do aktuálne neaktívneho slotu!
+Túto voľbu použite iba po skončení OTA.
+Pokračovať?"</string>
     <string name="setup_title">Ďalšie nastavenia</string>
     <string name="reboot_delay_toast">Reštart o 5 sekúnd…</string>
     <string name="flash_screen_title">Inštalácia</string>
@@ -79,7 +83,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Nie sú žiadne záznamy, skúste nejakú appku vyžadujúcu práva superpoužívateľa</string>
-    <string name="log_data_magisk_none">Záznamy Magisku sú prázdne, to je divné</string>
+    <string name="log_data_magisk_none">Záznamy Kitsune Masku sú prázdne, to je divné</string>
     <string name="menuSaveLog">Uložiť záznam</string>
     <string name="menuClearLog">Odstrániť záznam</string>
     <string name="logs_cleared">Záznam úspešne odstránený</string>
@@ -91,7 +95,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Zobraziť systémové aplikácie</string>
     <string name="show_os_app">Zobraziť aplikácie OS</string>
     <string name="hide_filter_hint">Filtrovať podľa názvu</string>
@@ -125,9 +129,9 @@
     <string name="settings_dark_mode_dark">Vždy tmavý</string>
     <string name="settings_download_path_title">Cesta na sťahovanie</string>
     <string name="settings_download_path_message">Súbory budú uložené do %1$s</string>
-    <string name="settings_hide_app_title">Skryť aplikáciu Magisk</string>
+    <string name="settings_hide_app_title">Skryť aplikáciu Kitsune Mask</string>
     <string name="settings_hide_app_summary">Inštalovať proxy aplikáciu s náhodným ID balíčka a vlastným názvom aplikácie</string>
-    <string name="settings_restore_app_title">Obnoviť aplikáciu Magisk</string>
+    <string name="settings_restore_app_title">Obnoviť aplikáciu Kitsune Mask</string>
     <string name="settings_restore_app_summary">Odkryť aplikáciu a obnoviť pôvodný súbor APK</string>
     <string name="language">Jazyk</string>
     <string name="system_default">(Predvolený systémom)</string>
@@ -138,9 +142,9 @@
     <string name="settings_update_beta">Beta</string>
     <string name="settings_update_custom">Vlastný kanál</string>
     <string name="settings_update_custom_msg">Zadajte vlastnú URL</string>
-    <string name="settings_zygisk_summary">Spustiť časti Magisku v démonovi zygote</string>
+    <string name="settings_zygisk_summary">Spustiť časti Kitsune Masku v démonovi zygote</string>
     <string name="settings_denylist_title">Vynútiť zoznam zamietnutých</string>
-    <string name="settings_denylist_summary">Pre procesy na zozname zamietnutých budú všetky úpravy Magiskom vrátené</string>
+    <string name="settings_denylist_summary">Pre procesy na zozname zamietnutých budú všetky úpravy Kitsune Maskom vrátené</string>
     <string name="settings_denylist_config_title">Nastavenie zoznamu zamietnutých</string>
     <string name="settings_denylist_config_summary">Vyberte procesy, ktoré majú byť zahrnuté do zoznamu blokovaných</string>
     <string name="settings_hosts_title">Systemless hosts</string>
@@ -181,13 +185,13 @@
     <string name="isolate_summary">Každá relácia root bude mať vlastný izolovaný namespace</string>
 
     <!--Notifications-->
-    <string name="update_channel">Aktualizácie Magisku</string>
+    <string name="update_channel">Aktualizácie Kitsune Masku</string>
     <string name="progress_channel">Upozornenia o priebehu</string>
     <string name="updated_channel">Aktualizácia dokončená</string>
     <string name="download_complete">Sťahovanie ukončené</string>
     <string name="download_file_error">Chyba sťahovania súboru</string>
-    <string name="magisk_update_title">Je dostupná aktualizácia Magisku!</string>
-    <string name="updated_title">Magisk aktualizovaný</string>
+    <string name="magisk_update_title">Je dostupná aktualizácia Kitsune Masku!</string>
+    <string name="updated_title">Kitsune Mask aktualizovaný</string>
     <string name="updated_text">Ťuknutím otvoríte apku</string>
 
     <!--Toasts, Dialogs-->
@@ -200,7 +204,7 @@
     <string name="flashing">Flashovanie...</string>
     <string name="done">Hotovo!</string>
     <string name="failure">Zlyhalo!</string>
-    <string name="hide_app_title">Skrýva sa aplikácia Magisk…</string>
+    <string name="hide_app_title">Skrýva sa aplikácia Kitsune Mask…</string>
     <string name="open_link_failed_toast">Nepodarilo sa nájsť vhodnú aplikáciu na otvorenie odkazu</string>
     <string name="complete_uninstall">Úplne odinštalovať</string>
     <string name="restore_img">Obnoviť obrazy</string>
@@ -209,20 +213,22 @@
     <string name="restore_fail">Stock záloha neexistuje!</string>
     <string name="setup_fail">Nastavenie zlyhalo</string>
     <string name="env_fix_title">Vyžaduje sa ďalšie nastavenie</string>
-    <string name="env_fix_msg">Aby Magisk fungoval správne, vaše zariadenie potrebuje ďalšie nastavenie. Chcete pokračovať a reštartovať?</string>
-    <string name="env_full_fix_msg">Vaše zariadenie potrebuje na správne fungovanie reflash Magisku. Preinštalujte Magisk priamo z aplikácie, režim obnovenia nemôže získať správne informácie o zariadení.</string>
+    <string name="env_fix_msg">Aby Kitsune Mask fungoval správne, vaše zariadenie potrebuje ďalšie nastavenie. Chcete pokračovať a reštartovať?</string>
+    <string name="env_full_fix_msg">Vaše zariadenie potrebuje na správne fungovanie reflash Kitsune Masku. Preinštalujte Kitsune Mask priamo z aplikácie, režim obnovenia nemôže získať správne informácie o zariadení.</string>
     <string name="setup_msg">Nastavenie je spustené…</string>
-    <string name="unsupport_magisk_title">Nepodporovaná verzia Magisku</string>
-    <string name="unsupport_magisk_msg">Táto verzia aplikácie nepodporuje Magisk s verziou nižšou ako %1$s.\n\nAplikácia sa bude správať, akoby Magisk nebol nainštalový, aktualizujte Magisk čo najskôr.</string>
+    <string name="unsupport_magisk_title">Nepodporovaná verzia Kitsune Masku</string>
+    <string name="unsupport_magisk_msg">"Táto verzia aplikácie nepodporuje Kitsune Mask s verziou nižšou ako %1$s.
+
+Aplikácia sa bude správať, akoby Kitsune Mask nebol nainštalový, aktualizujte Kitsune Mask čo najskôr."</string>
     <string name="unsupport_general_title">Abnormálny stav</string>
     <string name="unsupport_system_app_msg">Spustenie tejto apky ako systémovej nie je podporované. Preveďte apku na používateľskú.</string>
-    <string name="unsupport_other_su_msg">Bol nájdený binárny súbor \"su\", ktorý nie je pre Magisk. Odstráňte, prosím, konkurenčné root spôsoby a/alebo preinštalujte Magisk.</string>
-    <string name="unsupport_external_storage_msg">Magisk je nainštalovaný na externom úložisku. Prosím, presuňte apku na interné úložisko.</string>
-    <string name="unsupport_nonroot_stub_msg">Skrytá aplikácia Magisk nemôže pokračovať v práci, lebo root sa stratil. Prosím, obnovte ju z pôvodného súboru APK.</string>
+    <string name="unsupport_other_su_msg">Bol nájdený binárny súbor \"su\", ktorý nie je pre Kitsune Mask. Odstráňte, prosím, konkurenčné root spôsoby a/alebo preinštalujte Kitsune Mask.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask je nainštalovaný na externom úložisku. Prosím, presuňte apku na interné úložisko.</string>
+    <string name="unsupport_nonroot_stub_msg">Skrytá aplikácia Kitsune Mask nemôže pokračovať v práci, lebo root sa stratil. Prosím, obnovte ju z pôvodného súboru APK.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Udeľte povolenie na zapnutie tejto funkcie</string>
     <string name="post_notifications_denied">Udeľte upozorneniam povolenie na zapnutie tejto funkcie</string>
-    <string name="install_unknown_denied">Povoľte "inštaláciu neznámych aplikácii" na povolenie tejto funkcie</string>
+    <string name="install_unknown_denied">Povoľte inštaláciu neznámych aplikácii na povolenie tejto funkcie</string>
     <string name="add_shortcut_title">Pridať odkaz na domovskú obrazovku</string>
     <string name="add_shortcut_msg">Po skrytí tejto aplikácie sa jej názov a ikona môžu stať ťažko rozoznateľnými. Chcete pridať krajší odkaz na domovskú obrazovku?</string>
     <string name="app_not_found">Nenašla sa žiadna aplikácia, ktorá dokáže spracovať túto akciu</string>

@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
@@ -98,6 +99,8 @@ val MagiskAccentColor = Color(0xFF00AF9C)
 
 object ThemeState {
     var colorMode by mutableIntStateOf(Config.colorMode)
+    var themeOrdinal by mutableIntStateOf(Config.themeOrdinal)
+    var pureBlack by mutableStateOf(Config.pureBlack)
 }
 
 val MagiskShapes = Shapes(
@@ -191,12 +194,24 @@ fun MagiskTheme(
     val isDarkTheme = mode.isDark(isDark)
     val useDynamicColor = mode.isMonet && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 
-    val colorScheme = when {
+    val palette = ThemePalette.fromOrdinal(ThemeState.themeOrdinal)
+    val seed = if (isDarkTheme) palette.dark else palette.light
+    val base = when {
         useDynamicColor && isDarkTheme -> dynamicDarkColorScheme(context)
         useDynamicColor && !isDarkTheme -> dynamicLightColorScheme(context)
-        isDarkTheme -> dynamicColorScheme(MagiskAccentColor, isDark = true)
-        else -> dynamicColorScheme(MagiskAccentColor, isDark = false)
+        else -> dynamicColorScheme(seed, isDark = isDarkTheme)
     }
+    val usePureBlack = ThemeState.pureBlack && isDarkTheme && palette != ThemePalette.RAMADAN
+    val colorScheme = if (usePureBlack) {
+        base.copy(
+            background = Color.Black,
+            surface = Color.Black,
+            surfaceDim = Color.Black,
+            surfaceContainerLowest = Color.Black,
+            surfaceContainerLow = Color(0xFF0A0A0A),
+            surfaceContainer = Color(0xFF101010),
+        )
+    } else base
 
     val activity = LocalActivity.current
     val view = LocalView.current

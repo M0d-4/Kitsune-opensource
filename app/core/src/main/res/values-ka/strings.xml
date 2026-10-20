@@ -19,15 +19,17 @@
     <string name="home_package">პაკეტი</string>
     <string name="home_app_title">აპი</string>
 
-    <string name="home_notice_content">გადმოიწერეთ Magisk მხოლოდ ოფიციალური GitHub-ის გვერდიდან. სხვა წყაროებიდან გადმოწერილი ფაილები შესაძლოა სახიფათო იყოს!</string>
+    <string name="home_notice_content">გადმოიწერეთ Kitsune Mask მხოლოდ ოფიციალური GitHub-ის გვერდიდან. სხვა წყაროებიდან გადმოწერილი ფაილები შესაძლოა სახიფათო იყოს!</string>
     <string name="home_support_title">მხარდაჭერა</string>
     <string name="home_item_source">წყარო</string>
-    <string name="home_support_content">Magisk-ი არის და ყოველთვის იქნება უფასო და წყარო-გახსნილი. მაგრამ თქვენ შეგიძლიათ დახმარება გაგვიწიოთ პატარა დონაციით.</string>
+    <string name="home_support_content">Kitsune Mask-ი არის და ყოველთვის იქნება უფასო და წყარო-გახსნილი. მაგრამ თქვენ შეგიძლიათ დახმარება გაგვიწიოთ პატარა დონაციით.</string>
     <string name="home_installed_version">დაინსტალირებული</string>
     <string name="home_latest_version">უახლესი</string>
     <string name="invalid_update_channel">არასწორი განახლების არხი</string>
-    <string name="uninstall_magisk_title">Magisk-ის დეინსტალაცია</string>
-    <string name="uninstall_magisk_msg">ყველა მოდული იქნება წაშლილი/გამორთული!\nRoot-ი წაიშლება!\nთქვენი მონაცემები დაიშიფრება!</string>
+    <string name="uninstall_magisk_title">Kitsune Mask-ის დეინსტალაცია</string>
+    <string name="uninstall_magisk_msg">"ყველა მოდული იქნება წაშლილი/გამორთული!
+Root-ი წაიშლება!
+თქვენი მონაცემები დაიშიფრება!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">შიფრირება ყოველთვის იყოს ჩართული</string>
@@ -40,7 +42,9 @@
     <string name="manager_download_install">დააჭირეთ გადმოსაწერად და შემდგომ დასაყენებლად</string>
     <string name="direct_install">აქვე დაინსტალირება (რეკომენდირებულია)</string>
     <string name="install_inactive_slot">არააქტიურ სლოტში დაყენება (სისტემის განახლების შემდეგ)</string>
-    <string name="install_inactive_slot_msg">თქვენი მოწყობილობა გადაიტვირთება არააქატიურ სლოტში!\nგამოიყენეთ ეს ოფცია მხოლოდ სისტემის განახლების დროს.\nგავაგრძელოთ?</string>
+    <string name="install_inactive_slot_msg">"თქვენი მოწყობილობა გადაიტვირთება არააქატიურ სლოტში!
+გამოიყენეთ ეს ოფცია მხოლოდ სისტემის განახლების დროს.
+გავაგრძელოთ?"</string>
     <string name="setup_title">დამატებითი ინსტალაცია</string>
     <string name="reboot_delay_toast">გადატვირთვა 5 წამში…</string>
     <string name="flash_screen_title">ინსტალაცია</string>
@@ -77,7 +81,7 @@
 
     <!--Logs-->
     <string name="log_data_none">თქვენი ლოგი ცარიელია, სცადეთ Root-ზე დაფუძნებული პროგრამების გამოყენება.</string>
-    <string name="log_data_magisk_none">Magisk-ის ლოგები ცარიელია, უცნაურია.</string>
+    <string name="log_data_magisk_none">Kitsune Mask-ის ლოგები ცარიელია, უცნაურია.</string>
     <string name="menuSaveLog">ლოგის შენხავა</string>
     <string name="menuClearLog">ლოგის გასუფთავება</string>
     <string name="logs_cleared">ლოგი წარმატებით გასუფთავდა.</string>
@@ -86,7 +90,7 @@
 
     <!--SafetyNet-->
 
-    <!-- MagiskHide -->
+    <!-- KMHide -->
     <string name="show_system_app">სისტემის პროგრამების ჩვენება</string>
     <string name="show_os_app">ოპერაციული სისტემის აპების ჩვენება</string>
     <string name="hide_filter_hint">ფილტრაცია სახელის მიხედვით</string>
@@ -113,9 +117,9 @@
     <string name="settings_dark_mode_dark">მუქი თემა</string>
     <string name="settings_download_path_title">გადმოწერის ლოკაცია</string>
     <string name="settings_download_path_message">ფაილები შეინახება %1$s-ში</string>
-    <string name="settings_hide_app_title">Magisk-ის აპის დამალვა</string>
+    <string name="settings_hide_app_title">Kitsune Mask-ის აპის დამალვა</string>
     <string name="settings_hide_app_summary">დაყენდეს ამოუცნობელი აპი შემთხვევითი პაკეტის ID-ით და განსხვავებული სახელით</string>
-    <string name="settings_restore_app_title">Magisk-ის აპის დაბრუნება</string>
+    <string name="settings_restore_app_title">Kitsune Mask-ის აპის დაბრუნება</string>
     <string name="settings_restore_app_summary">აპის თავდაპირველ მდგომარეობაზე დაბრუნება</string>
     <string name="language">ენა</string>
     <string name="system_default">(სისტემის რჩეული)</string>
@@ -159,11 +163,11 @@
     <string name="isolate_summary">ყოველ root სესიას ექნებათ თავიანთი იზოლირებული namespace-ი</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk-ის განახლებები</string>
+    <string name="update_channel">Kitsune Mask-ის განახლებები</string>
     <string name="progress_channel">პროგრესის შეტყობინებები</string>
     <string name="download_complete">გადმოწერა დასრულებულია</string>
     <string name="download_file_error">შეცდომა გადმოწერის დროს</string>
-    <string name="magisk_update_title">ხელმისაწვდომია Magisk-ის განახლება!</string>
+    <string name="magisk_update_title">ხელმისაწვდომია Kitsune Mask-ის განახლება!</string>
 
     <!--Toasts, Dialogs-->
     <string name="yes">დიახ</string>
@@ -174,7 +178,7 @@
     <string name="flashing">მიმდინარეობს ჩაშენება…</string>
     <string name="done">დასრულდა!</string>
     <string name="failure">ჩაიშალა</string>
-    <string name="hide_app_title">ვმალავთ Magisk-ის აპს…</string>
+    <string name="hide_app_title">ვმალავთ Kitsune Mask-ის აპს…</string>
     <string name="open_link_failed_toast">ლინკის გამხსნელი აპლიკაცია ვერ მოიძებნა</string>
     <string name="complete_uninstall">დეინსტალაციის დასრულება</string>
     <string name="restore_img">სურათის აღდგენა</string>
@@ -183,10 +187,12 @@
     <string name="restore_fail">საწყისი რეზერვი არ არსებობს!</string>
     <string name="setup_fail">ინსტალაცია ჩაიშალა</string>
     <string name="env_fix_title">სჭირდება დამატებითი გამართვა</string>
-    <string name="env_fix_msg">თქვენს მოწყობილობას სჭრიდება დამატებითი გამართვა იმისთვის რომ Magisk-მა იმუშავოს. გადმოიწერება "Magisk setup.zip" ფაილი, გსურთ გაგრძელება?</string>
+    <string name="env_fix_msg">თქვენს მოწყობილობას სჭრიდება დამატებითი გამართვა იმისთვის რომ Kitsune Mask-მა იმუშავოს. გადმოიწერება Kitsune Mask setup.zip ფაილი, გსურთ გაგრძელება?</string>
     <string name="setup_msg">მიმდინარეობს ინტერფეისის ინსტალაცია…</string>
-    <string name="unsupport_magisk_title">შეუთავსებელი Magisk-ის ვერსია</string>
-    <string name="unsupport_magisk_msg">ეს აპის ვერსია შეუთავსებსლია Magisk-ის %1$s-ზე ნაკლებ ვერსიებთან.\n\nაპს ეგონება, რომ Magisk-ი არაა დაყენებული, გთხოვთ გაანხალოთ Magisk-ი დროულად.</string>
+    <string name="unsupport_magisk_title">შეუთავსებელი Kitsune Mask-ის ვერსია</string>
+    <string name="unsupport_magisk_msg">"ეს აპის ვერსია შეუთავსებსლია Kitsune Mask-ის %1$s-ზე ნაკლებ ვერსიებთან.
+
+აპს ეგონება, რომ Kitsune Mask-ი არაა დაყენებული, გთხოვთ გაანხალოთ Kitsune Mask-ი დროულად."</string>
     <string name="external_rw_permission_denied">დართეთ მეხსიერებასთან წვდომის ნებართვა ამ ფუნქციის გამოსაყნებლად</string>
     <string name="add_shortcut_title">ხატულის დამატება საწყისს ეკრანზე</string>
     <string name="add_shortcut_msg">აპის დამალვის შემდეგ, მისი ნახატი და სახელი შეიძლება ამოუცნობი გახდეს. გნებავთ ხატულის დამატება ასწყისს ეკრანზე?</string>

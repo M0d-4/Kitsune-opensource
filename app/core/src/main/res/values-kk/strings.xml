@@ -20,16 +20,18 @@
     <string name="home_package">Десте атауы</string>
     <string name="home_app_title">Қолданба</string>
 
-    <string name="home_notice_content">Magisk-ті ТЕК ресми GitHub репозиториінен жүктеп алыңыз. Басқа көзден алынған файлдар зиянды болуы мүмкін!</string>
+    <string name="home_notice_content">Kitsune Mask-ті ТЕК ресми GitHub репозиториінен жүктеп алыңыз. Басқа көзден алынған файлдар зиянды болуы мүмкін!</string>
     <string name="home_support_title">Бізді қолдау</string>
     <string name="home_follow_title">Бізге жазылу</string>
     <string name="home_item_source">Бастапқы коды</string>
-    <string name="home_support_content">Magisk жобасы тегін әрі еркін болып, болашақта да солай болып қала бермек. Қиын болмаса, бізді қаржылай қолдасаңыз болады.</string>
+    <string name="home_support_content">Kitsune Mask жобасы тегін әрі еркін болып, болашақта да солай болып қала бермек. Қиын болмаса, бізді қаржылай қолдасаңыз болады.</string>
     <string name="home_installed_version">Орнатылған</string>
     <string name="home_latest_version">Соңғы</string>
     <string name="invalid_update_channel">Жарамсыз жаңарту көзі</string>
-    <string name="uninstall_magisk_title">Magisk-ті жою</string>
-    <string name="uninstall_magisk_msg">Барлық модуль сөндіріледі/жойылады!\nRoot құқығынан айырыласыз!\nMagisk көмегімен шифрлауды сөндірген болсаңыз, құрылғының жады қайта шифрланады!</string>
+    <string name="uninstall_magisk_title">Kitsune Mask-ті жою</string>
+    <string name="uninstall_magisk_msg">"Барлық модуль сөндіріледі/жойылады!
+Root құқығынан айырыласыз!
+Kitsune Mask көмегімен шифрлауды сөндірген болсаңыз, құрылғының жады қайта шифрланады!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Шифрлауды сөндірмей қалдыру</string>
@@ -42,7 +44,9 @@
     <string name="manager_download_install">Жүктеп алып, орнату үшін басыңыз</string>
     <string name="direct_install">Тікелей орнату (ұсынылады)</string>
     <string name="install_inactive_slot">Белсенді емес слотқа орнату (OTA-дан кейін)</string>
-    <string name="install_inactive_slot_msg">Құрылғыңыз белсенді емес слотқа МӘЖБҮРЛІ ТҮРДЕ қайта жүктеледі!\nБұл тәсілді тек OTA жаңартуынан кейін қолданыңыз.\nЖалғастырасыз ба?</string>
+    <string name="install_inactive_slot_msg">"Құрылғыңыз белсенді емес слотқа МӘЖБҮРЛІ ТҮРДЕ қайта жүктеледі!
+Бұл тәсілді тек OTA жаңартуынан кейін қолданыңыз.
+Жалғастырасыз ба?"</string>
     <string name="setup_title">Қосымша баптау</string>
     <string name="reboot_delay_toast">5 секундтан кейін қайта жүктеледі…</string>
     <string name="flash_screen_title">Орнату</string>
@@ -79,7 +83,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Әрекет логы бос, root құқығын қажет ететін қолданбаларды көбірек қолданып көріңіз.</string>
-    <string name="log_data_magisk_none">Magisk логы бос, біртүрлі екен</string>
+    <string name="log_data_magisk_none">Kitsune Mask логы бос, біртүрлі екен</string>
     <string name="menuSaveLog">Логты сақтау</string>
     <string name="menuClearLog">Логты тазалау</string>
     <string name="logs_cleared">Лог сәтті тазаланды</string>
@@ -91,7 +95,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Жүйе қолданбаларын көрсету</string>
     <string name="show_os_app">ОЖ қолданбаларын көрсету</string>
     <string name="hide_filter_hint">Атауы бойынша іздеу</string>
@@ -125,9 +129,9 @@
     <string name="settings_dark_mode_dark">Әрдайым қараңғы</string>
     <string name="settings_download_path_title">Жүктеу бумасы</string>
     <string name="settings_download_path_message">Файлдар %1$s бумасына сақталады</string>
-    <string name="settings_hide_app_title">Magisk қолданбасын жасыру</string>
+    <string name="settings_hide_app_title">Kitsune Mask қолданбасын жасыру</string>
     <string name="settings_hide_app_summary">Қолданба атауын өзгертіп, кездейсоқ десте атауы бар APK файлын құрастыру</string>
-    <string name="settings_restore_app_title">Magisk қолданбасын қалпына келтіру</string>
+    <string name="settings_restore_app_title">Kitsune Mask қолданбасын қалпына келтіру</string>
     <string name="settings_restore_app_summary">Қолданбаны жасырын күйден шығарып, түпнұсқа APK орнату</string>
     <string name="language">Тіл</string>
     <string name="system_default">(Жүйедегідей)</string>
@@ -138,9 +142,9 @@
     <string name="settings_update_beta">Beta</string>
     <string name="settings_update_custom">Басқа</string>
     <string name="settings_update_custom_msg">Басқа арнаның URL мекенжайын енгізіңіз</string>
-    <string name="settings_zygisk_summary">Magisk кодын zygote процесіне енгізу</string>
+    <string name="settings_zygisk_summary">Kitsune Mask кодын zygote процесіне енгізу</string>
     <string name="settings_denylist_title">DenyList-тi қолдану</string>
-    <string name="settings_denylist_summary">Magisk жасаған барлық өзгеріс DenyList-тегі процестерден жасырылады.</string>
+    <string name="settings_denylist_summary">Kitsune Mask жасаған барлық өзгеріс DenyList-тегі процестерден жасырылады.</string>
     <string name="settings_denylist_config_title">DenyList-тi баптау</string>
     <string name="settings_denylist_config_summary">DenyList-ке қосқыңыз келетін процестерді таңдаңыз</string>
     <string name="settings_hosts_title">Жүйеден тыс hosts</string>
@@ -179,13 +183,13 @@
     <string name="isolate_summary">Әр root сеансы өз атау кеңістігін қолданады</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk жаңартулары</string>
+    <string name="update_channel">Kitsune Mask жаңартулары</string>
     <string name="progress_channel">Прогресс мәлімдемесі</string>
     <string name="updated_channel">Жаңарту аяқталды</string>
     <string name="download_complete">Жүктеу аяқталды</string>
     <string name="download_file_error">Файлды жүктеп алу қатесі</string>
-    <string name="magisk_update_title">Magisk жаңартуы қолжетімді!</string>
-    <string name="updated_title">Magisk жаңартылды</string>
+    <string name="magisk_update_title">Kitsune Mask жаңартуы қолжетімді!</string>
+    <string name="updated_title">Kitsune Mask жаңартылды</string>
     <string name="updated_text">Қолданбасын ашу үшін басыңыз</string>
 
     <!--Toasts, Dialogs-->
@@ -198,7 +202,7 @@
     <string name="flashing">Орнатуда…</string>
     <string name="done">Дайын!</string>
     <string name="failure">Қате!</string>
-    <string name="hide_app_title">Magisk қолданбасын жасыруда…</string>
+    <string name="hide_app_title">Kitsune Mask қолданбасын жасыруда…</string>
     <string name="open_link_failed_toast">Сілтемені аша алатын қолданба табылмады</string>
     <string name="complete_uninstall">Толығымен жою</string>
     <string name="restore_img">Жад бөлімдерін қалпына келтіру</string>
@@ -207,20 +211,22 @@
     <string name="restore_fail">Өзгертілген бөлімдердің сақтық көшірмесі жоқ!</string>
     <string name="setup_fail">Орнату сәтсіз аяқталды</string>
     <string name="env_fix_title">Қосымша баптау керек</string>
-    <string name="env_fix_msg">Magisk дұрыс жұмыс істеуі үшін қосымша әрекет қажет. Орнатуды жалғастырып, құрылғыны қайта қосасыз ба?</string>
-    <string name="env_full_fix_msg">Magisk дұрыс жұмыс істеуі үшін оны қайта орнату керек. Magisk-ті қолданба арқылы қайта орнатыңыз; Recovery режімі құрылғыңыз туралы дұрыс ақпаратты таба алмайды.</string>
+    <string name="env_fix_msg">Kitsune Mask дұрыс жұмыс істеуі үшін қосымша әрекет қажет. Орнатуды жалғастырып, құрылғыны қайта қосасыз ба?</string>
+    <string name="env_full_fix_msg">Kitsune Mask дұрыс жұмыс істеуі үшін оны қайта орнату керек. Kitsune Mask-ті қолданба арқылы қайта орнатыңыз; Recovery режімі құрылғыңыз туралы дұрыс ақпаратты таба алмайды.</string>
     <string name="setup_msg">Жұмыс ортасын баптауда…</string>
-    <string name="unsupport_magisk_title">Үйлеспейтін Magisk нұсқасы</string>
-    <string name="unsupport_magisk_msg">Қолданбаның осы нұсқасы Magisk-тің %1$s дейінгі нұсқаларына үйлеспейді.\n\nҚолданба Magisk орнатылмағандай жұмыс істейді; Magisk-ті жақын арада жаңартыңыз.</string>
+    <string name="unsupport_magisk_title">Үйлеспейтін Kitsune Mask нұсқасы</string>
+    <string name="unsupport_magisk_msg">"Қолданбаның осы нұсқасы Kitsune Mask-тің %1$s дейінгі нұсқаларына үйлеспейді.
+
+Қолданба Kitsune Mask орнатылмағандай жұмыс істейді; Kitsune Mask-ті жақын арада жаңартыңыз."</string>
     <string name="unsupport_general_title">Қалыпты емес жағдай</string>
     <string name="unsupport_system_app_msg">Бұл қолданба жүйе қолданбасы ретінде жұмыс істей алмайды. Оны қалыпты қолданба ретінде қайта орнатыңыз.</string>
-    <string name="unsupport_other_su_msg">Magisk өзге бағдарламаға тиесілі \"su\" файлын анықтады. Қайшы келетін root қолданбасын жойып, Magisk-ті қайта орнатыңыз.</string>
-    <string name="unsupport_external_storage_msg">Magisk қолданбасы сыртқы жадқа орнатылды. Қолданбаны ішкі жадқа жылжытыңыз.</string>
-    <string name="unsupport_nonroot_stub_msg">Root құқығы жоғалғандықтан, жасырылған Magisk қолданбасы жұмыс істей алмайды. Түпнұсқа APK файлын орнатыңыз.</string>
+    <string name="unsupport_other_su_msg">Kitsune Mask өзге бағдарламаға тиесілі \"su\" файлын анықтады. Қайшы келетін root қолданбасын жойып, Kitsune Mask-ті қайта орнатыңыз.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask қолданбасы сыртқы жадқа орнатылды. Қолданбаны ішкі жадқа жылжытыңыз.</string>
+    <string name="unsupport_nonroot_stub_msg">Root құқығы жоғалғандықтан, жасырылған Kitsune Mask қолданбасы жұмыс істей алмайды. Түпнұсқа APK файлын орнатыңыз.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Мүмкіндікті қолдану үшін құрылғы жадына рұқсат беріңіз</string>
     <string name="post_notifications_denied">Мүмкіндікті қолдану үшін мәлімдеме жіберуге рұқсат беріңіз</string>
-    <string name="install_unknown_denied">Мүмкіндікті қолдану үшін "белгісіз қолданбаларды орнатуға" рұқсат беріңіз</string>
+    <string name="install_unknown_denied">Мүмкіндікті қолдану үшін белгісіз қолданбаларды орнатуға рұқсат беріңіз</string>
     <string name="add_shortcut_title">Бастапқы экранға таңбаша қосу</string>
     <string name="add_shortcut_msg">Қолданба жасырылғаннан кейін, оның атауы мен таңбашасын тану қиын болуы мүмкін. Бастапқы экранға ыңғайлы таңбаша қосу керек пе?</string>
     <string name="app_not_found">Бұл әрекетті орындай алатын қолданба табылмады</string>

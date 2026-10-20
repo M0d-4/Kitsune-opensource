@@ -176,11 +176,18 @@ fun Project.setupCoreLib() {
                 inputs.property("versionCode", Config.versionCode)
                 from(rootFile("scripts")) {
                     include("util_functions.sh", "boot_patch.sh", "addon.d.sh",
-                        "app_functions.sh", "uninstaller.sh", "module_installer.sh")
+                        "app_functions.sh", "uninstaller.sh", "module_installer.sh",
+                        "bootloop_protector.sh")
                 }
                 from(stubTask) {
                     include { it.name.endsWith(".apk") }
                     rename { "stub.apk" }
+                }
+                // App-list hiding payload, built by ./build.py (app/applist is a separate build)
+                rootFile("app/applist/zygote/build/outputs/magisk/release").let { dir ->
+                    if (dir.exists()) {
+                        from(dir) { include("applist_payload.zip") }
+                    }
                 }
                 filesMatching("**/util_functions.sh") {
                     filter {
@@ -279,7 +286,7 @@ fun Project.setupMainApk() {
         namespace = "com.topjohnwu.magisk"
 
         defaultConfig {
-            applicationId = "com.topjohnwu.magisk"
+            applicationId = "io.github.x0eg0.magisk"
             vectorDrawables.useSupportLibrary = true
             versionName = Config.version
             versionCode = Config.versionCode

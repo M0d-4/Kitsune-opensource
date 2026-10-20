@@ -25,7 +25,9 @@
     <string name="home_latest_version">ਨਵੀਨਤਮ</string>
     <string name="invalid_update_channel">ਅਵੈਧ ਅਪਡੇਟ ਚੈਨਲ</string>
     <string name="uninstall_magisk_title">ਮੈਜਿਸਕ ਨੂੰ ਅਣਇੰਸਟੌਲ ਕਰੋ</string>
-    <string name="uninstall_magisk_msg">ਸਾਰੇ ਮੋਡੀਊਲ ਅਯੋਗ/ਮਿਟਾ ਦਿੱਤੇ ਜਾਣਗੇ!\n ਰੂਟ ਨੂੰ ਹਟਾਇਆ ਜਾਏਗਾ!\n ਤੁਹਾਡਾ ਡਾਟਾ ਸੰਭਾਵਤ ਤੌਰ ਤੇ ਐਨਕ੍ਰਿਪਟ ਕੀਤਾ ਗਿਆ ਹੈ ਜੇ ਪਹਿਲਾਂ ਹੀ ਨਹੀਂ!</string>
+    <string name="uninstall_magisk_msg">"ਸਾਰੇ ਮੋਡੀਊਲ ਅਯੋਗ/ਮਿਟਾ ਦਿੱਤੇ ਜਾਣਗੇ!
+ ਰੂਟ ਨੂੰ ਹਟਾਇਆ ਜਾਏਗਾ!
+ ਤੁਹਾਡਾ ਡਾਟਾ ਸੰਭਾਵਤ ਤੌਰ ਤੇ ਐਨਕ੍ਰਿਪਟ ਕੀਤਾ ਗਿਆ ਹੈ ਜੇ ਪਹਿਲਾਂ ਹੀ ਨਹੀਂ!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">ਫੋਰਸ ਇਨਕ੍ਰਿਪਸ਼ਨ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖੋ</string>
@@ -38,7 +40,9 @@
     <string name="manager_download_install">ਡਾਊਨਲੋਡ ਅਤੇ ਇੰਸਟੌਲ ਕਰਨ ਲਈ ਦਬਾਓ</string>
     <string name="direct_install">ਸਿੱਦਾ ਇੰਸਟਾਲ (ਸਿਫਾਰਸ਼ੀ)</string>
     <string name="install_inactive_slot">ਨਾ-ਸਰਗਰਮ ਸਲਾਟ ਵਿੱਚ ਇੰਸਟਾਲ ਕਰੋ (OTA ਤੋਂ ਬਾਅਦ)</string>
-    <string name="install_inactive_slot_msg">ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਨੂੰ ਮੁੜ ਚਾਲੂ ਹੋਣ ਤੋਂ ਬਾਅਦ ਮੌਜੂਦਾ ਨਿਸ਼ਕਿਰਿਆ ਨੰਬਰ ਤੇ ਬੂਟ ਕਰਨ ਲਈ ਮਜਬੂਰ ਕੀਤਾ ਜਾਏਗਾ!\n OTA ਪੂਰਾ ਹੋਣ ਤੋਂ ਬਾਅਦ ਹੀ ਇਸ ਵਿਕਲਪ ਦੀ ਵਰਤੋਂ ਕਰੋ।\n ਜਾਰੀ ਰੱਖਣਾ ਹੈ?</string>
+    <string name="install_inactive_slot_msg">"ਤੁਹਾਡੀ ਡਿਵਾਈਸ ਨੂੰ ਮੁੜ ਚਾਲੂ ਹੋਣ ਤੋਂ ਬਾਅਦ ਮੌਜੂਦਾ ਨਿਸ਼ਕਿਰਿਆ ਨੰਬਰ ਤੇ ਬੂਟ ਕਰਨ ਲਈ ਮਜਬੂਰ ਕੀਤਾ ਜਾਏਗਾ!
+ OTA ਪੂਰਾ ਹੋਣ ਤੋਂ ਬਾਅਦ ਹੀ ਇਸ ਵਿਕਲਪ ਦੀ ਵਰਤੋਂ ਕਰੋ।
+ ਜਾਰੀ ਰੱਖਣਾ ਹੈ?"</string>
     <string name="setup_title">ਅਤਿਰਿਕਤ ਸੈਟਅਪ</string>
     <string name="reboot_delay_toast">5 ਸਕਿੰਟਾਂ ਵਿੱਚ ਰੀਬੂਟ ਹੋ ਰਿਹਾ ਹੈ …</string>
     <string name="flash_screen_title">ਇੰਸਟਾਲੇਸ਼ਨ</string>
@@ -55,16 +59,16 @@
 
 
 
-    <string name="su_allow_toast"> %1$s ਨੂੰ ਸੁਪਰਯੂਜ਼ਰ ਅਧਿਕਾਰ ਦਿੱਤੇ ਗਏ ਸਨ</string>
-    <string name="su_deny_toast"> %1$s ਸੁਪਰਯੂਜ਼ਰ ਅਧਿਕਾਰਾਂ ਤੋਂ ਇਨਕਾਰ ਕੀਤਾ ਗਿਆ ਸੀ</string>
-    <string name="su_snack_grant"> %1$s ਨੂੰ ਸੁਪਰਯੂਜ਼ਰ ਅਧਿਕਾਰ ਦਿੱਤੇ ਗਏ ਸਨ</string>
-    <string name="su_snack_deny"> %1$s ਸੁਪਰ ਯੂਜ਼ਰ ਅਧਿਕਾਰਾਂ ਤੋਂ ਇਨਕਾਰ ਕੀਤਾ ਗਿਆ ਹੈ</string>
-    <string name="su_snack_notif_on"> %1$s ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਯੋਗ ਹਨ</string>
-    <string name="su_snack_notif_off"> %1$s ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਅਯੋਗ ਹਨ</string>
-    <string name="su_snack_log_on"> %1$s ਦੀਆਂ ਲੌਗਿੰਗ ਯੋਗ ਹਨ</string>
-    <string name="su_snack_log_off"> %1$s ਦੀਆਂ ਲੌਗਿੰਗ ਅਯੋਗ ਹਨ</string>
+    <string name="su_allow_toast">%1$s ਨੂੰ ਸੁਪਰਯੂਜ਼ਰ ਅਧਿਕਾਰ ਦਿੱਤੇ ਗਏ ਸਨ</string>
+    <string name="su_deny_toast">%1$s ਸੁਪਰਯੂਜ਼ਰ ਅਧਿਕਾਰਾਂ ਤੋਂ ਇਨਕਾਰ ਕੀਤਾ ਗਿਆ ਸੀ</string>
+    <string name="su_snack_grant">%1$s ਨੂੰ ਸੁਪਰਯੂਜ਼ਰ ਅਧਿਕਾਰ ਦਿੱਤੇ ਗਏ ਸਨ</string>
+    <string name="su_snack_deny">%1$s ਸੁਪਰ ਯੂਜ਼ਰ ਅਧਿਕਾਰਾਂ ਤੋਂ ਇਨਕਾਰ ਕੀਤਾ ਗਿਆ ਹੈ</string>
+    <string name="su_snack_notif_on">%1$s ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਯੋਗ ਹਨ</string>
+    <string name="su_snack_notif_off">%1$s ਦੀਆਂ ਸੂਚਨਾਵਾਂ ਅਯੋਗ ਹਨ</string>
+    <string name="su_snack_log_on">%1$s ਦੀਆਂ ਲੌਗਿੰਗ ਯੋਗ ਹਨ</string>
+    <string name="su_snack_log_off">%1$s ਦੀਆਂ ਲੌਗਿੰਗ ਅਯੋਗ ਹਨ</string>
     <string name="su_revoke_title">ਅਧਿਕਾਰ ਵਾਪਸ ਲਓ?</string>
-    <string name="su_revoke_msg"> %1$s ਦੇ ਅਧਿਕਾਰਾਂ ਨੂੰ ਰੱਦ ਕਰਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?</string>
+    <string name="su_revoke_msg">%1$s ਦੇ ਅਧਿਕਾਰਾਂ ਨੂੰ ਰੱਦ ਕਰਨ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?</string>
     <string name="toast">ਪੌਪ-ਅੱਪ ਸੂਚਨਾ</string>
     <string name="none">ਕੋਈ ਨਹੀਂ</string>
 
@@ -83,7 +87,7 @@
 
     <!--SafetyNet-->
 
-    <!-- MagiskHide -->
+    <!-- KMHide -->
     <string name="show_system_app">ਸਿਸਟਮ ਐਪਸ ਦਿਖਾਓ</string>
     <string name="show_os_app">OS ਐਪਲੀਕੇਸ਼ਨ ਦਿਖਾਓ</string>
     <string name="hide_filter_hint">ਨਾਮ ਦੁਆਰਾ ਫਿਲਟਰ ਕਰੋ</string>
@@ -96,7 +100,7 @@
     <string name="reboot_bootloader">ਬੂਟਲੋਡਰ ਰੀਬੂਟ</string>
     <string name="reboot_download">ਡਾਊਨਲੋਡ ਮੋਡ ਰੀਬੂਟ</string>
     <string name="reboot_edl">EDL ਰੀਬੂਟ</string>
-    <string name="module_version_author"> %2$s ਦੇ ਦੁਆਰਾ %1$s</string>
+    <string name="module_version_author">%2$s ਦੇ ਦੁਆਰਾ %1$s</string>
     <string name="module_state_remove">ਹਟਾਓ</string>
     <string name="module_state_restore">ਰੀਸਟੋਰ ਕਰੋ</string>
     <string name="module_action_install_external">ਸਟੋਰੇਜ ਤੋਂ ਇੰਸਟਾਲ ਕਰੋ</string>
@@ -113,7 +117,7 @@
     <string name="language">ਭਾਸ਼ਾ</string>
     <string name="system_default">(ਸਿਸਟਮ ਡਿਫੌਲਟ)</string>
     <string name="settings_check_update_title">ਚੈੱਕ ਅੱਪਡੇਟ</string>
-    <string name="settings_check_update_summary">ਸਮੇਂ-ਸਮੇਂ \'ਤੇ ਪਿਛੋਕੜ ਦੇ ਅਪਡੇਟਾਂ ਦੀ ਜਾਂਚ ਕਰੋ</string>
+    <string name="settings_check_update_summary">"ਸਮੇਂ-ਸਮੇਂ 'ਤੇ ਪਿਛੋਕੜ ਦੇ ਅਪਡੇਟਾਂ ਦੀ ਜਾਂਚ ਕਰੋ"</string>
     <string name="settings_update_channel_title">ਅਪਡੇਟ ਚੈਨਲ</string>
     <string name="settings_update_stable">ਸਥਿਰ</string>
     <string name="settings_update_beta">ਬੀਟਾ</string>
@@ -177,7 +181,7 @@
     <string name="setup_msg">ਵਾਤਾਵਰਣ ਸੈਟਅਪ ਚੱਲ ਰਿਹਾ ਹੈ …</string>
     <string name="unsupport_magisk_title">ਗ਼ੈਰ ਮੈਜਿਸਕ ਵਰਜਨ</string>
     <string name="external_rw_permission_denied">ਇਸ ਦੀ ਵਰਤੋਂ ਕਰਨ ਲਈ ਸਟੋਰੇਜ ਦੀ ਆਗਿਆ ਦਿਓ</string>
-    <string name="add_shortcut_title">ਹੋਮਸਕ੍ਰੀਨ \'ਤੇ ਸ਼ਾਰਟਕੱਟ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="add_shortcut_title">"ਹੋਮਸਕ੍ਰੀਨ 'ਤੇ ਸ਼ਾਰਟਕੱਟ ਸ਼ਾਮਲ ਕਰੋ"</string>
     <string name="app_not_found">ਇਸ ਐਕਸ਼ਨ ਨੂੰ ਸੰਭਾਲਣ ਲਈ ਕੋਈ ਐਪਲੀਕੇਸ਼ਨ ਨਹੀਂ ਮਿਲੀ</string>
 
 </resources>

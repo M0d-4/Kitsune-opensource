@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="theme_title">Choose your theme</string>
+    <string name="theme_pure_black">Pure Black</string>
+    <string name="theme_pure_black_desc">AMOLED-friendly pure black background (Dark mode only)</string>
+</resources>

@@ -29,7 +29,9 @@
     <string name="home_latest_version">പുതിയ പതിപ്പ്</string>
     <string name="invalid_update_channel">അപ്‌ഡേറ്റ് ചാനൽ അസാധുവാണ്</string>
     <string name="uninstall_magisk_title">മജിസ്‌ക് അൺഇൻസ്റ്റാൾ ചെയ്യുക</string>
-    <string name="uninstall_magisk_msg">എല്ലാ മൊഡ്യൂളുകളും പ്രവർത്തനരഹിതമാക്കും/നീക്കം ചെയ്യപ്പെടും!\nറൂട്ട് നീക്കം ചെയ്യപ്പെടും!\nമജിസ്‌ക് വഴി  അൺഎൻക്രിപ്റ്റ്  ചെയ്യപ്പെട്ട ഇന്റെര്ണല് സ്റ്റോറേജുകൾ വീണ്ടും എൻക്രിപ്റ്റ് ചെയ്യപ്പെടും!!</string>
+    <string name="uninstall_magisk_msg">"എല്ലാ മൊഡ്യൂളുകളും പ്രവർത്തനരഹിതമാക്കും/നീക്കം ചെയ്യപ്പെടും!
+റൂട്ട് നീക്കം ചെയ്യപ്പെടും!
+മജിസ്‌ക് വഴി അൺഎൻക്രിപ്റ്റ് ചെയ്യപ്പെട്ട ഇന്റെര്ണല് സ്റ്റോറേജുകൾ വീണ്ടും എൻക്രിപ്റ്റ് ചെയ്യപ്പെടും!!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">ഫോഴ്‌സ് എൻക്രിപ്ഷൻ സംരക്ഷിക്കുക</string>
@@ -42,7 +44,9 @@
     <string name="manager_download_install">ഡൗൺലോഡ് ചെയ്ത് ഇൻസ്റ്റാൾ ചെയ്യാൻ അമർത്തുക</string>
     <string name="direct_install">നേരിട്ടുള്ള ഇൻസ്റ്റാളേഷൻ (ശുപാർശ ചെയ്യുന്നത്)</string>
     <string name="install_inactive_slot">നിഷ്ക്രിയ സ്ലോട്ടിലേക്ക് ഇൻസ്‌റ്റാൾ ചെയ്യുക (OTA-ന് ശേഷം)</string>
-    <string name="install_inactive_slot_msg">റീബൂട്ടിന് ശേഷം നിങ്ങളുടെ ഉപകരണം നിലവിലെ നിഷ്‌ക്രിയ സ്ലോട്ടിലേക്ക് ബൂട്ട് ചെയ്യാൻ നിർബന്ധിതരാകും!\nOTA പൂർത്തിയാക്കിയതിന് ശേഷം മാത്രം ഈ ഓപ്ഷൻ ഉപയോഗിക്കുക.\nതുടരണോ?</string>
+    <string name="install_inactive_slot_msg">"റീബൂട്ടിന് ശേഷം നിങ്ങളുടെ ഉപകരണം നിലവിലെ നിഷ്‌ക്രിയ സ്ലോട്ടിലേക്ക് ബൂട്ട് ചെയ്യാൻ നിർബന്ധിതരാകും!
+OTA പൂർത്തിയാക്കിയതിന് ശേഷം മാത്രം ഈ ഓപ്ഷൻ ഉപയോഗിക്കുക.
+തുടരണോ?"</string>
     <string name="setup_title">അധിക സജ്ജീകരണം</string>
     <string name="reboot_delay_toast">5 സെക്കൻഡിൽ റീബൂട്ട് ചെയ്യുന്നു…</string>
     <string name="flash_screen_title">ഇൻസ്റ്റലേഷൻ</string>
@@ -61,8 +65,8 @@
 
 
     <string name="su_allow_toast">%1$s-ന് സൂപ്പർയൂസർ അവകാശം ലഭിച്ചു</string>
-    <string name="su_deny_toast">%1$s-ന് സൂപ്പർയൂസർ അവകാശം നിഷേധിച്ചു </string>
-    <string name="su_snack_grant">%1$s-ന്റെ സൂപ്പർയൂസർ അവകാശം അനുവദിച്ചിരിക്കുന്നു </string>
+    <string name="su_deny_toast">%1$s-ന് സൂപ്പർയൂസർ അവകാശം നിഷേധിച്ചു</string>
+    <string name="su_snack_grant">%1$s-ന്റെ സൂപ്പർയൂസർ അവകാശം അനുവദിച്ചിരിക്കുന്നു</string>
     <string name="su_snack_deny">1$s-ന്റെ സൂപ്പർയൂസർ അവകാശം നിഷേധിക്കപ്പെട്ടിരിക്കുന്നു</string>
     <string name="su_snack_notif_on">%1$s-ന്റെ അറിയിപ്പുകൾ പ്രവർത്തനക്ഷമമാക്കി</string>
     <string name="su_snack_notif_off">%1$s-ന്റെ അറിയിപ്പുകൾ പ്രവർത്തനരഹിതമാക്കി</string>
@@ -79,7 +83,8 @@
 
     <!--Logs-->
     <string name="log_data_none">നിങ്ങൾക്ക് ലോഗുകൾ ഒന്നുമില്ലലോ, റൂട്ട് ആപ്പുകൾ കൂടുതൽ ഉപയോഗിക്കൂ</string>
-    <string name="log_data_magisk_none">മജിസ്‌ക് ലോഗുകൾ കാലിയാണ്, \nഎവിടെയോ എന്തോ ഒരു തകരാറു പോലെ</string>
+    <string name="log_data_magisk_none">"മജിസ്‌ക് ലോഗുകൾ കാലിയാണ്, 
+എവിടെയോ എന്തോ ഒരു തകരാറു പോലെ"</string>
     <string name="menuSaveLog">ലോഗ് സേവ് ചെയ്യുക</string>
     <string name="menuClearLog">ലോഗ് മായ്‌ക്കുക</string>
     <string name="logs_cleared">ലോഗ് മായ്ച്ചു</string>
@@ -88,7 +93,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">സിസ്റ്റം ആപ്പുകൾ കാണിക്കുക</string>
     <string name="show_os_app">OS ആപ്പുകൾ കാണിക്കുക</string>
     <string name="hide_filter_hint">പേര് പ്രകാരം ഫിൽട്ടർ ചെയ്യുക</string>
@@ -201,7 +206,9 @@
     <string name="env_fix_msg">മജിസ്‌ക് ശരിയായി പ്രവർത്തിക്കാൻ നിങ്ങളുടെ ഉപകരണത്തിന് കൂടുതൽ സജ്ജീകരണം ആവശ്യമാണ്. നിങ്ങൾക്ക് തുടരാനും റീബൂട്ട് ചെയ്യാനും താൽപ്പര്യമുണ്ടോ?</string>
     <string name="setup_msg">ഇൻവൈറൻമൻറ്റ് സജ്ജീകരണം പ്രവർത്തിക്കുന്നു...</string>
     <string name="unsupport_magisk_title">പിന്തുണയ്ക്കാത്ത മജിസ്‌ക് പതിപ്പ്</string>
-    <string name="unsupport_magisk_msg">ആപ്പിന്റെ ഈ പതിപ്പ് %1$s-ൽ താഴെയുള്ള മജിസ്‌ക് പതിപ്പുകളെ പിന്തുണയ്‌ക്കുന്നില്ല.\n\nമജിസ്‌ക് ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ലെന്ന മട്ടിൽ ആപ്പ് പ്രവർത്തിക്കും, ദയവായി മജിസ്‌ക് എത്രയും വേഗം അപ്‌ഗ്രേഡ് ചെയ്യുക.</string>
+    <string name="unsupport_magisk_msg">"ആപ്പിന്റെ ഈ പതിപ്പ് %1$s-ൽ താഴെയുള്ള മജിസ്‌ക് പതിപ്പുകളെ പിന്തുണയ്‌ക്കുന്നില്ല.
+
+മജിസ്‌ക് ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ലെന്ന മട്ടിൽ ആപ്പ് പ്രവർത്തിക്കും, ദയവായി മജിസ്‌ക് എത്രയും വേഗം അപ്‌ഗ്രേഡ് ചെയ്യുക."</string>
     <string name="unsupport_general_title">അസാധാരണമായ നില</string>
     <string name="unsupport_system_app_msg">ഒരു സിസ്റ്റം ആപ്പായി ഈ ആപ്പ് പ്രവർത്തിപ്പിക്കുന്നത് സാധ്യമല്ല. ഒരു യൂസർ ആപ്പിലേക്ക് ആപ്പ് പുനഃസ്ഥാപിക്കുക.</string>
     <string name="unsupport_other_su_msg">മജിസ്‌ക്-ൽ നിന്ന് അല്ലാത്ത ഒരു \"su\" ബൈനറി കണ്ടെത്തി. അധിക റൂട്ട് സൊല്യൂഷൻ നീക്കം ചെയ്യുക കൂടാതെ/അല്ലെങ്കിൽ മാജിസ്ക് വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്യുക.</string>
@@ -210,7 +217,7 @@
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">ഈ പ്രവർത്തനം പ്രവർത്തനക്ഷമമാക്കാൻ സ്റ്റോറജ് ​​അനുമതി നൽകുക</string>
     <string name="post_notifications_denied">ഈ പ്രവർത്തനം പ്രവർത്തനക്ഷമമാക്കാൻ അറിയിപ്പ്‌ അനുമതി നൽകുക</string>
-    <string name="install_unknown_denied">ഈ പ്രവർത്തനം പ്രവർത്തനക്ഷമമാക്കാൻ "install unknown apps" അനുവദിക്കുക</string>
+    <string name="install_unknown_denied">ഈ പ്രവർത്തനം പ്രവർത്തനക്ഷമമാക്കാൻ install unknown apps അനുവദിക്കുക</string>
     <string name="add_shortcut_title">ഹോം സ്ക്രീനിലേക്ക് ഷോർട്ട്കട്ട് ചേർക്കുക</string>
     <string name="add_shortcut_msg">ഈ ആപ്പ് മറച്ചതിന് ശേഷം, അതിന്റെ പേരും ഐക്കണും തിരിച്ചറിയാൻ ബുദ്ധിമുട്ടായേക്കാം. ഹോം സ്‌ക്രീനിലേക്ക് മനോഹരമായ ഒരു ഷോർറ്റ്കറ്റ ചേർക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?</string>
     <string name="app_not_found">ഈ പ്രവർത്തനം കൈകാര്യം ചെയ്യാൻ ഒരു ആപ്പും കണ്ടെത്തിയില്ല</string>

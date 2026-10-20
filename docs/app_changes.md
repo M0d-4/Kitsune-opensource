@@ -45,12 +45,12 @@
 
 ### v7.5.1
 
-- Fix toggling app components in MagiskHide screen
+- Fix toggling app components in KMHide screen
 - Update translations
 
 ### v7.5.0
 
-- Support new MagiskSU communication method (ContentProvider)
+- Support new KMSU communication method (ContentProvider)
 - Fix several issues with hidden stub APK
 - Support using BiometricPrompt (face unlock)
 
@@ -97,7 +97,7 @@
 ### v7.1.0
 
 - Support the new module format
-- Support per-application component granularity MagiskHide targets (only on v19+)
+- Support per-application component granularity KMHide targets (only on v19+)
 - Ask for fingerprint before deleting rules if enabled
 - Fix the bug that causes repackaging to lose settings
 - Several UI fixes
@@ -126,7 +126,7 @@
 
 - Update to use new online module's organizing method
 - When fingerprint authentication is enabled, toggling root permissions in "Superuser" section now requires fingerprint beforehand
-- Fix crashes when entering MagiskHide section on some devices
+- Fix crashes when entering KMHide section on some devices
 - Remove support to Magisk version lower than v15.0
 - Ask storage permissions before patching stock boot image
 - Update dark theme CardView color
@@ -164,7 +164,7 @@
 - Remain hidden when upgrading within repackaged Magisk Manager
 - New feature: support reconstructing a proper Magisk environment if error detected (e.g. after factory reset)
 - New uninstall method: download uninstaller and completely remove Magisk + Magisk Manager, following with a reboot
-- Hidden apps are now shown on the top of the list in MagiskHide fragment
+- Hidden apps are now shown on the top of the list in KMHide fragment
 - Tons of under-the-hood bug fixes and improvements
 
 ### v5.7.0
@@ -247,7 +247,7 @@
 - Support hardlinking global su database into app data
 - Support signing boot images (AVB 1.0)
 - Update app icon to adaptive icons
-- Remove app from MagiskHide list if uninstalled
+- Remove app from KMHide list if uninstalled
 - Add support to save detailed logs when installing Magisk or modules
 - Fix download progress error if module is larger than 20MB
 - Changed the way how downloaded repos are processed, should be rock stable
@@ -265,7 +265,7 @@
 - Fix several places where external storage is needed but forgot to request
 - Fetching online repo info from sever is significantly faster thanks to multithreading
 - Pulling down Download page will now force a full refresh, thanks to the faster loading speed
-- Using new resetprop tool to properly detect MagiskHide status
+- Using new resetprop tool to properly detect KMHide status
 
 ### v5.3.5
 
@@ -391,17 +391,17 @@
 
 ### v4.1
 
-- Change MagiskHide startup
+- Change KMHide startup
 - Reduce static data (= less memory leaks/issues)
 - Translation updates
 
 ### v4.0
 
-- Whole new Superuser section for MagiskSU management!
+- Whole new Superuser section for KMSU management!
 - Add Superuser tab in Logs section
 - Add lots of Superuser settings
-- Handle MagiskSU requests, logging, notifications
-- Controls MagiskHide initialization
+- Handle KMSU requests, logging, notifications
+- Controls KMHide initialization
 - Add disable button
 - Add uninstall button
 - Tons of improvements, not practical to list all :)

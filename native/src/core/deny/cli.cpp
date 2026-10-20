@@ -21,6 +21,10 @@ Actions:
    ls              Print the current denylist
    exec CMDs...    Execute commands in isolated mount
                    namespace and do all unmounts
+   sulist [ACTION [ARGS...]]
+                   SuList (only listed apps can see/use root). ACTION is one
+                   of: status (default), enable, disable, add PKG [PROC],
+                   rm PKG [PROC], ls
 
 )EOF");
     exit(1);
@@ -54,6 +58,24 @@ void denylist_handler(int client) {
     case DenyRequest::STATUS:
         res = denylist_enforced ? DenyResponse::ENFORCED : DenyResponse::NOT_ENFORCED;
         break;
+    case DenyRequest::ENFORCE_SULIST:
+        res = enable_sulist();
+        break;
+    case DenyRequest::DISABLE_SULIST:
+        res = disable_sulist();
+        break;
+    case DenyRequest::ADD_SULIST:
+        res = add_list(client, true);
+        break;
+    case DenyRequest::REMOVE_SULIST:
+        res = rm_list(client, true);
+        break;
+    case DenyRequest::LIST_SULIST:
+        ls_list(client, true);
+        return;
+    case DenyRequest::STATUS_SULIST:
+        res = sulist_enforced() ? DenyResponse::SULIST_ENFORCED : DenyResponse::SULIST_NOT_ENFORCED;
+        break;
     default:
         // Unknown request code
         break;
@@ -74,7 +96,25 @@ int denylist_cli(rust::Vec<rust::String> &args) {
     argv.push_back(nullptr);
 
     int req;
-    if (argv[0] == "enable"sv)
+    size_t base = 0;  // index of the first action argument
+    if (argv[0] == "sulist"sv) {
+        base = 1;
+        const char *act = argv[1] ? argv[1] : "status";
+        if (act == "status"sv)
+            req = DenyRequest::STATUS_SULIST;
+        else if (act == "enable"sv)
+            req = DenyRequest::ENFORCE_SULIST;
+        else if (act == "disable"sv)
+            req = DenyRequest::DISABLE_SULIST;
+        else if (act == "add"sv && argv[2])
+            req = DenyRequest::ADD_SULIST;
+        else if (act == "rm"sv && argv[2])
+            req = DenyRequest::REMOVE_SULIST;
+        else if (act == "ls"sv)
+            req = DenyRequest::LIST_SULIST;
+        else
+            usage();
+    } else if (argv[0] == "enable"sv)
         req = DenyRequest::ENFORCE;
     else if (argv[0] == "disable"sv)
         req = DenyRequest::DISABLE;
@@ -101,9 +141,10 @@ int denylist_cli(rust::Vec<rust::String> &args) {
     if (fd < 0) exit(1);
 
     write_int(fd, req);
-    if (req == DenyRequest::ADD || req == DenyRequest::REMOVE) {
-        write_string(fd, argv[1]);
-        write_string(fd, argv[2] ? argv[2] : "");
+    if (req == DenyRequest::ADD || req == DenyRequest::REMOVE ||
+        req == DenyRequest::ADD_SULIST || req == DenyRequest::REMOVE_SULIST) {
+        write_string(fd, argv[base + 1]);
+        write_string(fd, argv[base + 2] ? argv[base + 2] : "");
     }
 
     // Get response
@@ -129,6 +170,15 @@ int denylist_cli(rust::Vec<rust::String> &args) {
     case DenyResponse::INVALID_PKG:
         fprintf(stderr, "Invalid package / process name\n");
         goto return_code;
+    case DenyResponse::SULIST_ENFORCED:
+        fprintf(stderr, "SuList is enforced\n");
+        goto return_code;
+    case DenyResponse::SULIST_NOT_ENFORCED:
+        fprintf(stderr, "SuList is not enforced\n");
+        goto return_code;
+    case DenyResponse::SULIST_NO_DISABLE:
+        fprintf(stderr, "Cannot disable while SuList is enforced\n");
+        goto return_code;
     case DenyResponse::ERROR:
         fprintf(stderr, "deny: Daemon error\n");
         return -1;
@@ -138,7 +188,7 @@ int denylist_cli(rust::Vec<rust::String> &args) {
         __builtin_unreachable();
     }
 
-    if (req == DenyRequest::LIST) {
+    if (req == DenyRequest::LIST || req == DenyRequest::LIST_SULIST) {
         string out;
         for (;;) {
             read_string(fd, out);
@@ -149,5 +199,9 @@ int denylist_cli(rust::Vec<rust::String> &args) {
     }
 
 return_code:
-    return req == DenyRequest::STATUS ? res != DenyResponse::ENFORCED : res != DenyResponse::OK;
+    if (req == DenyRequest::STATUS)
+        return res != DenyResponse::ENFORCED;
+    if (req == DenyRequest::STATUS_SULIST)
+        return res != DenyResponse::SULIST_ENFORCED;
+    return res != DenyResponse::OK;
 }

@@ -69,7 +69,7 @@
     <string name="su_snack_log_on">تۆمارەکانی %1$s کراوەتەوە</string>
     <string name="su_snack_log_off">تۆمارەکانی %1$s کوژاوەتەوە</string>
     <string name="su_revoke_title">لابردن؟</string>
-    <string name="su_revoke_msg">دڵنیابەوە بۆ لابردنی سوپەریوسەر بۆ %1$s </string>
+    <string name="su_revoke_msg">دڵنیابەوە بۆ لابردنی سوپەریوسەر بۆ %1$s</string>
     <string name="toast">هێنانەسەر</string>
     <string name="none">هیچ</string>
 
@@ -91,7 +91,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">پیشاندانی ئەپەکانی سیستەم</string>
     <string name="show_os_app">پیشاندانی ئەپەکان</string>
     <string name="hide_filter_hint">پاڵاوتنی بەپێی ناو</string>
@@ -145,8 +145,8 @@
     <string name="settings_denylist_config_title">دەستکاریکردنی پێڕستی نەرێنیکراوەکان</string>
     <string name="settings_denylist_config_summary">ئەو ئەپە هەڵبژێرە کە دەتەوێت نەرێنیی بکەیت</string>
     <string name="settings_hosts_title">هۆستی ناسیستەمی</string>
-    <string name="settings_hosts_summary"> هۆستی ناسیستەمی بۆ لابردنی ڕیکلامەکان</string>
-    <string name="settings_hosts_toast"> هۆستی ناسیستەمی زیادکرا</string>
+    <string name="settings_hosts_summary">هۆستی ناسیستەمی بۆ لابردنی ڕیکلامەکان</string>
+    <string name="settings_hosts_toast">هۆستی ناسیستەمی زیادکرا</string>
     <string name="settings_app_name_hint">ناوی نوێ</string>
     <string name="settings_app_name_helper">ئەپەکە بەم ناوەوە دروست دەکرێتەوە</string>
     <string name="settings_app_name_error">هەڵەیە</string>
@@ -212,19 +212,19 @@
     <string name="setup_fail">ڕێکخستن شکستی هێنا</string>
     <string name="env_fix_title">پێویستی بە ڕێکخستنی زیاترە</string>
     <string name="env_fix_msg">مۆبایلەکەت پێویستی بە ڕێکخستنی زیاترە، ئایا ئەتەوێت بەردەوام بیت و ڕێستارتی بکەیتەوە؟</string>
-    <string name="env_full_fix_msg"> پێویستە دوبارە ماجیسک دابگریتەوە بۆ ئەوەی بەباشی کاربکات تکایە ماجیسک دابگرەوە لەناو ئەپەکە خۆی چونکە لە ڕیکەڤەرییەوە ناتوانرێ زانیاری تەواو لەسەر ئامێرەکە دەستبخرێت </string>
+    <string name="env_full_fix_msg">پێویستە دوبارە ماجیسک دابگریتەوە بۆ ئەوەی بەباشی کاربکات تکایە ماجیسک دابگرەوە لەناو ئەپەکە خۆی چونکە لە ڕیکەڤەرییەوە ناتوانرێ زانیاری تەواو لەسەر ئامێرەکە دەستبخرێت</string>
     <string name="setup_msg">دەستپێکردن....</string>
     <string name="unsupport_magisk_title">وەشانی ماجیسک پاڵپشتینەکراوە</string>
     <string name="unsupport_magisk_msg">وەشانی ماجیسکەکەت زۆر کۆنە وەک ئەوە وایە هەر نەبێت، تکایە نوێی بکەوە بە زوترین کات</string>
     <string name="unsupport_general_title">باری نائاسایی</string>
     <string name="unsupport_system_app_msg">ئەم ئەپە وەکو ئەپی سیستەم کارناکات، تکایە بیگۆڕەوە بۆ ئەپی ئاسایی</string>
-    <string name="unsupport_other_su_msg"> \"su\" binary یەکی بێگانە دۆزرایەوە، تکایە جگە لە ماجیسک ئەپی تر بەکارمەهێنە بۆ ڕۆت کردن  </string>
+    <string name="unsupport_other_su_msg">\"su\" binary یەکی بێگانە دۆزرایەوە، تکایە جگە لە ماجیسک ئەپی تر بەکارمەهێنە بۆ ڕۆت کردن</string>
     <string name="unsupport_external_storage_msg">ماجیسک لە بیرگەی دەرەکی داگیراوە، تکایە بیبەوە بۆ ناوەکی</string>
     <string name="unsupport_nonroot_stub_msg">ئەپە شاراوەکە کار ناکات چونکە ڕۆتەکە نەماوە، تکایە ئەپە ڕەسەنەکە بگەڕێنەوە</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">ڕەزامەندی بیرگە بدە تاوەکوو ئەمە کار بکات</string>
     <string name="post_notifications_denied">ڕەزامەندی ئاگاداری بکە تاوەکوو ئەمە کار بکات</string>
-    <string name="install_unknown_denied">ڕەزامەندی "install unknown apps" تاوەکوو کار بکات</string>
+    <string name="install_unknown_denied">ڕەزامەندی install unknown apps تاوەکوو کار بکات</string>
     <string name="add_shortcut_title">زیادی بکە بۆ سەر شاشە</string>
     <string name="add_shortcut_msg">دوای شاردنەوەی ئەم ئەپە، ئەتەوێت یەک ئایکۆنی جوان زیادبکەیت بۆ سەر شاشەکە ئەگەر قورس بوو ئەوەی خۆی بدۆزیتەوە؟</string>
     <string name="app_not_found">هیچ ئەپێک نەدۆزرایەوە تاوەکوو ئەم کارەی پێ بکرێت</string>

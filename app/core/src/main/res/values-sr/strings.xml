@@ -19,14 +19,16 @@
     <string name="not_available">N/A</string>
     <string name="hide">Сакриј</string>    <string name="home_package">Пакет</string>
     <string name="home_app_title">Апл.</string>    <string name="reinstall">Поново инсталирај</string>
-    <string name="home_notice_content">Преузмите Magisk САМО са званичне GitHub странице. Фајлови из непознатих извора могу бити малициозни!</string>
+    <string name="home_notice_content">Преузмите Kitsune Mask САМО са званичне GitHub странице. Фајлови из непознатих извора могу бити малициозни!</string>
     <string name="home_support_title">Подржите нас</string>
     <string name="home_follow_title">Запратите нас</string>
     <string name="home_item_source">Извор</string>
-    <string name="home_support_content">Magisk јесте и увек ће бити бесплатан и open source. Међутим, можете показати да Вам је стало својом донацијом.</string>    <string name="home_installed_version">Инсталирано</string>
+    <string name="home_support_content">Kitsune Mask јесте и увек ће бити бесплатан и open source. Међутим, можете показати да вам је стало својом донацијом.</string>    <string name="home_installed_version">Инсталирано</string>
     <string name="home_latest_version">Најновије</string>
-    <string name="invalid_update_channel">Невалидан канал ажурирања</string>    <string name="uninstall_magisk_title">Деинсталирај Magisk</string>
-    <string name="uninstall_magisk_msg">Сви модули ће бити онемогућени/уклоњени!\nКорен ће бити уклоњен!\nСвако неенкриптовано интерно складиште ће употребом Magisk-а бити поново енкриптовано!</string>
+    <string name="invalid_update_channel">Невалидан канал ажурирања</string>    <string name="uninstall_magisk_title">Деинсталирај Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Сви модули ће бити онемогућени/уклоњени!
+Корен ће бити уклоњен!
+Свако неенкриптовано интерно складиште ће употребом Kitsune Mask-а бити поново енкриптовано!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Задржи форсирану енкрипцију</string>
@@ -37,7 +39,9 @@
     <string name="install_next">Наредно</string>
     <string name="install_start">Почнимо</string>
     <string name="manager_download_install">Притисни да преузмеш и инсталираш</string>
-    <string name="direct_install">Директна инсталација (Препоручено)</string>    <string name="install_inactive_slot">Инсталација на неактиван слот (Након OTA)</string>    <string name="install_inactive_slot_msg">Ваш уређај ће бити ФОРСИРАН да се покрене на тренутно неактивном слоту након поновног покретања!\nКористите опцију само кад се OTA заврши.\nНастави?</string>
+    <string name="direct_install">Директна инсталација (Препоручено)</string>    <string name="install_inactive_slot">Инсталација на неактиван слот (Након OTA)</string>    <string name="install_inactive_slot_msg">"Ваш уређај ће бити ФОРСИРАН да се покрене на тренутно неактивном слоту након поновног покретања!
+Користите опцију само кад се OTA заврши.
+Настави?"</string>
     <string name="setup_title">Додатне поставке</string>
     <string name="download_dialog_title">Унеси URL слике</string>
     <string name="download_dialog_msg">Потпуна OTA слика или фабричка слика</string>
@@ -80,7 +84,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Немате логова. Покушајте користити коренске апликације више.</string>
-    <string name="log_data_magisk_none">Magisk логови су празни, то је чудно.</string>
+    <string name="log_data_magisk_none">Kitsune Mask логови су празни, то је чудно.</string>
     <string name="menuSaveLog">Сачувај лог</string>
     <string name="menuClearLog">Уклони лог</string>
     <string name="logs_cleared">Лог успешно уклоњен</string>    <string name="back">Назад</string>    <string name="enabled">Омогућено</string>
@@ -93,7 +97,7 @@
     <string name="granted">Одобрено</string>
     <string name="denied">Одбијено</string>
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Прикажи системске апл.</string>
     <string name="show_os_app">Прикажи апл. ОС-а</string>
     <string name="hide_filter_hint">Филтрирај по имену</string>
@@ -128,15 +132,15 @@
 
     <!--Settings-->
     <string name="settings_dark_mode_title">Тема</string>
-    <string name="settings_dark_mode_message">Изаберите тему која Вам највише одговара!</string>
+    <string name="settings_dark_mode_message">Изаберите тему која вам највише одговара!</string>
     <string name="settings_dark_mode_light">Увек светло</string>
     <string name="settings_dark_mode_system">Прати систем</string>
     <string name="settings_dark_mode_dark">Увек тамно</string>
     <string name="settings_download_path_title">Путања за преузимање</string>
     <string name="settings_download_path_message">Фајлови ће бити сачувани на %1$s</string>
-    <string name="settings_hide_app_title">Сакриј Magisk апл.</string>
+    <string name="settings_hide_app_title">Сакриј Kitsune Mask апл.</string>
     <string name="settings_hide_app_summary">Инсталирај proxy апликацију са насумичним ID-јем пакета и прилагођеном лабелом</string>
-    <string name="settings_restore_app_title">Поврати Magisk апл.</string>
+    <string name="settings_restore_app_title">Поврати Kitsune Mask апл.</string>
     <string name="settings_restore_app_summary">Откриј апл. и поврати оригинални APK</string>
     <string name="language">Језик</string>
     <string name="system_default">(Подразумевано системски)</string>
@@ -148,9 +152,9 @@
     <string name="settings_update_debug">Debug</string>
     <string name="settings_update_custom">Прилагођено</string>
     <string name="settings_update_custom_msg">Унеси прилагођени URL канала</string>
-    <string name="settings_zygisk_summary">Покрени делове Magisk-а у Zygote daemon-у</string>
+    <string name="settings_zygisk_summary">Покрени делове Kitsune Mask-а у Zygote daemon-у</string>
     <string name="settings_denylist_title">Спроведи листу забрана</string>
-    <string name="settings_denylist_summary">Процеси на листи забрана ће повратити све Magisk измене</string>
+    <string name="settings_denylist_summary">Процеси на листи забрана ће повратити све Kitsune Mask измене</string>
     <string name="settings_denylist_config_title">Конфигуриши листу забрана</string>
     <string name="settings_denylist_config_summary">Изабери процесе који ће бити на листи забрана</string>
     <string name="settings_hosts_title">Безсистемски домаћини (hosts)</string>
@@ -198,13 +202,13 @@
     <string name="isolate_summary">Свака коренска сесија ће имати свој изоловани namespace</string>
 
     <!--Notifications-->
-    <string name="update_channel">Ажурирања Magisk-а</string>
+    <string name="update_channel">Ажурирања Kitsune Mask-а</string>
     <string name="progress_channel">Нотификације о прогресу</string>
     <string name="updated_channel">Ажурирање завршено</string>
     <string name="download_complete">Преузимање завршено</string>
     <string name="download_file_error">Грешка при преузимању фајла</string>
-    <string name="magisk_update_title">Ажурирање Magisk-а доступно!</string>
-    <string name="updated_title">Magisk је ажуриран</string>
+    <string name="magisk_update_title">Ажурирање Kitsune Mask-а доступно!</string>
+    <string name="updated_title">Kitsune Mask је ажуриран</string>
     <string name="updated_text">Кликни да отвориш апликацију</string>
 
     <!--Toasts, Dialogs-->
@@ -218,7 +222,7 @@
     <string name="flashing">Флешовање…</string>    <string name="done">Завршено!</string>
     <string name="done_action">Покретање акције %1$s завршено</string>
     <string name="failure">Неуспешно!</string>
-    <string name="hide_app_title">Скривање Magisk апликације…</string>
+    <string name="hide_app_title">Скривање Kitsune Mask апликације…</string>
     <string name="open_link_failed_toast">Није пронађена апликација за отварање линка</string>
     <string name="complete_uninstall">Комплетна деинсталација</string>
     <string name="restore_img">Поврати слике</string>
@@ -227,16 +231,18 @@
     <string name="restore_fail">Фабрички бекап не постоји!</string>
     <string name="setup_fail">Неуспешна поставка</string>
     <string name="env_fix_title">Потребно додатно подешавање</string>
-    <string name="env_fix_msg">Ваш уређај захтева додатно подешавање да би Magisk радио како треба. Да ли желите наставити и покренути поново?</string>
-    <string name="env_full_fix_msg">Ваш уређај захтева поновно флешовање да би Magisk радио како треба. Реинсталирајте Magisk кроз апликацију, режим опоравка не може добити тачне информације о уређају.</string>
+    <string name="env_fix_msg">Ваш уређај захтева додатно подешавање да би Kitsune Mask радио како треба. Да ли желите наставити и покренути поново?</string>
+    <string name="env_full_fix_msg">Ваш уређај захтева поновно флешовање да би Kitsune Mask радио како треба. Реинсталирајте Kitsune Mask кроз апликацију, режим опоравка не може добити тачне информације о уређају.</string>
     <string name="setup_msg">Покретање подешавања окружења…</string>
-    <string name="unsupport_magisk_title">Неподржана верзија Magisk-а</string>
-    <string name="unsupport_magisk_msg">Ова верзија апликације не подржава Magisk верзије мање од %1$s.\n\nАпликација ће се понашати као да Magisk није инсталиран. Молимо ажурирајте Magisk што пре.</string>
+    <string name="unsupport_magisk_title">Неподржана верзија Kitsune Mask-а</string>
+    <string name="unsupport_magisk_msg">"Ова верзија апликације не подржава Kitsune Mask верзије мање од %1$s.
+
+Апликација ће се понашати као да Kitsune Mask није инсталиран. Молимо ажурирајте Kitsune Mask што пре."</string>
     <string name="unsupport_general_title">Ненормално стање</string>
     <string name="unsupport_system_app_msg">Покретање апликације као системске није подржано. Молимо поставите апликацију да буде корисничка.</string>
-    <string name="unsupport_other_su_msg">Детектован \"su\" binary који није Magisk-ов. Молимо уклоните конкурентно коренско решење и/или реинсталирајте Magisk.</string>
-    <string name="unsupport_external_storage_msg">Magisk је инсталиран на екстерно складиште. Молимо померите апл. у интерно складиште.</string>
-    <string name="unsupport_nonroot_stub_msg">Скривена Magisk апликација не може наставити са радом јер је корен изгубљен. Молимо повратите оригинални APK.</string>
+    <string name="unsupport_other_su_msg">Детектован \"su\" binary који није Kitsune Mask-ов. Молимо уклоните конкурентно коренско решење и/или реинсталирајте Kitsune Mask.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask је инсталиран на екстерно складиште. Молимо померите апл. у интерно складиште.</string>
+    <string name="unsupport_nonroot_stub_msg">Скривена Kitsune Mask апликација не може наставити са радом јер је корен изгубљен. Молимо повратите оригинални APK.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Дозволите пермисију за складиште да бисте омогућили ову функционалност</string>
     <string name="post_notifications_denied">Дозволите пермисију за нотификације да бисте омогућили ову функционалност</string>

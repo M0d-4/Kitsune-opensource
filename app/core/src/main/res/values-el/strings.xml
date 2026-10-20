@@ -20,15 +20,15 @@
     <string name="home_package">Πακέτο</string>
     <string name="home_app_title">Εφαρμογή</string>
 
-    <string name="home_notice_content">Κάντε λήψη του Magisk ΜΟΝΟ από την επίσημη σελίδα του GitHub. Τα αρχεία από άγνωστες πηγές μπορεί να είναι κακόβουλα!</string>
+    <string name="home_notice_content">Κάντε λήψη του Kitsune Mask ΜΟΝΟ από την επίσημη σελίδα του GitHub. Τα αρχεία από άγνωστες πηγές μπορεί να είναι κακόβουλα!</string>
     <string name="home_support_title">Υποστήριξη</string>
     <string name="home_follow_title">Ακολούθησε μας</string>
     <string name="home_item_source">Πηγή</string>
-    <string name="home_support_content">Το Magisk είναι, και θα είναι για πάντα, δωρεάν και ανοιχτού κώδικα. Μπορείτε ωστόσο να μας δείξετε ότι ενδιαφέρεστε στέλνοντας μια μικρή δωρεά.</string>
+    <string name="home_support_content">Το Kitsune Mask είναι, και θα είναι για πάντα, δωρεάν και ανοιχτού κώδικα. Μπορείτε ωστόσο να μας δείξετε ότι ενδιαφέρεστε στέλνοντας μια μικρή δωρεά.</string>
     <string name="home_installed_version">Τρέχουσα έκδοση</string>
     <string name="home_latest_version">Διαθέσιμη έκδοση</string>
     <string name="invalid_update_channel">Λανθασμένο κανάλι ενημέρωσης</string>
-    <string name="uninstall_magisk_title">Απεγκατάσταση Magisk</string>
+    <string name="uninstall_magisk_title">Απεγκατάσταση Kitsune Mask</string>
     <string name="uninstall_magisk_msg">Όλα τα modules θα απενεργοποιηθούν/αφαιρεθούν. Το root θα αφαιρεθεί και ενδέχεται να κρυπτογραφηθούν τα δεδομένα σας, εάν δεν είναι κρυπτογραφημένα!</string>
 
     <!--Install-->
@@ -42,7 +42,9 @@
     <string name="manager_download_install">Πιέστε για λήψη και εγκατάσταση</string>
     <string name="direct_install">Απευθείας Εγκατάσταση (Προτείνεται)</string>
     <string name="install_inactive_slot">Εγκατάσταση στο ανενεργό Slot (Μετά από OTA)</string>
-    <string name="install_inactive_slot_msg">Η συσκευή σας θα αναγκαστεί να εκκινήσει στο τρέχον ανενεργό Slot μετά από επανεκκίνηση!\nΧρησιμοποιήστε αυτήν την επιλογή μόνο αφού ολοκληρωθεί το OTA.\nΣυνέχεια;</string>
+    <string name="install_inactive_slot_msg">"Η συσκευή σας θα αναγκαστεί να εκκινήσει στο τρέχον ανενεργό Slot μετά από επανεκκίνηση!
+Χρησιμοποιήστε αυτήν την επιλογή μόνο αφού ολοκληρωθεί το OTA.
+Συνέχεια;"</string>
     <string name="setup_title">Πρόσθετη εγκατάσταση</string>
     <string name="reboot_delay_toast">Επανεκκίνηση σε 5 δευτερόλεπτα…</string>
     <string name="flash_screen_title">Εγκατάσταση</string>
@@ -79,7 +81,7 @@
 	
     <!--Logs-->
     <string name="log_data_none">Δεν υπάρχουν αρχεία καταγραφής, δοκιμάστε να χρησιμοποιήσετε περισσότερο τις εφαρμογές με δυνατότητα SU</string>
-    <string name="log_data_magisk_none">Τα αρχεία καταγραφής του Magisk είναι κενά, αυτό είναι περίεργο</string>
+    <string name="log_data_magisk_none">Τα αρχεία καταγραφής του Kitsune Mask είναι κενά, αυτό είναι περίεργο</string>
     <string name="menuSaveLog">Αποθήκευση καταγραφής</string>
     <string name="menuClearLog">Εκκαθάριση αρχείου καταγραφής</string>
     <string name="logs_cleared">Το αρχείο καταγραφής εκκαθαρίστηκε επιτυχώς</string>
@@ -88,7 +90,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Εμφάνιση εφαρμογών συστήματος</string>
     <string name="show_os_app">Εμφάνιση εφαρμογών OS</string>
     <string name="hide_filter_hint">Φιλτράρισμα</string>
@@ -119,9 +121,9 @@
     <string name="settings_dark_mode_dark">Πάντα Dark</string>
     <string name="settings_download_path_title">Διαδρομή λήψης</string>
     <string name="settings_download_path_message">Τα αρχεία θα αποθηκευτούν στο %1$s</string>
-    <string name="settings_hide_app_title">Απόκρυψη της εφαρμογής Magisk</string>
+    <string name="settings_hide_app_title">Απόκρυψη της εφαρμογής Kitsune Mask</string>
     <string name="settings_hide_app_summary">Εγκαταστήστε μια εφαρμογή με τυχαίο αναγνωριστικό πακέτου και προσαρμοσμένη ετικέτα εφαρμογής</string>
-    <string name="settings_restore_app_title">Επαναφέρετε την εφαρμογή Magisk</string>
+    <string name="settings_restore_app_title">Επαναφέρετε την εφαρμογή Kitsune Mask</string>
     <string name="settings_restore_app_summary">Καταργήστε την απόκρυψη της εφαρμογής και επαναφέρετέ την στο αρχικό APK</string>
     <string name="language">Γλώσσα</string>
     <string name="system_default">(Προεπιλογή Συστήματος)</string>
@@ -132,9 +134,9 @@
     <string name="settings_update_beta">Δοκιμαστικό</string>
     <string name="settings_update_custom">Προσαρμοσμένο</string>
     <string name="settings_update_custom_msg">Εισαγωγή ενός custom URL</string>
-    <string name="settings_zygisk_summary">Εκτέλεση μέρους του Magisk μέσα στο zygote daemon</string>
+    <string name="settings_zygisk_summary">Εκτέλεση μέρους του Kitsune Mask μέσα στο zygote daemon</string>
     <string name="settings_denylist_title">Επιβολή Λίστας Απορρίψεων</string>
-    <string name="settings_denylist_summary">Επαναφορά όλων των τροποποιήσεων του Magisk για της διεργασίες στην λίστα απορρίψεων</string>
+    <string name="settings_denylist_summary">Επαναφορά όλων των τροποποιήσεων του Kitsune Mask για της διεργασίες στην λίστα απορρίψεων</string>
     <string name="settings_denylist_config_title">Τροποποίηση της Λίστας Απορρίψεων</string>
     <string name="settings_denylist_config_summary">Επιλογή διεργασίας για να συμπεριληφθεί στη λίστα απορρίψεων</string>
     <string name="settings_hosts_title">Systemless hosts</string>
@@ -170,13 +172,13 @@
     <string name="isolate_summary">Κάθε συνεδρία root θα έχει το δικό της απομονωμένο χώρο ονομάτων</string>
 
     <!--Notifications-->
-    <string name="update_channel">Ενημερώσεις Magisk</string>
+    <string name="update_channel">Ενημερώσεις Kitsune Mask</string>
     <string name="progress_channel">Ειδοποιήσεις προόδου</string>
     <string name="updated_channel">Η Αναβάθμηση Ολοκληρώθηκε</string>
     <string name="download_complete">Η λήψη ολοκληρώθηκε</string>
     <string name="download_file_error">Σφάλμα στη λήψη του αρχείου</string>
-    <string name="magisk_update_title">Νέα Ενημέρωση Magisk Διαθέσιμη!</string>
-    <string name="updated_title">Το Magisk Ενημερώθηκε</string>
+    <string name="magisk_update_title">Νέα Ενημέρωση Kitsune Mask Διαθέσιμη!</string>
+    <string name="updated_title">Το Kitsune Mask Ενημερώθηκε</string>
     <string name="updated_text">Πατήστε για άνοιγμα εφαρμογής</string>
 
     <!--Toasts, Dialogs-->
@@ -189,7 +191,7 @@
     <string name="flashing">Προγραμματισμός σε εξέλιξη</string>
     <string name="done">Ολοκληρώθηκε</string>
     <string name="failure">Αποτυχία</string>
-    <string name="hide_app_title">Απόκρυψη της εφαρμογής Magisk…</string>
+    <string name="hide_app_title">Απόκρυψη της εφαρμογής Kitsune Mask…</string>
     <string name="open_link_failed_toast">Δεν βρέθηκε εφαρμογή για άνοιγμα του συνδέσμου</string>
     <string name="complete_uninstall">Πλήρης απεγκατάσταση</string>
     <string name="restore_img">Επαναφορά Images</string>
@@ -198,18 +200,20 @@
     <string name="restore_fail">Δεν υπάρχει αντίγραφο ασφαλείας!</string>
     <string name="setup_fail">Η εγκατάσταση απέτυχε</string>
     <string name="env_fix_title">Απαιτείται πρόσθετη εγκατάσταση</string>
-    <string name="env_fix_msg">Η συσκευή σας χρειάζεται πρόσθετη ρύθμιση για να λειτουργεί σωστά το Magisk. Θέλετε να συνεχίσετε και να επανεκκινήσετε;</string>
+    <string name="env_fix_msg">Η συσκευή σας χρειάζεται πρόσθετη ρύθμιση για να λειτουργεί σωστά το Kitsune Mask. Θέλετε να συνεχίσετε και να επανεκκινήσετε;</string>
     <string name="setup_msg">Τρέχει η εγκατάσταση περιβάλλοντος…</string>
-    <string name="unsupport_magisk_title">Μη υποστηριζόμενη έκδοση Magisk</string>
-    <string name="unsupport_magisk_msg">Αυτή η έκδοση της εφαρμογής δεν υποστηρίζει έκδοση Magisk χαμηλότερη από %1$s.\n\nΗ εφαρμογή θα συμπεριφέρεται σαν να μην έχει εγκατασταθεί το Magisk, αναβαθμίστε το Magisk το συντομότερο δυνατό.</string>
+    <string name="unsupport_magisk_title">Μη υποστηριζόμενη έκδοση Kitsune Mask</string>
+    <string name="unsupport_magisk_msg">"Αυτή η έκδοση της εφαρμογής δεν υποστηρίζει έκδοση Kitsune Mask χαμηλότερη από %1$s.
+
+Η εφαρμογή θα συμπεριφέρεται σαν να μην έχει εγκατασταθεί το Kitsune Mask, αναβαθμίστε το Kitsune Mask το συντομότερο δυνατό."</string>
     <string name="unsupport_general_title">Μη Φυσιολογική Κατάσταση</string>
     <string name="unsupport_system_app_msg">Η εκτέλεση αυτής της εφαρμογής ως εφαρμογής συστήματος δεν υποστηρίζεται. Επαναφέρετε την εφαρμογή σε εφαρμογή χρήστη.</string>
-    <string name="unsupport_other_su_msg">Εντοπίστηκε ένα \"su\" binary που δεν είναι από το Magisk. Καταργήστε οποιαδήποτε άλλη root μέθοδο και/ή επανεγκαταστήστε το Magisk.</string>
-    <string name="unsupport_external_storage_msg">Το Magisk είναι εγκατεστημένο σε εξωτερικό χώρο αποθήκευσης. Μετακινήστε την εφαρμογή στον εσωτερικό χώρο αποθήκευσης.</string>
-    <string name="unsupport_nonroot_stub_msg">Η κρυφή εφαρμογή Magisk δεν μπορεί να συνεχίσει να λειτουργεί επειδή χάθηκε το root. Παρακαλώ επαναφέρετε το αρχικό APK.</string>
+    <string name="unsupport_other_su_msg">Εντοπίστηκε ένα \"su\" binary που δεν είναι από το Kitsune Mask. Καταργήστε οποιαδήποτε άλλη root μέθοδο και/ή επανεγκαταστήστε το Kitsune Mask.</string>
+    <string name="unsupport_external_storage_msg">Το Kitsune Mask είναι εγκατεστημένο σε εξωτερικό χώρο αποθήκευσης. Μετακινήστε την εφαρμογή στον εσωτερικό χώρο αποθήκευσης.</string>
+    <string name="unsupport_nonroot_stub_msg">Η κρυφή εφαρμογή Kitsune Mask δεν μπορεί να συνεχίσει να λειτουργεί επειδή χάθηκε το root. Παρακαλώ επαναφέρετε το αρχικό APK.</string>
     
 	<string name="external_rw_permission_denied">Παραχωρήστε άδεια αποθήκευσης για να ενεργοποιήσετε αυτήν τη λειτουργία</string>
-    <string name="install_unknown_denied">Επιτρέψτε την "εγκατάσταση άγνωστων εφαρμογών" για να ενεργοποιήσετε αυτήν τη λειτουργία</string>
+    <string name="install_unknown_denied">Επιτρέψτε την εγκατάσταση άγνωστων εφαρμογών για να ενεργοποιήσετε αυτήν τη λειτουργία</string>
     <string name="add_shortcut_title">Προσθέστε συντόμευση στην αρχική οθόνη</string>
     <string name="add_shortcut_msg">Μετά την απόκρυψη αυτής της εφαρμογής, το όνομα και το εικονίδιο της ενδέχεται να είναι δύσκολο να αναγνωριστούν. Θέλετε να προσθέσετε μια όμορφη συντόμευση στην αρχική οθόνη;</string>
     <string name="app_not_found">Δεν βρέθηκε εφαρμογή που να χειρίζεται αυτήν την ενέργεια</string>

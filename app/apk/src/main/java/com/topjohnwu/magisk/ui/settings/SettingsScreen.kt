@@ -23,6 +23,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import com.topjohnwu.magisk.core.utils.BootloopProtector
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -47,6 +53,7 @@ import com.topjohnwu.magisk.ui.component.MagiskDialog
 import com.topjohnwu.magisk.ui.component.SettingsArrow
 import com.topjohnwu.magisk.ui.component.SettingsDropdown
 import com.topjohnwu.magisk.ui.component.SettingsSwitch
+import com.topjohnwu.magisk.ui.ThemePalette
 import com.topjohnwu.magisk.ui.component.SmallTitle
 import com.topjohnwu.magisk.ui.component.verticalScrollbar
 import com.topjohnwu.magisk.core.R as CoreR
@@ -174,6 +181,36 @@ private fun CustomizationSection(
                 colorMode = newMode.value
                 Config.colorMode = newMode.value
                 ThemeState.colorMode = newMode.value
+            }
+        )
+
+        HorizontalDivider(
+            modifier = Modifier.padding(horizontal = 16.dp),
+            color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+        )
+
+        // Kitsune colour palette
+        var themeOrdinal by remember { mutableIntStateOf(Config.themeOrdinal) }
+        SettingsDropdown(
+            title = stringResource(CoreR.string.theme_title),
+            items = remember { ThemePalette.entries.map { it.label } },
+            selectedIndex = themeOrdinal.coerceIn(0, ThemePalette.entries.size - 1),
+            onSelectedIndexChange = { index ->
+                themeOrdinal = index
+                Config.themeOrdinal = index
+                ThemeState.themeOrdinal = index
+            }
+        )
+
+        var pureBlack by remember { mutableStateOf(Config.pureBlack) }
+        SettingsSwitch(
+            title = stringResource(CoreR.string.theme_pure_black),
+            summary = stringResource(CoreR.string.theme_pure_black_desc),
+            checked = pureBlack,
+            onCheckedChange = {
+                pureBlack = it
+                Config.pureBlack = it
+                ThemeState.pureBlack = it
             }
         )
 
@@ -385,6 +422,87 @@ private fun MagiskSection(
                 title = stringResource(CoreR.string.settings_denylist_config_title),
                 summary = stringResource(CoreR.string.settings_denylist_config_summary),
                 onClick = { viewModel.navigateToDenyList() }
+            )
+
+            HorizontalDivider(
+                modifier = Modifier.padding(horizontal = 16.dp),
+                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+            )
+
+            // SuList: only the listed apps can see/use root
+            val suListEnabled by viewModel.suListEnabled.collectAsStateWithLifecycle()
+            SettingsSwitch(
+                title = stringResource(CoreR.string.settings_sulist_title),
+                summary = stringResource(CoreR.string.settings_sulist_enabled),
+                checked = suListEnabled,
+                onCheckedChange = { viewModel.toggleSuList(it) }
+            )
+
+            if (suListEnabled) {
+                var autoGrant by remember { mutableStateOf(Config.sulistAutoGrant) }
+                SettingsSwitch(
+                    title = stringResource(CoreR.string.settings_sulist_auto_grant_title),
+                    summary = stringResource(CoreR.string.settings_sulist_auto_grant_summary),
+                    checked = autoGrant,
+                    onCheckedChange = {
+                        autoGrant = it
+                        Config.sulistAutoGrant = it
+                    }
+                )
+                SettingsArrow(
+                    title = stringResource(CoreR.string.settings_configure_sulist),
+                    summary = stringResource(CoreR.string.settings_sulist_summary),
+                    onClick = { viewModel.navigateToSuList() }
+                )
+            }
+
+            HorizontalDivider(
+                modifier = Modifier.padding(horizontal = 16.dp),
+                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+            )
+
+            // App-list hiding (hides chosen apps from other apps' package queries)
+            SettingsArrow(
+                title = stringResource(CoreR.string.applist_hide_title),
+                summary = stringResource(CoreR.string.applist_hide_desc),
+                onClick = { viewModel.navigateToAppList() }
+            )
+
+            HorizontalDivider(
+                modifier = Modifier.padding(horizontal = 16.dp),
+                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+            )
+
+            SettingsArrow(
+                title = stringResource(CoreR.string.module_review_title),
+                summary = stringResource(CoreR.string.module_review_open),
+                onClick = { viewModel.navigateToModuleReview() }
+            )
+
+            HorizontalDivider(
+                modifier = Modifier.padding(horizontal = 16.dp),
+                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+            )
+
+            // Bootloop protection
+            val bootloopScope = rememberCoroutineScope()
+            var bootloop by remember { mutableStateOf(false) }
+            LaunchedEffect(Unit) {
+                bootloop = withContext(Dispatchers.IO) { BootloopProtector.isEnabled() }
+            }
+            SettingsSwitch(
+                title = stringResource(CoreR.string.settings_bootloop_title),
+                summary = stringResource(CoreR.string.settings_bootloop_summary),
+                checked = bootloop,
+                onCheckedChange = { on ->
+                    bootloop = on
+                    bootloopScope.launch {
+                        val ok = withContext(Dispatchers.IO) {
+                            if (on) BootloopProtector.enable() else BootloopProtector.disable()
+                        }
+                        if (!ok) bootloop = !on
+                    }
+                }
             )
         }
     }

@@ -18,16 +18,18 @@
     <string name="home_package">پیکیج</string>
     <string name="home_app_title">ایپ</string>
 
-    <string name="home_notice_content">صرف آفیشل گٹ ہب پیج سے Magisk ڈاؤن لوڈ کریں۔ نامعلوم ذرائع سے فائلیں نقصان دہ ہو سکتی ہیں!</string>
+    <string name="home_notice_content">صرف آفیشل گٹ ہب پیج سے Kitsune Mask ڈاؤن لوڈ کریں۔ نامعلوم ذرائع سے فائلیں نقصان دہ ہو سکتی ہیں!</string>
     <string name="home_support_title">ہماری مدد کریں</string>
     <string name="home_follow_title">ہمیں فالو کریں</string>
     <string name="home_item_source">ذریعہ</string>
-    <string name="home_support_content">Magisk ہمیشہ مفت اور اوپن سورس رہے گا۔ تاہم، آپ عطیہ کر کے ہمیں اپنی دیکھ بھال کا اظہار کر سکتے ہیں۔</string>
+    <string name="home_support_content">Kitsune Mask ہمیشہ مفت اور اوپن سورس رہے گا۔ تاہم، آپ عطیہ کر کے ہمیں اپنی دیکھ بھال کا اظہار کر سکتے ہیں۔</string>
     <string name="home_installed_version">انسٹال شدہ</string>
     <string name="home_latest_version">تازہ ترین</string>
     <string name="invalid_update_channel">غلط اپ ڈیٹ چینل</string>
-    <string name="uninstall_magisk_title">Magisk اَن انسٹال کریں</string>
-    <string name="uninstall_magisk_msg">تمام ماڈیولز غیر فعال/ہٹا دیے جائیں گے!\nروٹ ہٹا دیا جائے گا!\nMagisk کے استعمال کے ذریعے غیر اینکرپٹ کی گئی کوئی بھی اندرونی اسٹوریج دوبارہ اینکرپٹ ہو جائے گی!</string>
+    <string name="uninstall_magisk_title">Kitsune Mask اَن انسٹال کریں</string>
+    <string name="uninstall_magisk_msg">"تمام ماڈیولز غیر فعال/ہٹا دیے جائیں گے!
+روٹ ہٹا دیا جائے گا!
+Kitsune Mask کے استعمال کے ذریعے غیر اینکرپٹ کی گئی کوئی بھی اندرونی اسٹوریج دوبارہ اینکرپٹ ہو جائے گی!"</string>
 
     <string name="keep_force_encryption">جبری انکرپشن کو محفوظ رکھیں</string>
     <string name="keep_dm_verity">AVB 2.0/dm-verity کو محفوظ رکھیں</string>
@@ -39,7 +41,9 @@
     <string name="manager_download_install">ڈاؤن لوڈ اور انسٹال کرنے کے لیے دبائیں</string>
     <string name="direct_install">براہ راست انسٹال (تجویز کردہ)</string>
     <string name="install_inactive_slot">غیر فعال سلاٹ میں انسٹال کریں (OTA کے بعد)</string>
-    <string name="install_inactive_slot_msg">ریبوٹ کے بعد آپ کا آلہ زبردستی موجودہ غیر فعال سلاٹ میں بوٹ ہو جائے گا!\nیہ آپشن صرف OTA مکمل ہونے کے بعد استعمال کریں۔\nجاری رکھیں؟</string>
+    <string name="install_inactive_slot_msg">"ریبوٹ کے بعد آپ کا آلہ زبردستی موجودہ غیر فعال سلاٹ میں بوٹ ہو جائے گا!
+یہ آپشن صرف OTA مکمل ہونے کے بعد استعمال کریں۔
+جاری رکھیں؟"</string>
     <string name="setup_title">اضافی سیٹ اپ</string>
     <string name="reboot_delay_toast">5 سیکنڈ میں ریبوٹ ہو رہا ہے…</string>
     <string name="flash_screen_title">انسٹالیشن</string>
@@ -74,7 +78,7 @@
     <string name="superuser_policy_none">ابھی تک کسی ایپ نے سپر یوزر کی اجازت نہیں مانگی ہے۔</string>
 
     <string name="log_data_none">آپ لاگ فری ہیں، اپنی روٹ ایپس کو مزید استعمال کرنے کی کوشش کریں</string>
-    <string name="log_data_magisk_none">Magisk لاگز خالی ہیں، یہ عجیب بات ہے</string>
+    <string name="log_data_magisk_none">Kitsune Mask لاگز خالی ہیں، یہ عجیب بات ہے</string>
     <string name="menuSaveLog">لاگ محفوظ کریں</string>
     <string name="menuClearLog">ابھی لاگ صاف کریں</string>
     <string name="logs_cleared">لاگ کامیابی سے صاف ہو گیا</string>
@@ -115,9 +119,9 @@
     <string name="settings_dark_mode_dark">ہمیشہ ڈارک</string>
     <string name="settings_download_path_title">ڈاؤن لوڈ کا راستہ</string>
     <string name="settings_download_path_message">فائلیں %1$s میں محفوظ کی جائیں گی</string>
-    <string name="settings_hide_app_title">Magisk ایپ کو چھپائیں</string>
+    <string name="settings_hide_app_title">Kitsune Mask ایپ کو چھپائیں</string>
     <string name="settings_hide_app_summary">ایک رینڈم پیکیج ID اور کسٹم ایپ لیبل کے ساتھ ایک پراکسی ایپ انسٹال کریں</string>
-    <string name="settings_restore_app_title">Magisk ایپ کو بحال کریں</string>
+    <string name="settings_restore_app_title">Kitsune Mask ایپ کو بحال کریں</string>
     <string name="settings_restore_app_summary">ایپ کو ان ہائیڈ کریں اور اصل APK کو بحال کریں</string>
     <string name="language">زبان</string>
     <string name="system_default">(سسٹم ڈیفالٹ)</string>
@@ -128,9 +132,9 @@
     <string name="settings_update_beta">بیٹا</string>
     <string name="settings_update_custom">کسٹم</string>
     <string name="settings_update_custom_msg">ایک کسٹم چینل URL درج کریں</string>
-    <string name="settings_zygisk_summary">zygote ڈیمن میں Magisk کے کچھ حصے چلائیں</string>
+    <string name="settings_zygisk_summary">zygote ڈیمن میں Kitsune Mask کے کچھ حصے چلائیں</string>
     <string name="settings_denylist_title">مسترد فہرست نافذ کریں</string>
-    <string name="settings_denylist_summary">مسترد فہرست میں موجود عملوں میں Magisk کی تمام ترامیم کو کالعدم قرار دیا جائے گا</string>
+    <string name="settings_denylist_summary">مسترد فہرست میں موجود عملوں میں Kitsune Mask کی تمام ترامیم کو کالعدم قرار دیا جائے گا</string>
     <string name="settings_denylist_config_title">مسترد فہرست کی تشکیل کریں</string>
     <string name="settings_denylist_config_summary">مسترد فہرست میں شامل کرنے کے لیے عمل منتخب کریں</string>
     <string name="settings_hosts_title">سسٹم لیس ہوسٹس</string>
@@ -167,13 +171,13 @@
     <string name="settings_ns_requester">نیم اسپیس وراثت میں حاصل کریں</string>
     <string name="settings_ns_isolate">آئسولیٹڈ نیم اسپیس</string>
     <string name="isolate_summary">ہر روٹ سیشن کی اپنی آئسولیٹڈ نیم اسپیس ہوگی</string>
-    <string name="update_channel">Magisk اپ ڈیٹس</string>
+    <string name="update_channel">Kitsune Mask اپ ڈیٹس</string>
     <string name="progress_channel">پیش رفت کی اطلاعات</string>
     <string name="updated_channel">اپ ڈیٹ مکمل</string>
     <string name="download_complete">ڈاؤن لوڈ مکمل</string>
     <string name="download_file_error">فائل ڈاؤن لوڈ کرنے میں خرابی</string>
-    <string name="magisk_update_title">Magisk اپ ڈیٹ دستیاب ہے!</string>
-    <string name="updated_title">Magisk اپ ڈیٹ ہو گیا</string>
+    <string name="magisk_update_title">Kitsune Mask اپ ڈیٹ دستیاب ہے!</string>
+    <string name="updated_title">Kitsune Mask اپ ڈیٹ ہو گیا</string>
     <string name="updated_text">ایپ کھولنے کے لیے ٹیپ کریں</string>
     <string name="yes">ہاں</string>
     <string name="no">نہیں</string>
@@ -185,7 +189,7 @@
     <string name="flashing">فلیش ہو رہا ہے…</string>
     <string name="done">ہو گیا!</string>
     <string name="failure">ناکام!</string>
-    <string name="hide_app_title">Magisk ایپ کو چھپایا جا رہا ہے…</string>
+    <string name="hide_app_title">Kitsune Mask ایپ کو چھپایا جا رہا ہے…</string>
     <string name="open_link_failed_toast">لنک کھولنے کے لیے کوئی ایپ نہیں ملی</string>
     <string name="complete_uninstall">مکمل ان انسٹال</string>
     <string name="restore_img">تصاویر بحال کریں</string>
@@ -193,21 +197,23 @@
     <string name="restore_done">بحالی مکمل ہو گئی!</string>
     <string name="restore_fail">اسٹاک بیک اپ موجود نہیں ہے!</string>
     <string name="setup_fail">سیٹ اپ ناکام ہو گیا</string>
-    <string name="env_full_fix_msg">Magisk کو صحیح طریقے سے کام کرنے کے لیے آپ کے آلے کو دوبارہ فلیش کرنے کی ضرورت ہے۔ براہ کرم ایپ کے اندر Magisk کو دوبارہ انسٹال کریں، ریکوری موڈ درست ڈیوائس کی معلومات حاصل نہیں کر سکتا۔</string>
+    <string name="env_full_fix_msg">Kitsune Mask کو صحیح طریقے سے کام کرنے کے لیے آپ کے آلے کو دوبارہ فلیش کرنے کی ضرورت ہے۔ براہ کرم ایپ کے اندر Kitsune Mask کو دوبارہ انسٹال کریں، ریکوری موڈ درست ڈیوائس کی معلومات حاصل نہیں کر سکتا۔</string>
     <string name="env_fix_title">اضافی سیٹ اپ درکار ہے</string>
-    <string name="env_fix_msg">Magisk کو صحیح طریقے سے کام کرنے کے لیے آپ کے آلے کو اضافی سیٹ اپ کی ضرورت ہے۔ کیا آپ جاری رکھنا چاہتے ہیں اور ریبوٹ کرنا چاہتے ہیں؟</string>
+    <string name="env_fix_msg">Kitsune Mask کو صحیح طریقے سے کام کرنے کے لیے آپ کے آلے کو اضافی سیٹ اپ کی ضرورت ہے۔ کیا آپ جاری رکھنا چاہتے ہیں اور ریبوٹ کرنا چاہتے ہیں؟</string>
     <string name="setup_msg">ماحول کا سیٹ اپ چل رہا ہے…</string>
-    <string name="unsupport_magisk_title">Magisk کا غیر تعاون یافتہ ورژن</string>
-    <string name="unsupport_magisk_msg">ایپ کا یہ ورژن %1$s سے کم Magisk ورژنز کو سپورٹ نہیں کرتا ہے۔\n\nایپ ایسے برتاؤ کرے گی جیسے کوئی Magisk انسٹال نہیں ہے، براہ کرم جلد از جلد Magisk کو اپ گریڈ کریں۔</string>
+    <string name="unsupport_magisk_title">Kitsune Mask کا غیر تعاون یافتہ ورژن</string>
+    <string name="unsupport_magisk_msg">"ایپ کا یہ ورژن %1$s سے کم Kitsune Mask ورژنز کو سپورٹ نہیں کرتا ہے۔
+
+ایپ ایسے برتاؤ کرے گی جیسے کوئی Kitsune Mask انسٹال نہیں ہے، براہ کرم جلد از جلد Kitsune Mask کو اپ گریڈ کریں۔"</string>
     <string name="unsupport_general_title">غیر معمولی حالت</string>
     <string name="unsupport_system_app_msg">سسٹم ایپ کے طور پر اس ایپ کو چلانا تعاون یافتہ نہیں ہے۔ براہ کرم ایپ کو صارف ایپ میں واپس کریں۔</string>
-    <string name="unsupport_other_su_msg">Magisk کے علاوہ کسی اور "su" بائنری کا پتہ چلا ہے۔ براہ کرم کسی بھی مسابقتی روٹ حل کو ہٹا دیں اور/یا Magisk کو دوبارہ انسٹال کریں۔</string>
-    <string name="unsupport_external_storage_msg">Magisk بیرونی اسٹوریج پر انسٹال ہے۔ براہ کرم ایپ کو اندرونی اسٹوریج میں منتقل کریں۔</string>
-    <string name="unsupport_nonroot_stub_msg">چھپی ہوئی Magisk ایپ کام جاری نہیں رکھ سکتی کیونکہ روٹ ختم ہو گیا ہے۔ براہ کرم اصل APK کو بحال کریں۔</string>
+    <string name="unsupport_other_su_msg">Kitsune Mask کے علاوہ کسی اور su بائنری کا پتہ چلا ہے۔ براہ کرم کسی بھی مسابقتی روٹ حل کو ہٹا دیں اور/یا Kitsune Mask کو دوبارہ انسٹال کریں۔</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask بیرونی اسٹوریج پر انسٹال ہے۔ براہ کرم ایپ کو اندرونی اسٹوریج میں منتقل کریں۔</string>
+    <string name="unsupport_nonroot_stub_msg">چھپی ہوئی Kitsune Mask ایپ کام جاری نہیں رکھ سکتی کیونکہ روٹ ختم ہو گیا ہے۔ براہ کرم اصل APK کو بحال کریں۔</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">اس فعالیت کو فعال کرنے کے لیے اسٹوریج کی اجازت دیں</string>
     <string name="post_notifications_denied">اس فعالیت کو فعال کرنے کے لیے اطلاعات کی اجازت دیں</string>
-    <string name="install_unknown_denied">اس فعالیت کو فعال کرنے کے لیے "نامعلوم ایپس انسٹال کریں" کی اجازت دیں</string>
+    <string name="install_unknown_denied">اس فعالیت کو فعال کرنے کے لیے نامعلوم ایپس انسٹال کریں کی اجازت دیں</string>
     <string name="add_shortcut_title">ہوم اسکرین پر شارٹ کٹ شامل کریں</string>
     <string name="add_shortcut_msg">اس ایپ کو چھپانے کے بعد، اس کا نام اور آئیکن پہچاننا مشکل ہو سکتا ہے۔ کیا آپ ہوم اسکرین پر ایک خوبصورت شارٹ کٹ شامل کرنا چاہتے ہیں؟</string>
     <string name="app_not_found">اس عمل کو سنبھالنے کے لیے کوئی ایپ نہیں ملی</string>

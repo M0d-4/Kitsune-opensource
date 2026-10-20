@@ -14,6 +14,12 @@ enum : int {
     REMOVE,
     LIST,
     STATUS,
+    ENFORCE_SULIST,
+    DISABLE_SULIST,
+    ADD_SULIST,
+    REMOVE_SULIST,
+    LIST_SULIST,
+    STATUS_SULIST,
 
     END
 };
@@ -29,6 +35,9 @@ enum : int {
     INVALID_PKG,
     NO_NS,
     ERROR,
+    SULIST_ENFORCED,
+    SULIST_NOT_ENFORCED,
+    SULIST_NO_DISABLE,
 
     END
 };
@@ -37,9 +46,11 @@ enum : int {
 // CLI entries
 int enable_deny();
 int disable_deny();
-int add_list(int client);
-int rm_list(int client);
-void ls_list(int client);
+int add_list(int client, bool sulist = false);
+int rm_list(int client, bool sulist = false);
+void ls_list(int client, bool sulist = false);
+int enable_sulist();
+int disable_sulist();
 
 bool proc_context_match(int pid, std::string_view context);
 void *logcat(void *arg);

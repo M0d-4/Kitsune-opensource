@@ -7,7 +7,7 @@
     <string name="settings">Instellingen</string>
     <string name="install">Installeren</string>
     <string name="section_home">Overzicht</string>
-    <string name="section_theme">Thema\'s</string>
+    <string name="section_theme">"Thema's"</string>
 
     <!--Home-->
     <string name="no_connection">Geen internetverbinding</string>
@@ -20,12 +20,14 @@
 
     <string name="home_support_title">Ondersteun ons</string>
     <string name="home_item_source">Broncode</string>
-    <string name="home_support_content">Magisk is en zal altijd gratis en open source blijven, maar als je wilt, kun je een kleine donatie doen.</string>
+    <string name="home_support_content">Kitsune Mask is en zal altijd gratis en open source blijven, maar als je wilt, kun je een kleine donatie doen.</string>
     <string name="home_installed_version">Geïnstalleerd</string>
     <string name="home_latest_version">Actueel</string>
     <string name="invalid_update_channel">Ongeldig updatekanaal</string>
-    <string name="uninstall_magisk_title">Magisk deïnstalleren</string>
-    <string name="uninstall_magisk_msg">Alle modules worden uitgeschakeld/verwijderd!\nRoot wordt verwijderd!\nJe gegevens worden, als ze dat nog niet waren, mogelijk versleuteld!</string>
+    <string name="uninstall_magisk_title">Kitsune Mask deïnstalleren</string>
+    <string name="uninstall_magisk_msg">"Alle modules worden uitgeschakeld/verwijderd!
+Root wordt verwijderd!
+Je gegevens worden, als ze dat nog niet waren, mogelijk versleuteld!"</string>
 
 
     <!--Install-->
@@ -39,7 +41,9 @@
     <string name="manager_download_install">Druk om te downloaden en installeren</string>
     <string name="direct_install">Direct installeren (aanbevolen)</string>
     <string name="install_inactive_slot">Installeren in inactieve sleuf (na OTA)</string>
-    <string name="install_inactive_slot_msg">Je apparaat wordt GEDWONGEN opgestart in de huidige inactieve sleuf na het herstarten!\nGebruik deze optie alleen NA het installeren van een OTA-update.\nWil je doorgaan?</string>
+    <string name="install_inactive_slot_msg">"Je apparaat wordt GEDWONGEN opgestart in de huidige inactieve sleuf na het herstarten!
+Gebruik deze optie alleen NA het installeren van een OTA-update.
+Wil je doorgaan?"</string>
     <string name="setup_title">Installatie afronden</string>
     <string name="reboot_delay_toast">Je apparaat wordt over 5 seconden herstart…</string>
     <string name="flash_screen_title">Installatie</string>
@@ -75,7 +79,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Er is nog niks gelogd. Gebruik meer apps met superuserrechten!</string>
-    <string name="log_data_magisk_none">Het Magisk-logboek is leeg. Dit is ongebruikelijk.</string>
+    <string name="log_data_magisk_none">Het Kitsune Mask-logboek is leeg. Dit is ongebruikelijk.</string>
     <string name="menuSaveLog">Logboek opslaan</string>
     <string name="menuClearLog">Logboek wissen</string>
     <string name="logs_cleared">Het logboek is gewist.</string>
@@ -84,7 +88,7 @@
 
     <!--SafetyNet-->
 
-    <!-- MagiskHide -->
+    <!-- KMHide -->
     <string name="show_system_app">Systeemapps tonen</string>
     <string name="hide_filter_hint">Filteren op naam</string>
     <string name="hide_search">Zoeken</string>
@@ -145,11 +149,11 @@
     <string name="isolate_summary">Elke rootsessie heeft zijn eigen geïsoleerde naamruimte</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magisk-updates</string>
+    <string name="update_channel">Kitsune Mask-updates</string>
     <string name="progress_channel">Voortgangsmeldingen</string>
     <string name="download_complete">Downloaden voltooid</string>
     <string name="download_file_error">Het bestand kan niet worden gedownload</string>
-    <string name="magisk_update_title">Er is een Magisk-update beschikbaar!</string>
+    <string name="magisk_update_title">Er is een Kitsune Mask-update beschikbaar!</string>
 
     <!--Toasts, Dialogs-->
     <string name="yes">Ja</string>
@@ -170,7 +174,7 @@
     <string name="setup_fail">Installatie mislukt</string>
     <string name="env_fix_title">Installatie nog niet afgerond</string>
     <string name="setup_msg">Bezig met toepassen van omgevingsinstellingen…</string>
-    <string name="unsupport_magisk_title">Niet-ondersteunde Magisk-versie</string>
+    <string name="unsupport_magisk_title">Niet-ondersteunde Kitsune Mask-versie</string>
     <string name="external_rw_permission_denied">Verleen het opslagrecht om deze functie gebruiken</string>
     <string name="add_shortcut_title">Snelkoppeling maken op startscherm</string>
     <string name="app_not_found">Er is geen app op je apparaat die deze handeling kan uitvoeren</string>

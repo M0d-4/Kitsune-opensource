@@ -16,11 +16,27 @@ sealed interface Route : NavKey, Parcelable {
 
     @Parcelize
     @Serializable
+    data object SuList : Route
+
+    @Parcelize
+    @Serializable
+    data object AppList : Route
+
+    @Parcelize
+    @Serializable
     data class Flash(
         val action: String,
         val additionalData: String? = null,
         val usbDevice: String? = null,
     ) : Route
+
+    @Parcelize
+    @Serializable
+    data object ModuleReview : Route
+
+    @Parcelize
+    @Serializable
+    data class BulkFlash(val uris: List<String>) : Route
 
     @Parcelize
     @Serializable

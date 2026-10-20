@@ -1,0 +1,26 @@
+[versions]
+agp = "8.13.2"
+kotlin = "2.3.21"
+hidden-api = "4.4.0"
+r8-annotations = "v1.0.1"
+sun-cleaner = "v1.0.1"
+panama = "c0d8fa4"
+zygoteloader = "2a2160f"
+
+[plugins]
+agp-app = { id = "com.android.application", version.ref = "agp" }
+agp-lib = { id = "com.android.library", version.ref = "agp" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+refine = { id = "dev.rikka.tools.refine", version = "4.4.0" }
+zygoteloader = { id = "com.github.aerath-stuff.ZygoteLoader", version.ref = "zygoteloader" }
+
+[libraries]
+androidx-annotation-jvm = { group = "androidx.annotation", name = "annotation-jvm", version = "1.10.0" }
+dev-rikka-hidden-compat = { module = "dev.rikka.hidden:compat", version.ref = "hidden-api" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.11.0" }
+r8-annotations = { module = "io.github.vova7878:R8Annotations", version.ref = "r8-annotations" }
+sun-cleaner = { module = "io.github.vova7878:SunCleanerStub", version.ref = "sun-cleaner" }
+panama-core = { module = "com.github.aerath-stuff.PanamaPort:Core", version.ref = "panama" }
+panama-unsafe = { module = "com.github.aerath-stuff.PanamaPort:Unsafe", version.ref = "panama" }
+panama-llvm = { module = "com.github.aerath-stuff.PanamaPort:LLVM", version.ref = "panama" }

@@ -78,7 +78,8 @@ import com.topjohnwu.magisk.core.R as CoreR
 fun DenyListScreen(
     viewModel: DenyListViewModel,
     onBack: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    titleRes: Int = CoreR.string.denylist
 ) {
     val loading by viewModel.loading.collectAsStateWithLifecycle()
     val apps by viewModel.filteredApps.collectAsStateWithLifecycle()
@@ -96,7 +97,7 @@ fun DenyListScreen(
         modifier = modifier,
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(CoreR.string.denylist)) },
+                title = { Text(stringResource(titleRes)) },
                 navigationIcon = {
                     IconButton(
                         onClick = onBack

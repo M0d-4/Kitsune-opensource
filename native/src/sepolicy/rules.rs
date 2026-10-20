@@ -97,7 +97,7 @@ impl SePolicy {
             allow(["domain"], [proc], ["fd"], ["use"]);
             allow(["domain"], [proc], ["fifo_file"], ["write", "read", "open", "getattr"]);
 
-            // Allow these processes to access MagiskSU and output logs
+            // Allow these processes to access KMSU and output logs
             allow(["zygote", "shell", "platform_app",
                 "system_app", "priv_app", "untrusted_app", "untrusted_app_all"],
                 [proc], ["unix_stream_socket"], ["connectto", "getopt"]);

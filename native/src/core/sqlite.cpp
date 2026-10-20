@@ -296,6 +296,12 @@ sqlite3 *open_and_init_db() {
         upgrade = true;
     }
 
+    // The SuList table is independent of the schema version (IF NOT EXISTS), so databases
+    // shared with other builds never get their user_version bumped because of it
+    sql_chk_log(sql_exec_impl, db.get(),
+            "CREATE TABLE IF NOT EXISTS sulist "
+            "(package_name TEXT, process TEXT, PRIMARY KEY(package_name, process))");
+
     if (upgrade) {
         // Set version
         sql_chk_log(sql_exec_impl, db.get(), "PRAGMA user_version=" DB_VERSION_STR);

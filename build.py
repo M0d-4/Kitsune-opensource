@@ -344,8 +344,25 @@ def build_apk(module: str):
     return target
 
 
+def build_applist():
+    """Build the app-list hiding payload (app/applist, a separate Gradle build) so that the
+    app build can bundle it as the applist_payload.zip asset. Failure is not fatal: the app then
+    simply ships without the feature's payload."""
+    header("* Building the app-list hiding payload")
+    ensure_jdk()
+    cwd = Path.cwd()
+    os.chdir(Path("app", "applist"))
+    try:
+        proc = execv([str(Path("gradlew").resolve()), ":zygote:assembleRelease"])
+    finally:
+        os.chdir(cwd)
+    if proc.returncode != 0:
+        header("! Building the app-list hiding payload failed, the app will not include it")
+
+
 def build_app():
     header("* Building the Magisk app")
+    build_applist()
     apk = build_apk(":apk")
 
     build_type = "release" if args.release else "debug"

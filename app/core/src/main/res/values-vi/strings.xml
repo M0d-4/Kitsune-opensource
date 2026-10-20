@@ -20,15 +20,17 @@
     <string name="home_package">Gói</string>
     <string name="home_app_title">Ứng dụng</string>
 
-    <string name="home_notice_content">Chỉ nên tải Magisk từ trang GitHub chính thức. Tải tệp từ các nguồn không rõ có thể gây hại!</string>
+    <string name="home_notice_content">Chỉ nên tải Kitsune Mask từ trang GitHub chính thức. Tải tệp từ các nguồn không rõ có thể gây hại!</string>
     <string name="home_support_title">Hỗ trợ chúng tôi</string>
     <string name="home_item_source">Nguồn</string>
-    <string name="home_support_content">Magisk sẽ, và luôn luôn là, miễn phí và mã nguồn mở. Tuy nhiên, bạn có thể cho chúng tôi thấy rằng bạn quan tâm bằng cách gửi một khoản đóng góp nhỏ.</string>
+    <string name="home_support_content">Kitsune Mask sẽ, và luôn luôn là, miễn phí và mã nguồn mở. Tuy nhiên, bạn có thể cho chúng tôi thấy rằng bạn quan tâm bằng cách gửi một khoản đóng góp nhỏ.</string>
     <string name="home_installed_version">Cài đặt</string>
     <string name="home_latest_version">Mới nhất</string>
     <string name="invalid_update_channel">Kênh cập nhật không hợp lệ</string>
-    <string name="uninstall_magisk_title">Gỡ cài đặt Magisk</string>
-    <string name="uninstall_magisk_msg">Tất cả các mô-đun sẽ bị tắt hoặc bị xóa!\nRoot sẽ bị gỡ bỏ\nPhân vùng data đã tắt mã hóa thông qua Magisk sẽ bị mã hóa lại!</string>
+    <string name="uninstall_magisk_title">Gỡ cài đặt Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Tất cả các mô-đun sẽ bị tắt hoặc bị xóa!
+Root sẽ bị gỡ bỏ
+Phân vùng data đã tắt mã hóa thông qua Kitsune Mask sẽ bị mã hóa lại!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Giữ bắt buộc mã hóa</string>
@@ -41,7 +43,9 @@
     <string name="manager_download_install">Nhấn để tải xuống và cài đặt</string>
     <string name="direct_install">Cài đặt trực tiếp (Khuyến nghị)</string>
     <string name="install_inactive_slot">Cài đặt vào vùng không hoạt động (Sau OTA)</string>
-    <string name="install_inactive_slot_msg">Thiết bị của bạn sẽ bị BUỘC khởi động vào vị trí không hoạt động hiện tại sau khi khởi động lại!\nChỉ sử dụng tùy chọn này sau khi hoàn tất OTA.\nTiếp tục chứ?</string>
+    <string name="install_inactive_slot_msg">"Thiết bị của bạn sẽ bị BUỘC khởi động vào vị trí không hoạt động hiện tại sau khi khởi động lại!
+Chỉ sử dụng tùy chọn này sau khi hoàn tất OTA.
+Tiếp tục chứ?"</string>
     <string name="setup_title">Thiết lập bổ sung</string>
     <string name="reboot_delay_toast">Khởi động lại sau 5 giây…</string>
     <string name="flash_screen_title">Cài đặt</string>
@@ -78,7 +82,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Nhật ký của bạn đang trống, hãy thử sử dụng các ứng dụng root của bạn nhiều hơn</string>
-    <string name="log_data_magisk_none">Nhật ký Magisk trống, điều đó thật kỳ lạ</string>
+    <string name="log_data_magisk_none">Nhật ký Kitsune Mask trống, điều đó thật kỳ lạ</string>
     <string name="menuSaveLog">Lưu nhật ký</string>
     <string name="menuClearLog">Xóa nhật ký ngay bây giờ</string>
     <string name="logs_cleared">Đã xóa nhật ký thành công</string>
@@ -87,7 +91,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Hiển thị các ứng dụng hệ thống</string>
     <string name="show_os_app">Hiển thị các ứng dụng hệ điều hành</string>
     <string name="hide_filter_hint">Lọc theo tên</string>
@@ -119,9 +123,9 @@
     <string name="settings_dark_mode_dark">Luôn tối</string>
     <string name="settings_download_path_title">Đường dẫn tải xuống</string>
     <string name="settings_download_path_message">Các tệp sẽ được lưu vào %1$s</string>
-    <string name="settings_hide_app_title">Ẩn ứng dụng Magisk</string>
+    <string name="settings_hide_app_title">Ẩn ứng dụng Kitsune Mask</string>
     <string name="settings_hide_app_summary">Cài đặt ứng dụng proxy với ID gói ngẫu nhiên và nhãn ứng dụng tùy chỉnh</string>
-    <string name="settings_restore_app_title">Khôi phục ứng dụng Magisk</string>
+    <string name="settings_restore_app_title">Khôi phục ứng dụng Kitsune Mask</string>
     <string name="settings_restore_app_summary">Bỏ ẩn ứng dụng và khôi phục nó về APK ban đầu</string>
     <string name="language">Ngôn ngữ</string>
     <string name="system_default">(Mặc định hệ thống)</string>
@@ -132,9 +136,9 @@
     <string name="settings_update_beta">Beta</string>
     <string name="settings_update_custom">Kênh tùy chỉnh</string>
     <string name="settings_update_custom_msg">Chèn một URL tùy chỉnh</string>
-    <string name="settings_zygisk_summary">Khởi chạy các thành phần của Magisk trong tiến trình nền zygote</string>
+    <string name="settings_zygisk_summary">Khởi chạy các thành phần của Kitsune Mask trong tiến trình nền zygote</string>
     <string name="settings_denylist_title">Thực thi danh sách loại trừ</string>
-    <string name="settings_denylist_summary">Mọi sửa đổi do Magisk thực hiện sẽ bị loại khỏi các quy trình trong danh sách loại trừ</string>
+    <string name="settings_denylist_summary">Mọi sửa đổi do Kitsune Mask thực hiện sẽ bị loại khỏi các quy trình trong danh sách loại trừ</string>
     <string name="settings_denylist_config_title">Cấu hình DenyList</string>
     <string name="settings_denylist_config_summary">Chọn các quy trình được đưa vào DenyList</string>
     <string name="settings_hosts_title">Systemless hosts</string>
@@ -170,13 +174,13 @@
     <string name="isolate_summary">Mỗi phiên root sẽ có không gian tên riêng biệt</string>
 
     <!--Thông báo-->
-    <string name="update_channel">Cập nhật Magisk</string>
+    <string name="update_channel">Cập nhật Kitsune Mask</string>
     <string name="progress_channel">Thông báo tiến độ</string>
     <string name="updated_channel">Cập nhật hoàn tất</string>
     <string name="download_complete">Tải về hoàn tất</string>
     <string name="download_file_error">Lỗi khi tải xuống tệp</string>
-    <string name="magisk_update_title">Cập nhật Magisk có sẵn!</string>
-    <string name="updated_title">Đã cập nhật Magisk</string>
+    <string name="magisk_update_title">Cập nhật Kitsune Mask có sẵn!</string>
+    <string name="updated_title">Đã cập nhật Kitsune Mask</string>
     <string name="updated_text">Chạm để mở ứng dụng</string>
 
     <!--Toasts, Dialogs-->
@@ -189,7 +193,7 @@
     <string name="flashing">Đang cài…</string>
     <string name="done">Xong!</string>
     <string name="failure">Thất bại!</string>
-    <string name="hide_app_title">Đang ẩn ứng dụng Magisk…</string>
+    <string name="hide_app_title">Đang ẩn ứng dụng Kitsune Mask…</string>
     <string name="open_link_failed_toast">Không tìm thấy ứng dụng nào để mở liên kết</string>
     <string name="complete_uninstall">Hoàn thành Gỡ cài đặt</string>
     <string name="restore_img">Khôi phục đĩa ảnh boot (boot image)</string>
@@ -198,18 +202,20 @@
     <string name="restore_fail">Bản sao lưu gốc không tồn tại!</string>
     <string name="setup_fail">Thiết lập không thành công</string>
     <string name="env_fix_title">Yêu cầu thiết lập bổ sung</string>
-    <string name="env_fix_msg">Thiết bị của bạn cần thiết lập bổ sung để Magisk hoạt động bình thường. Bạn có muốn tiếp tục và khởi động lại không?</string>
+    <string name="env_fix_msg">Thiết bị của bạn cần thiết lập bổ sung để Kitsune Mask hoạt động bình thường. Bạn có muốn tiếp tục và khởi động lại không?</string>
     <string name="setup_msg">Đang chạy thiết lập môi trường…</string>
-    <string name="unsupport_magisk_title">Phiên bản Magisk không được hỗ trợ</string>
-    <string name="unsupport_magisk_msg">Phiên bản hiện tại của ứng dụng không hỗ trợ phiên bản Magisk thấp hơn %1$s.\n\nỨng dụng sẽ hoạt động như thể Magisk chưa được cài đặt. Vui lòng nâng cấp lên phiên bản mới nhất.</string>
+    <string name="unsupport_magisk_title">Phiên bản Kitsune Mask không được hỗ trợ</string>
+    <string name="unsupport_magisk_msg">"Phiên bản hiện tại của ứng dụng không hỗ trợ phiên bản Kitsune Mask thấp hơn %1$s.
+
+Ứng dụng sẽ hoạt động như thể Kitsune Mask chưa được cài đặt. Vui lòng nâng cấp lên phiên bản mới nhất."</string>
     <string name="unsupport_general_title">Trạng thái bất thường</string>
     <string name="unsupport_system_app_msg">Không hỗ trợ chạy ứng dụng này dưới dạng ứng dụng hệ thống. Vui lòng hoàn nguyên ứng dụng về ứng dụng người dùng.</string>
-    <string name="unsupport_other_su_msg">Một lệnh \"su\" không thuộc về Magisk được phát hiện. Vui lòng gỡ bỏ bất kì phương pháp root khác và/hoặc cài đặt lại Magisk.</string>
-    <string name="unsupport_external_storage_msg">Magisk được cài đặt vào bộ nhớ ngoài. Vui lòng chuyển ứng dụng vào bộ nhớ trong.</string>
+    <string name="unsupport_other_su_msg">Một lệnh \"su\" không thuộc về Kitsune Mask được phát hiện. Vui lòng gỡ bỏ bất kì phương pháp root khác và/hoặc cài đặt lại Kitsune Mask.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask được cài đặt vào bộ nhớ ngoài. Vui lòng chuyển ứng dụng vào bộ nhớ trong.</string>
     <string name="unsupport_nonroot_stub_msg">Ứng dụng không thể tiếp tục hoạt động ở trạng thái ẩn vì mất quyền root. Vui lòng khôi phục nó trở lại APK ban đầu.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Cấp quyền lưu trữ để bật chức năng này</string>
-    <string name="install_unknown_denied">Cho phép "cài đặt ứng dụng không rõ nguồn gốc" để bật chức năng này</string>
+    <string name="install_unknown_denied">Cho phép cài đặt ứng dụng không rõ nguồn gốc để bật chức năng này</string>
     <string name="add_shortcut_title">Thêm lối tắt vào màn hình chính</string>
     <string name="add_shortcut_msg">Sau khi ẩn ứng dụng này, tên và biểu tượng của nó có thể trở nên khó nhận ra. Bạn có muốn thêm một phím tắt đẹp vào màn hình chính không?</string>
     <string name="app_not_found">Không tìm thấy ứng dụng nào để xử lý hành động này</string>

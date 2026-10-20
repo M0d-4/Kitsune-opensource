@@ -47,6 +47,12 @@ import com.topjohnwu.magisk.core.wrap
 import com.topjohnwu.magisk.ui.component.rememberConfirmDialog
 import com.topjohnwu.magisk.ui.deny.DenyListScreen
 import com.topjohnwu.magisk.ui.deny.DenyListViewModel
+import com.topjohnwu.magisk.ui.deny.SuListViewModel
+import com.topjohnwu.magisk.ui.applist.AppListScreen
+import com.topjohnwu.magisk.ui.applist.AppListViewModel
+import com.topjohnwu.magisk.ui.flash.BulkFlashScreen
+import com.topjohnwu.magisk.ui.module.ModuleReviewScreen
+import com.topjohnwu.magisk.ui.flash.BulkFlashViewModel
 import com.topjohnwu.magisk.ui.flash.FlashScreen
 import com.topjohnwu.magisk.ui.flash.FlashUtils
 import com.topjohnwu.magisk.ui.flash.FlashViewModel
@@ -149,6 +155,20 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
                                     LaunchedEffect(Unit) { vm.startLoading() }
                                     DenyListScreen(vm, onBack = { navigator.pop() })
                                 }
+                                entry<Route.AppList> { _ ->
+                                    val vm: AppListViewModel = viewModel(factory = VMFactory)
+                                    LaunchedEffect(Unit) { vm.startLoading() }
+                                    AppListScreen(vm, onBack = { navigator.pop() })
+                                }
+                                entry<Route.SuList> { _ ->
+                                    val vm: SuListViewModel = viewModel(factory = VMFactory)
+                                    LaunchedEffect(Unit) { vm.startLoading() }
+                                    DenyListScreen(
+                                        vm,
+                                        onBack = { navigator.pop() },
+                                        titleRes = CoreR.string.sulist_screen_title
+                                    )
+                                }
                                 entry<Route.Flash> { key ->
                                     val vm: FlashViewModel = viewModel(factory = VMFactory)
                                     LaunchedEffect(key) {
@@ -160,6 +180,20 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
                                         }
                                     }
                                     FlashScreen(vm, onBack = { navigator.pop() })
+                                }
+                                entry<Route.ModuleReview> { _ ->
+                                    ModuleReviewScreen(
+                                        onBack = { navigator.pop() },
+                                        onInstall = { uris ->
+                                            navigator.pop()
+                                            navigator.push(Route.BulkFlash(uris))
+                                        }
+                                    )
+                                }
+                                entry<Route.BulkFlash> { key ->
+                                    val vm: BulkFlashViewModel = viewModel(factory = VMFactory)
+                                    LaunchedEffect(key) { vm.start(key.uris.map { it.toUri() }) }
+                                    BulkFlashScreen(vm, onBack = { navigator.pop() })
                                 }
                                 entry<Route.SuperuserDetail> { key ->
                                     val vm: SuperuserViewModel = viewModel(
@@ -237,6 +271,12 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
                     ?: return@LaunchedEffect
                 val uri = currentIntent.getStringExtra(FlashUtils.EXTRA_FLASH_URI)
                 navigator.push(Route.Flash(action, uri))
+                currentIntent.action = null
+            } else if (currentIntent.action == FlashUtils.INTENT_MODULE_ACTION) {
+                val id = currentIntent.getStringExtra(FlashUtils.EXTRA_MODULE_ID)
+                    ?: return@LaunchedEffect
+                val name = currentIntent.getStringExtra(FlashUtils.EXTRA_MODULE_NAME) ?: id
+                navigator.push(Route.Action(id, name))
                 currentIntent.action = null
             }
         }

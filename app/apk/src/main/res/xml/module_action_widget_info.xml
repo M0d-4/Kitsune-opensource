@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider android:minWidth="250.0dip" android:minHeight="250.0dip" android:updatePeriodMillis="3600000" android:initialLayout="@layout/module_action_widget" android:minResizeWidth="110.0dip" android:minResizeHeight="110.0dip" android:widgetCategory="home_screen|keyguard" android:targetCellWidth="3" android:targetCellHeight="3"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

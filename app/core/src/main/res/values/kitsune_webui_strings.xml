@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="webui_download_started">Download started</string>
+    <string name="webui_root_denied">Please grant root permission</string>
+    <string name="webui_save_failed">"Couldn't save the file"</string>
+    <string name="webui_saved">File saved</string>
+    <string name="webui_error_load_msg">"Something went wrong while opening the module's WebUI."</string>
+    <string name="webui_error_load_title">"The page couldn't load"</string>
+    <string name="webui_error_root_msg">"The module's WebUI runs with root. Grant root to the app and try again."</string>
+    <string name="webui_error_root_title">Root access needed</string>
+    <string name="webui_error_webroot_msg">"This module doesn't ship a webroot/index.html, so there's nothing to open. It may have been updated or removed."</string>
+    <string name="webui_error_webroot_title">No WebUI in this module</string>
+    <string name="webui_loading">Loading WebUI…</string>
+    <string name="webui_retry">Retry</string>
+    <string name="module_action_webui">WebUI</string>
+</resources>

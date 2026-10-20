@@ -27,7 +27,9 @@
     <string name="home_latest_version">அண்மை</string>
     <string name="invalid_update_channel">புதுப்பிப்பு சேனல் தவறானது</string>
     <string name="uninstall_magisk_title">மேஜிஸ்க் நிறுவலை நீக்கு</string>
-    <string name="uninstall_magisk_msg">அனைத்து தொகுதிகள் முடக்கப்படும்/அகற்றப்படும்!\nரூட் அகற்றப்படும்!\nஏற்கனவே இல்லையென்றால் உங்கள் தரவு குறியாக்கம் செய்யப்படலாம்!</string>
+    <string name="uninstall_magisk_msg">"அனைத்து தொகுதிகள் முடக்கப்படும்/அகற்றப்படும்!
+ரூட் அகற்றப்படும்!
+ஏற்கனவே இல்லையென்றால் உங்கள் தரவு குறியாக்கம் செய்யப்படலாம்!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">குறியாக்கத்தைப் பாதுகாக்கவும்</string>
@@ -40,7 +42,9 @@
     <string name="manager_download_install">பதிவிறக்கி நிறுவ இந்த பொத்தானை அழுத்தவும்</string>
     <string name="direct_install">நேரடி நிறுவல் (பரிந்துரைக்கப்படுகிறது)</string>
     <string name="install_inactive_slot">செயலற்ற ஸ்லாட்டுக்கு நிறுவவும் (OTA க்குப் பிறகு)</string>
-    <string name="install_inactive_slot_msg">மறுதொடக்கம் செய்தபின் தற்போதைய செயலற்ற ஸ்லாட்டுக்கு துவக்க உங்கள் சாதனம் கட்டாயப்படுத்தப்படும்!\nOTA முடிந்தபின் மட்டுமே இந்த விருப்பத்தைப் பயன்படுத்தவும்.\nதொடரவா?</string>
+    <string name="install_inactive_slot_msg">"மறுதொடக்கம் செய்தபின் தற்போதைய செயலற்ற ஸ்லாட்டுக்கு துவக்க உங்கள் சாதனம் கட்டாயப்படுத்தப்படும்!
+OTA முடிந்தபின் மட்டுமே இந்த விருப்பத்தைப் பயன்படுத்தவும்.
+தொடரவா?"</string>
     <string name="setup_title">கூடுதல் அமைப்பு</string>
     <string name="reboot_delay_toast">5 வினாடிகளில் மீண்டும் துவக்குகிறது…</string>
     <string name="flash_screen_title">நிறுவல்</string>
@@ -86,7 +90,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">தொலைபேசி பயன்பாடுகளைக் காட்டு</string>
     <string name="show_os_app">OS பயன்பாடுகளைக் காட்டு</string>
     <string name="hide_filter_hint">பெயரால் வடிகட்டவும்</string>

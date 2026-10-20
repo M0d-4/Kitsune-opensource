@@ -23,6 +23,8 @@ object Config : PreferenceConfig, DBConfig {
         const val SU_MNT_NS = "mnt_ns"
         const val SU_BIOMETRIC = "su_biometric"
         const val ZYGISK = "zygisk"
+        const val SULIST_AUTO_GRANT = "sulist_auto_grant"
+        const val APPLIST_HIDE = "applist_hide"
         const val BOOTLOOP = "bootloop"
         const val SU_MANAGER = "requester"
         const val KEYSTORE = "keystore"
@@ -39,6 +41,8 @@ object Config : PreferenceConfig, DBConfig {
         const val DOWNLOAD_DIR = "download_dir"
         const val SAFETY = "safety_notice"
         const val THEME_ORDINAL = "theme_ordinal"
+        const val PURE_BLACK = "pure_black"
+        const val PENDING_REBOOT_BOOT = "pending_reboot_boot"
         const val ASKED_HOME = "asked_home"
         const val DOH = "doh"
         const val RAND_NAME = "rand_name"
@@ -84,6 +88,7 @@ object Config : PreferenceConfig, DBConfig {
     @JvmField var keepEnc = false
     @JvmField var recovery = false
     var denyList = false
+    var sulist = false
 
     var askedHome by preference(Key.ASKED_HOME, false)
     var bootloop by dbSettings(Key.BOOTLOOP, 0)
@@ -91,6 +96,8 @@ object Config : PreferenceConfig, DBConfig {
     var safetyNotice by preference(Key.SAFETY, true)
     var darkTheme by preference(Key.DARK_THEME, -1)
     var themeOrdinal by preference(Key.THEME_ORDINAL, 0)
+    var pureBlack by preference(Key.PURE_BLACK, false)
+    var pendingRebootBoot by preference(Key.PENDING_REBOOT_BOOT, "")
     var colorMode by preference(Key.COLOR_MODE, ColorMode.MONET_SYSTEM.value)
 
     private var checkUpdatePrefs by preference(Key.CHECK_UPDATES, true)
@@ -121,6 +128,8 @@ object Config : PreferenceConfig, DBConfig {
         }
 
     var zygisk by dbSettings(Key.ZYGISK, Info.isEmulator)
+    var sulistAutoGrant by dbSettings(Key.SULIST_AUTO_GRANT, false)
+    var applistHide by dbSettings(Key.APPLIST_HIDE, false)
     var suManager by dbStrings(Key.SU_MANAGER, "", true)
     var keyStoreRaw by dbStrings(Key.KEYSTORE, "", true)
     var suNotification by preferenceStrInt(Key.SU_NOTIFICATION, Value.NOTIFICATION_TOAST)

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_sulist_title">SuList Mode</string>
+    <string name="settings_sulist_enabled">Only selected apps can access root</string>
+    <string name="settings_sulist_summary">Select apps that can access root</string>
+    <string name="settings_configure_sulist">Configure SuList</string>
+    <string name="settings_sulist_auto_grant_title">Auto-grant root to SuList apps</string>
+    <string name="settings_sulist_auto_grant_summary">Apps on the SuList get root without a prompt</string>
+    <string name="sulist_screen_title">SuList</string>
+</resources>

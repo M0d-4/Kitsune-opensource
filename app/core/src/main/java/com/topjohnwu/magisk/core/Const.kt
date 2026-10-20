@@ -39,10 +39,10 @@ object Const {
 
     object Url {
         const val PATREON_URL = "https://www.patreon.com/topjohnwu"
-        const val SOURCE_CODE_URL = "https://github.com/topjohnwu/Magisk"
+        const val SOURCE_CODE_URL = "https://github.com/M0d-4/Kitsune-opensource"
 
         const val GITHUB_API_URL = "https://api.github.com/"
-        const val GITHUB_PAGE_URL = "https://topjohnwu.github.io/magisk-files/"
+        const val GITHUB_PAGE_URL = "https://m0d-4.github.io/Kitsune-opensource/"
         const val INVALID_URL = "https://example.com/"
         const val GOOGLEBOOK_RECOVERY_URL =
             "https://dl.google.com/dl/edgedl/device/recovery/production_recovery.json"

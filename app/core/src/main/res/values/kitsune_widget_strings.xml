@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_name">Module Actions</string>
+    <string name="widget_no_action_modules">No Action modules</string>
+    <string name="widget_no_webui_modules">No WebUI modules</string>
+</resources>

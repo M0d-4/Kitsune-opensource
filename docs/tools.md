@@ -289,7 +289,7 @@ Actions:
 
 ### su
 
-An applet of `magisk`, the MagiskSU entry point. Good old `su` command.
+An applet of `magisk`, the KMSU entry point. Good old `su` command.
 
 ```
 Usage: su [options] [--] [user [argument...]]

@@ -26,11 +26,13 @@ import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.PlaylistAdd
 import androidx.compose.material.icons.automirrored.filled.Undo
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CloudUpload
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Public
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -40,6 +42,7 @@ import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
@@ -82,9 +85,11 @@ import com.topjohnwu.magisk.ui.component.MagiskDialog
 import com.topjohnwu.magisk.ui.component.MarkdownTextAsync
 import com.topjohnwu.magisk.ui.component.rememberConfirmDialog
 import com.topjohnwu.magisk.ui.component.verticalScrollbar
+import com.topjohnwu.magisk.ui.navigation.Route
 import com.topjohnwu.magisk.utils.textHolder
 import kotlinx.coroutines.launch
 import com.topjohnwu.magisk.core.R as CoreR
+import com.topjohnwu.magisk.ui.webui.WebUIActivity
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -125,6 +130,14 @@ fun ModuleScreen(
         }
     }
 
+    val multiFilePicker = rememberLauncherForActivityResult(
+        ActivityResultContracts.GetMultipleContents()
+    ) { uris ->
+        if (uris.isNotEmpty()) {
+            viewModel.navigateTo(Route.BulkFlash(uris.map { it.toString() }))
+        }
+    }
+
     DisposableEffect(onRegisterFab) {
         onRegisterFab?.invoke { filePicker.launch("application/zip") }
         onDispose {
@@ -157,6 +170,14 @@ fun ModuleScreen(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(CoreR.string.modules)) },
+                actions = {
+                    IconButton(onClick = { multiFilePicker.launch("application/zip") }) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.PlaylistAdd,
+                            contentDescription = stringResource(CoreR.string.bulk_flash_title),
+                        )
+                    }
+                },
                 scrollBehavior = scrollBehavior
             )
         },
@@ -369,6 +390,30 @@ private fun ModuleCard(
                                     )
                                     Text(
                                         text = stringResource(CoreR.string.module_action),
+                                        style = MaterialTheme.typography.labelLarge,
+                                    )
+                                }
+                            }
+                        }
+                        if (item.showWebUI) {
+                            val context = LocalContext.current
+                            FilledTonalButton(
+                                contentPadding = PaddingValues(horizontal = 14.dp, vertical = 8.dp),
+                                onClick = {
+                                    WebUIActivity.start(context, item.module.id, item.module.name)
+                                },
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(4.dp),
+                                ) {
+                                    Icon(
+                                        modifier = Modifier.size(18.dp),
+                                        imageVector = Icons.Default.Public,
+                                        contentDescription = stringResource(CoreR.string.module_action_webui)
+                                    )
+                                    Text(
+                                        text = stringResource(CoreR.string.module_action_webui),
                                         style = MaterialTheme.typography.labelLarge,
                                     )
                                 }

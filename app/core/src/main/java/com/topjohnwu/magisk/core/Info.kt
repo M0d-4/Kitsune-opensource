@@ -102,6 +102,7 @@ object Info {
                 runCatching { fastCmd("magisk -V").toInt() }.getOrDefault(-1)
             )
             Config.denyList = fastCmdResult(shell, "magisk --denylist status")
+            Config.sulist = fastCmdResult(shell, "magisk --denylist sulist status")
         }
 
         val map = mutableMapOf<String, String>()

@@ -19,16 +19,19 @@
     <string name="hide">Ocultar</string>
     <string name="home_package">Nombre de paquete:</string>
     <string name="home_app_title">App</string>
-    <string name="home_notice_content">Descarga Magisk únicamente desde la página oficial de GitHub. ¡Las descargas desde fuentes desconocidas pueden ser maliciosas!</string>
+    <string name="home_notice_content">Descarga Kitsune Mask únicamente desde la página oficial de GitHub. ¡Las descargas desde fuentes desconocidas pueden ser maliciosas!</string>
     <string name="home_support_title">Apóyanos</string>
     <string name="home_follow_title">Síguenos</string>
     <string name="home_item_source">Código fuente</string>
-    <string name="home_support_content">Magisk es y siempre será gratis y de código abierto. Sin embargo, puedes mostrarnos tu apoyo mediante una donación.</string>
+    <string name="home_support_content">Kitsune Mask es y siempre será gratis y de código abierto. Sin embargo, puedes mostrarnos tu apoyo mediante una donación.</string>
     <string name="home_installed_version">Versión instalada:</string>
     <string name="home_latest_version">Última versión disponible:</string>
     <string name="invalid_update_channel">Canal de actualización inválido</string>
-    <string name="uninstall_magisk_title">Desinstalar Magisk</string>
-    <string name="uninstall_magisk_msg">Antes de desinstalar Magisk, ten en cuenta lo siguiente:\n• Todos los módulos serán desinstalados\n• Perderás el acceso root\n• Tu almacenamiento interno será reencriptado en caso de que no lo esté</string>
+    <string name="uninstall_magisk_title">Desinstalar Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Antes de desinstalar Kitsune Mask, ten en cuenta lo siguiente:
+• Todos los módulos serán desinstalados
+• Perderás el acceso root
+• Tu almacenamiento interno será reencriptado en caso de que no lo esté"</string>
 
     <!--Instalación-->
     <string name="keep_force_encryption">Mantener FDE (Full-Disk Encryption)</string>
@@ -41,7 +44,9 @@
     <string name="manager_download_install">Pulsa para descargar e instalar</string>
     <string name="direct_install">Instalación directa (recomendado)</string>
     <string name="install_inactive_slot">Instalar en el slot inactivo (tras una OTA)</string>
-    <string name="install_inactive_slot_msg">Tu dispositivo será forzado a bootear en el slot inactivo actual después de un reinicio\nUsa esta opción solo después de que la actualización OTA se complete.\n¿Quieres continuar?</string>
+    <string name="install_inactive_slot_msg">"Tu dispositivo será forzado a bootear en el slot inactivo actual después de un reinicio
+Usa esta opción solo después de que la actualización OTA se complete.
+¿Quieres continuar?"</string>
     <string name="setup_title">Configuración adicional</string>
     <string name="reboot_delay_toast">Reiniciando en 5 segundos…</string>
     <string name="flash_screen_title">Instalación</string>
@@ -77,7 +82,7 @@
 
     <!--Registros-->
     <string name="log_data_none">No hay registros de apps disponibles</string>
-    <string name="log_data_magisk_none">No hay registros de Magisk disponibles</string>
+    <string name="log_data_magisk_none">No hay registros de Kitsune Mask disponibles</string>
     <string name="menuSaveLog">Guardar registro</string>
     <string name="menuClearLog">Limpiar registro</string>
     <string name="logs_cleared">Registros limpiados correctamente</string>
@@ -121,8 +126,9 @@
     <string name="settings_dark_mode_dark">Oscuro</string>
     <string name="settings_dark_mode_system">Predeterminado del sistema</string>
     <string name="settings_download_path_title">Ruta de descarga</string>
-    <string name="settings_download_path_message">Los archivos serán guardados en la siguiente ruta:\n%1$s</string>
-    <string name="settings_hide_app_title">Ocultar la app de Magisk</string>
+    <string name="settings_download_path_message">"Los archivos serán guardados en la siguiente ruta:
+%1$s"</string>
+    <string name="settings_hide_app_title">Ocultar la app de Kitsune Mask</string>
     <string name="settings_hide_app_summary">Instalar una versión proxy de la app con un nombre de paquete aleatorio y una etiqueta personalizada</string>
     <string name="settings_restore_app_title">Restaurar la app</string>
     <string name="settings_restore_app_summary">Desoculta la app y la reemplaza por la original</string>
@@ -135,16 +141,16 @@
     <string name="settings_update_beta">Beta</string>
     <string name="settings_update_custom">Personalizado</string>
     <string name="settings_update_custom_msg">Ingresa la URL del canal personalizado</string>
-    <string name="settings_zygisk_summary">Ejecuta Magisk en el proceso Zygote de Android</string>
+    <string name="settings_zygisk_summary">Ejecuta Kitsune Mask en el proceso Zygote de Android</string>
     <string name="settings_denylist_title">Aplicar lista de denegación</string>
-    <string name="settings_denylist_summary">Las apps en la lista de denegación no serán modificadas por Magisk</string>
+    <string name="settings_denylist_summary">Las apps en la lista de denegación no serán modificadas por Kitsune Mask</string>
     <string name="settings_denylist_config_title">Configurar lista de denegación</string>
     <string name="settings_denylist_config_summary">Selecciona los procesos de cada app que se incluirán en la lista</string>
     <string name="settings_hosts_title">Systemless hosts</string>
     <string name="settings_hosts_summary">Prepara al archivo hosts para que los bloqueadores de anuncios puedan modificarlo sin alterar el sistema</string>
     <string name="settings_hosts_toast">El módulo se instaló correctamente, reinicia para aplicar los cambios.</string>
     <string name="settings_app_name_hint">Nuevo nombre de la app</string>
-    <string name="settings_app_name_helper">La app de Magisk será reempaquetada con este nombre</string>
+    <string name="settings_app_name_helper">La app de Kitsune Mask será reempaquetada con este nombre</string>
     <string name="settings_app_name_error">El nombre es inválido</string>
 
 
@@ -155,7 +161,7 @@
     <string name="settings_su_auth_summary">Preguntar por la autenticación de usuario durante las peticiones de Superusuario</string>
     <string name="settings_su_auth_insecure">No hay método de autenticación configurado en el dispositivo</string>
     <string name="settings_customization">Personalización</string>
-    <string name="setting_add_shortcut_summary">Añade un atajo a la app con el ícono de Magisk a la pantalla de inicio en caso de que te resulte difícil reconocerla tras haberle cambiado el nombre y el ícono</string>
+    <string name="setting_add_shortcut_summary">Añade un atajo a la app con el ícono de Kitsune Mask a la pantalla de inicio en caso de que te resulte difícil reconocerla tras haberle cambiado el nombre y el ícono</string>
     <string name="settings_doh_title">DNS sobre HTTPS</string>
     <string name="settings_doh_description">Proporciona una solución alternativa (workaround) contra el envenenamiento de DNS en algunos países</string>
     <string name="multiuser_mode">Modo multiusuario</string>
@@ -174,13 +180,13 @@
     <string name="isolate_summary">Cada sesión de superusuario tendrá su propio namespace de montaje aislado</string>
 
     <!--Notificaciones-->
-    <string name="update_channel">Actualizaciones de Magisk</string>
+    <string name="update_channel">Actualizaciones de Kitsune Mask</string>
     <string name="progress_channel">Notificaciones de progreso</string>
     <string name="updated_channel">Actualización finalizada</string>
     <string name="download_complete">Descarga finalizada</string>
     <string name="download_file_error">Ocurrió un error en la descarga</string>
-    <string name="magisk_update_title">¡Actualización de Magisk disponible!</string>
-    <string name="updated_title">Se actualizó Magisk</string>
+    <string name="magisk_update_title">¡Actualización de Kitsune Mask disponible!</string>
+    <string name="updated_title">Se actualizó Kitsune Mask</string>
     <string name="updated_text">Pulsa para abrir la app</string>
 
     <!--Alertas y diálogos-->
@@ -193,7 +199,7 @@
     <string name="flashing">Flasheando…</string>
     <string name="done">¡Listo!</string>
     <string name="failure">¡Ocurrió un error!</string>
-    <string name="hide_app_title">Ocultando la app de Magisk…</string>
+    <string name="hide_app_title">Ocultando la app de Kitsune Mask…</string>
     <string name="open_link_failed_toast">No se encontró ninguna app que pueda abrir este enlace</string>
     <string name="complete_uninstall">Desinstalación completa</string>
     <string name="restore_img">Solo restaurar las imágenes</string>
@@ -202,22 +208,24 @@
     <string name="restore_fail">Oops... no se encontró una copia de seguridad de las imágenes originales</string>
     <string name="setup_fail">Ocurrió un error en la configuración</string>
     <string name="env_fix_title">Configuración adicional</string>
-    <string name="env_fix_msg">Tu dispositivo necesita una configuración adicional para que Magisk funcione correctamente. ¿Quieres continuar y reiniciar?</string>
-    <string name="env_full_fix_msg">Tu dispositivo necesita reinstalar Magisk para que este funcione correctamente. Por favor, reinstala Magisk desde la app, el modo recovery no puede obtener la información correcta del dispositivo.</string>
+    <string name="env_fix_msg">Tu dispositivo necesita una configuración adicional para que Kitsune Mask funcione correctamente. ¿Quieres continuar y reiniciar?</string>
+    <string name="env_full_fix_msg">Tu dispositivo necesita reinstalar Kitsune Mask para que este funcione correctamente. Por favor, reinstala Kitsune Mask desde la app, el modo recovery no puede obtener la información correcta del dispositivo.</string>
     <string name="setup_msg">Ejecutando configuración de entorno…</string>
-    <string name="unsupport_magisk_title">Versión de Magisk no soportada</string>
-    <string name="unsupport_magisk_msg">La versión actual de la app no soporta versiones de Magisk inferiores a la %1$s.\n\nLa app se comportará como si Magisk no estuviese instalado, por favor, actualízalo tan pronto como puedas</string>
+    <string name="unsupport_magisk_title">Versión de Kitsune Mask no soportada</string>
+    <string name="unsupport_magisk_msg">"La versión actual de la app no soporta versiones de Kitsune Mask inferiores a la %1$s.
+
+La app se comportará como si Kitsune Mask no estuviese instalado, por favor, actualízalo tan pronto como puedas"</string>
     <string name="unsupport_general_title">Estado anormal</string>
     <string name="unsupport_system_app_msg">La ejecución de esta app como app del sistema no está soportada. Por favor, vuelve a instalarla como usuario</string>
-    <string name="unsupport_other_su_msg">Se detectó un binario \"su\" ajeno a Magisk. Por favor, desinstala cualquier solución root de la competencia y/o reinstala Magisk</string>
-    <string name="unsupport_external_storage_msg">La app de Magisk está instalada en un almacenamiento externo, por favor, muévela al almacenamiento interno.</string>
-    <string name="unsupport_nonroot_stub_msg">La app de Magisk oculta no puede seguir funcionando porque se perdió el acceso root. Por favor, restaura el APK original</string>
+    <string name="unsupport_other_su_msg">Se detectó un binario \"su\" ajeno a Kitsune Mask. Por favor, desinstala cualquier solución root de la competencia y/o reinstala Kitsune Mask</string>
+    <string name="unsupport_external_storage_msg">La app de Kitsune Mask está instalada en un almacenamiento externo, por favor, muévela al almacenamiento interno.</string>
+    <string name="unsupport_nonroot_stub_msg">La app de Kitsune Mask oculta no puede seguir funcionando porque se perdió el acceso root. Por favor, restaura el APK original</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Permite el acceso al almacenamiento para activar esta funcionalidad</string>
     <string name="post_notifications_denied">Permite mostrar notificaciones para activar esta funcionalidad</string>
     <string name="install_unknown_denied">Permite la instalación de apps desconocidas para activar esta funcionalidad</string>
     <string name="add_shortcut_title">Añadir un atajo a la pantalla de inicio</string>
-    <string name="add_shortcut_msg">Añade un atajo a la app con el ícono de Magisk a la pantalla de inicio en caso de que te resulte difícil reconocerla tras haberle cambiado el nombre y el ícono</string>
+    <string name="add_shortcut_msg">Añade un atajo a la app con el ícono de Kitsune Mask a la pantalla de inicio en caso de que te resulte difícil reconocerla tras haberle cambiado el nombre y el ícono</string>
     <string name="app_not_found">No se encontró ninguna app que pueda realizar esta acción</string>
     <string name="reboot_apply_change">Reinicia para aplicar los cambios</string>
     <string name="restore_app_confirmation">Se restaurará la app oculta de vuelta a la original. ¿Quieres continuar?</string>

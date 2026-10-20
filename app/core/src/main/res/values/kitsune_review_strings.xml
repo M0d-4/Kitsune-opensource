@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="module_review_title">Review modules</string>
+    <string name="module_review_add">Add modules</string>
+    <string name="module_review_empty">No modules selected. Add one or more zip files to review them before installing.</string>
+    <string name="module_review_count_one">1 module selected</string>
+    <string name="module_review_count_many">%1$d modules selected</string>
+    <string name="module_review_install_fmt">Install %1$d</string>
+    <string name="module_review_remove">Remove</string>
+    <string name="module_review_open">Review modules before installing</string>
+</resources>

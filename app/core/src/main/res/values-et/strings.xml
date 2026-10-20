@@ -20,15 +20,17 @@
     <string name="home_package">Pakett</string>
     <string name="home_app_title">Rakendus</string>
 
-    <string name="home_notice_content">Laadi Magisk alla vaid ametlikult GitHubi lehelt. Tundmatutest allikatest laaditud failid võivad olla pahatahtlikud!</string>
+    <string name="home_notice_content">Laadi Kitsune Mask alla vaid ametlikult GitHubi lehelt. Tundmatutest allikatest laaditud failid võivad olla pahatahtlikud!</string>
     <string name="home_support_title">Toeta meid</string>
     <string name="home_item_source">Lähtekood</string>
-    <string name="home_support_content">Magisk on ja jääb alati tasuta ning avatud lähtekoodiga kättesaadavaks. Siiski, sa võid meile väikese annetuse näol toetust üles näidata.</string>
+    <string name="home_support_content">Kitsune Mask on ja jääb alati tasuta ning avatud lähtekoodiga kättesaadavaks. Siiski, sa võid meile väikese annetuse näol toetust üles näidata.</string>
     <string name="home_installed_version">Installitud</string>
     <string name="home_latest_version">Viimatine</string>
     <string name="invalid_update_channel">Sobimatu uuenduste kanal</string>
-    <string name="uninstall_magisk_title">Eemalda Magisk</string>
-    <string name="uninstall_magisk_msg">Kõik moodulid keelatakse/eemaldatakse!\nJuurkasutaja eemaldatakse!\nMistahes sisemälu failid, millelt eemaldati Magiski tarbeks krüpteering, krüpteeritakse taas!</string>
+    <string name="uninstall_magisk_title">Eemalda Kitsune Mask</string>
+    <string name="uninstall_magisk_msg">"Kõik moodulid keelatakse/eemaldatakse!
+Juurkasutaja eemaldatakse!
+Mistahes sisemälu failid, millelt eemaldati Kitsune Maski tarbeks krüpteering, krüpteeritakse taas!"</string>
 
     <!--Install-->
     <string name="keep_force_encryption">Säilita sunnitud krüpteering</string>
@@ -41,7 +43,9 @@
     <string name="manager_download_install">Vajuta allalaadimiseks ja installimiseks</string>
     <string name="direct_install">Otsene install (soovitatud)</string>
     <string name="install_inactive_slot">Installi ebaaktiivsesse lahtrisse (pärast üle-õhu uuendust)</string>
-    <string name="install_inactive_slot_msg">Pärast taaskäivitust SUNNITAKSE sinu seade käivituma praegusesse ebaaktiivsesse lahtrisse!\nKasuta seda valikut vaid peale üle-õhu uuenduse teostamist.\nJätkad?</string>
+    <string name="install_inactive_slot_msg">"Pärast taaskäivitust SUNNITAKSE sinu seade käivituma praegusesse ebaaktiivsesse lahtrisse!
+Kasuta seda valikut vaid peale üle-õhu uuenduse teostamist.
+Jätkad?"</string>
     <string name="setup_title">Lisaseadistus</string>
     <string name="reboot_delay_toast">Taaskäivitamine 5 sekundi pärast…</string>
     <string name="flash_screen_title">Installimine</string>
@@ -78,7 +82,7 @@
 
     <!--Logs-->
     <string name="log_data_none">Sa oled logivaba, proovi oma superkasutaja õigustega rakendusi rohkem kasutada</string>
-    <string name="log_data_magisk_none">Magiski logid on tühjad, see on imelik</string>
+    <string name="log_data_magisk_none">Kitsune Maski logid on tühjad, see on imelik</string>
     <string name="menuSaveLog">Salvesta logi</string>
     <string name="menuClearLog">Tühjenda logi nüüd</string>
     <string name="logs_cleared">Logi edukalt tühjendatud.</string>
@@ -87,7 +91,7 @@
 
     <!--SafetyNet-->
 
-    <!--MagiskHide-->
+    <!--KMHide-->
     <string name="show_system_app">Kuva uuendatavad süsteemirakendused</string>
     <string name="show_os_app">Kuva fikseeritud süsteemirakendused</string>
     <string name="hide_filter_hint">Filtreeri nime järgi</string>
@@ -117,9 +121,9 @@
     <string name="settings_dark_mode_dark">Alati tume</string>
     <string name="settings_download_path_title">Allalaadimise failitee</string>
     <string name="settings_download_path_message">Failid salvestatakse kausta %1$s</string>
-    <string name="settings_hide_app_title">Peida Magiski rakendus</string>
+    <string name="settings_hide_app_title">Peida Kitsune Maski rakendus</string>
     <string name="settings_hide_app_summary">Paigalda juhusliku paketi-ID ja kohandatud nimega puhverrakendus</string>
-    <string name="settings_restore_app_title">Taasta Magiski rakendus</string>
+    <string name="settings_restore_app_title">Taasta Kitsune Maski rakendus</string>
     <string name="settings_restore_app_summary">Too rakendus peidust välja, taastades originaalse APK</string>
     <string name="language">Keel</string>
     <string name="system_default">(Süsteemi vaikesäte)</string>
@@ -130,9 +134,9 @@
     <string name="settings_update_beta">Beeta</string>
     <string name="settings_update_custom">Kohandatud</string>
     <string name="settings_update_custom_msg">Sisesta kohandatud kanali URL</string>
-    <string name="settings_zygisk_summary">Käivita teatud Magiski osi zygote-protsessis</string>
+    <string name="settings_zygisk_summary">Käivita teatud Kitsune Maski osi zygote-protsessis</string>
     <string name="settings_denylist_title">Jõusta keeluloend</string>
-    <string name="settings_denylist_summary">Keeluloendis olevatel protsessidel tühistatakse kõik Magiski muudatused</string>
+    <string name="settings_denylist_summary">Keeluloendis olevatel protsessidel tühistatakse kõik Kitsune Maski muudatused</string>
     <string name="settings_denylist_config_title">Seadista keeluloendit</string>
     <string name="settings_denylist_config_summary">Vali keeluloendisse lisatavad protsessid</string>
     <string name="settings_hosts_title">Süsteemivaba hosts</string>
@@ -168,11 +172,11 @@
     <string name="isolate_summary">Iga juurkasutaja sessioon saab oma isoleeritud nimeruumi</string>
 
     <!--Notifications-->
-    <string name="update_channel">Magiski uuendused</string>
+    <string name="update_channel">Kitsune Maski uuendused</string>
     <string name="progress_channel">Edenemise teated</string>
     <string name="download_complete">Allalaadimine valmis</string>
     <string name="download_file_error">Faili allalaadimisel esines viga</string>
-    <string name="magisk_update_title">Magiski uuendus on saadaval!</string>
+    <string name="magisk_update_title">Kitsune Maski uuendus on saadaval!</string>
 
     <!--Toasts, Dialogs-->
     <string name="yes">Jah</string>
@@ -184,7 +188,7 @@
     <string name="flashing">Välgutamine…</string>
     <string name="done">Valmis!</string>
     <string name="failure">Ebaõnnestus</string>
-    <string name="hide_app_title">Magiski rakenduse peitmine…</string>
+    <string name="hide_app_title">Kitsune Maski rakenduse peitmine…</string>
     <string name="open_link_failed_toast">Lingi avamiseks sobivat rakendust ei leitud.</string>
     <string name="complete_uninstall">Täielik eemaldus</string>
     <string name="restore_img">Taasta tõmmised</string>
@@ -193,15 +197,17 @@
     <string name="restore_fail">Originaalne varundus puudub!</string>
     <string name="setup_fail">Seadistus ebaõnnnestus</string>
     <string name="env_fix_title">Vajab lisaseadistust</string>
-    <string name="env_fix_msg">Sinu seade vajab Magiski korralikuks toimimiseks lisaseadistust. Kas soovid jätkata ning seadme taaskäivitada?</string>
+    <string name="env_fix_msg">Sinu seade vajab Kitsune Maski korralikuks toimimiseks lisaseadistust. Kas soovid jätkata ning seadme taaskäivitada?</string>
     <string name="setup_msg">Käivitan keskkonnaseadistust…</string>
-    <string name="unsupport_magisk_title">Mittetoetatud Magiski versioon</string>
-    <string name="unsupport_magisk_msg">See rakenduse versioon ei toeta Magiski versioone, mis on vanemad kui %1$s.\n\nRakendus käitub nii, nagu Magisk ei olekski installitud, palun täienda Magiskit esimesel võimalusel.</string>
+    <string name="unsupport_magisk_title">Mittetoetatud Kitsune Maski versioon</string>
+    <string name="unsupport_magisk_msg">"See rakenduse versioon ei toeta Kitsune Maski versioone, mis on vanemad kui %1$s.
+
+Rakendus käitub nii, nagu Kitsune Mask ei olekski installitud, palun täienda Kitsune Maskit esimesel võimalusel."</string>
     <string name="unsupport_general_title">Ebanormaalne seisund</string>
     <string name="unsupport_system_app_msg">Selle rakenduse käitamine süsteemirakendusena ei ole toetatud. Palun taasta see kasutajarakenduseks.</string>
-    <string name="unsupport_other_su_msg">Tuvastati \"su\"-binaar, mida ei installinud Magisk. Palun eemalda mistahes konkureeriv juurkasutaja paigaldus ja/või taasinstalli Magisk.</string>
-    <string name="unsupport_external_storage_msg">Magisk on paigaldatud välismällu. Palun liiguta rakendus sisemällu.</string>
-    <string name="unsupport_nonroot_stub_msg">Peidetud Magiski rakendus ei saa enam töötada, kuna juurkasutaja on kadunud. Palun taasta originaalne APK.</string>
+    <string name="unsupport_other_su_msg">Tuvastati \"su\"-binaar, mida ei installinud Kitsune Mask. Palun eemalda mistahes konkureeriv juurkasutaja paigaldus ja/või taasinstalli Kitsune Mask.</string>
+    <string name="unsupport_external_storage_msg">Kitsune Mask on paigaldatud välismällu. Palun liiguta rakendus sisemällu.</string>
+    <string name="unsupport_nonroot_stub_msg">Peidetud Kitsune Maski rakendus ei saa enam töötada, kuna juurkasutaja on kadunud. Palun taasta originaalne APK.</string>
     <string name="unsupport_nonroot_stub_title">@string/settings_restore_app_title</string>
     <string name="external_rw_permission_denied">Selle funktsionaalsuse lubamiseks anna mäluruumi haldamise luba</string>
     <string name="add_shortcut_title">Lisa avakuvale otsetee</string>
