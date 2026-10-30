@@ -18,7 +18,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.systemBars
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.windowInsetsPadding
@@ -72,12 +72,12 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.window.core.layout.WindowSizeClass
 import com.topjohnwu.magisk.core.Config
 import com.topjohnwu.magisk.core.Info
+import com.topjohnwu.magisk.core.ktx.registerRuntimeReceiver
 import com.topjohnwu.magisk.core.repository.FirmwareCrawler
 import com.topjohnwu.magisk.core.utils.MediaStoreUtils.displayName
 import com.topjohnwu.magisk.core.utils.UsbBlockDevice
@@ -149,11 +149,12 @@ fun InstallDialog(
             val scrollState = rememberScrollState()
             Scaffold(
                 modifier = if (fullScreen) modifier.fillMaxSize() else modifier
-                    .windowInsetsPadding(WindowInsets.systemBars)
+                    .windowInsetsPadding(WindowInsets.safeDrawing)
                     .padding(24.dp)
                     .widthIn(max = 560.dp)
                     .heightIn(max = 800.dp)
                     .clip(RoundedCornerShape(28.dp)),
+                contentWindowInsets = WindowInsets.safeDrawing,
                 containerColor = if (fullScreen) MaterialTheme.colorScheme.background
                     else MaterialTheme.colorScheme.surfaceContainerHigh,
                 topBar = {
@@ -300,9 +301,11 @@ fun PatchComposableDialog(
     showUsbDestination: Boolean = false,
 ) {
     val context = LocalContext.current
-    var source by rememberSaveable(candidate) {
-        mutableStateOf(if (candidate != null) PatchSource.CANDIDATE else PatchSource.FILE)
-    }
+    // The user's choice, defaulting to the downloadable image when there is one. Not keyed on the
+    // candidate: it is only found after the firmware search, which runs again after the process
+    // is recreated, and must not reset a choice made before that
+    var chosenSource by rememberSaveable { mutableStateOf<PatchSource?>(null) }
+    val source = chosenSource ?: if (candidate != null) PatchSource.CANDIDATE else PatchSource.FILE
     var localFileUri by rememberSaveable { mutableStateOf<Uri?>(null) }
     var pendingSubmitAfterPick by rememberSaveable { mutableStateOf(false) }
     var url by rememberSaveable { mutableStateOf("") }
@@ -328,7 +331,7 @@ fun PatchComposableDialog(
                 addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED)
                 addAction(UsbManager.ACTION_USB_DEVICE_DETACHED)
             }
-            ContextCompat.registerReceiver(context, receiver, filter, ContextCompat.RECEIVER_EXPORTED)
+            context.registerRuntimeReceiver(receiver, filter)
             onDispose {
                 runCatching { context.unregisterReceiver(receiver) }
             }
@@ -357,7 +360,7 @@ fun PatchComposableDialog(
         pendingSubmitAfterPick = false
         if (uri != null) {
             localFileUri = uri
-            source = PatchSource.FILE
+            chosenSource = PatchSource.FILE
             if (shouldSubmit) {
                 confirmWithUri(uri)
             }
@@ -459,7 +462,7 @@ fun PatchComposableDialog(
                             .clip(RoundedCornerShape(12.dp))
                             .selectable(
                                 selected = source == PatchSource.CANDIDATE,
-                                onClick = { source = PatchSource.CANDIDATE },
+                                onClick = { chosenSource = PatchSource.CANDIDATE },
                                 role = Role.RadioButton
                             )
                             .padding(vertical = 10.dp),
@@ -494,7 +497,7 @@ fun PatchComposableDialog(
                         .selectable(
                             selected = source == PatchSource.FILE,
                             onClick = {
-                                source = PatchSource.FILE
+                                chosenSource = PatchSource.FILE
                                 pendingSubmitAfterPick = false
                                 localFilePicker.launch("*/*")
                             },
@@ -533,7 +536,7 @@ fun PatchComposableDialog(
                         .clip(RoundedCornerShape(12.dp))
                         .selectable(
                             selected = source == PatchSource.URL,
-                            onClick = { source = PatchSource.URL },
+                            onClick = { chosenSource = PatchSource.URL },
                             role = Role.RadioButton
                         )
                         .padding(vertical = 10.dp),

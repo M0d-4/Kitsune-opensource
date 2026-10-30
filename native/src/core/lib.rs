@@ -166,7 +166,6 @@ pub mod ffi {
         fn exec_script(script: Utf8CStrRef);
         fn exec_common_scripts(stage: Utf8CStrRef);
         fn exec_module_scripts(state: Utf8CStrRef, modules: &Vec<ModuleInfo>);
-        fn install_apk(apk: Utf8CStrRef);
         fn uninstall_pkg(apk: Utf8CStrRef);
         fn install_module(zip: Utf8CStrRef);
 
@@ -231,6 +230,7 @@ pub mod ffi {
         fn get_db_setting(&self, key: DbEntryKey) -> i32;
         #[cxx_name = "set_db_setting"]
         fn set_db_setting_for_cxx(&self, key: DbEntryKey, value: i32) -> bool;
+        fn get_app_id(&self, pkg: &str) -> i32;
 
         #[Self = MagiskD]
         #[cxx_name = "Get"]

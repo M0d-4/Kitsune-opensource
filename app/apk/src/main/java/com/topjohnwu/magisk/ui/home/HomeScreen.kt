@@ -1,11 +1,7 @@
 package com.topjohnwu.magisk.ui.home
 
-import android.content.Intent
 import android.os.Build
-import android.os.Handler
-import android.os.Looper
 import android.os.PowerManager
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,6 +10,7 @@ import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -62,7 +59,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -72,11 +68,15 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.toggleableState
+import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.core.content.getSystemService
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.compose.dropUnlessResumed
 import com.topjohnwu.magisk.R
 import com.topjohnwu.magisk.core.BuildConfig
 import com.topjohnwu.magisk.core.Config
@@ -89,16 +89,18 @@ import com.topjohnwu.magisk.ui.component.PendingRebootBanner
 import com.topjohnwu.magisk.core.ktx.toast
 import com.topjohnwu.magisk.core.tasks.AppMigration
 import com.topjohnwu.magisk.core.tasks.MagiskInstaller
+import com.topjohnwu.magisk.core.model.UpdateInfo
 import com.topjohnwu.magisk.ui.MainActivity
 import com.topjohnwu.magisk.ui.component.AdaptiveColumns
+import com.topjohnwu.magisk.ui.component.LoadingDialog
 import com.topjohnwu.magisk.ui.component.MagiskDialog
 import com.topjohnwu.magisk.ui.component.MarkdownTextAsync
-import com.topjohnwu.magisk.ui.component.rememberLoadingDialog
+import com.topjohnwu.magisk.ui.component.onlyHorizontal
 import com.topjohnwu.magisk.ui.component.verticalScrollbar
-import com.topjohnwu.magisk.ui.flash.FlashUtils
 import com.topjohnwu.magisk.ui.install.InstallDialog
 import com.topjohnwu.magisk.ui.install.InstallViewModel
-import kotlinx.coroutines.launch
+import com.topjohnwu.magisk.ui.navigation.LocalNavigator
+import com.topjohnwu.magisk.ui.navigation.Route
 import java.io.File
 import com.topjohnwu.magisk.core.R as CoreR
 
@@ -111,17 +113,18 @@ fun HomeScreen(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val navigator = LocalNavigator.current
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    val scope = rememberCoroutineScope()
-    val loadingDialog = rememberLoadingDialog()
 
     var showUninstallDialog by rememberSaveable { mutableStateOf(false) }
-    var showManagerDialog by rememberSaveable { mutableStateOf(false) }
+    // Keep the update itself, so a restored dialog doesn't depend on Info.update, which is reset
+    // on connectivity changes and after process death
+    var managerUpdate by rememberSaveable { mutableStateOf<UpdateInfo?>(null) }
     var showEnvFixDialog by rememberSaveable { mutableStateOf(false) }
     var showHideDialog by rememberSaveable { mutableStateOf(false) }
     var showRestoreDialog by rememberSaveable { mutableStateOf(false) }
     var showInstallDialog by rememberSaveable { mutableStateOf(false) }
-    var envFixCode by remember { mutableIntStateOf(0) }
+    var envFixCode by rememberSaveable { mutableIntStateOf(0) }
 
     LaunchedEffect(uiState.showUninstall) {
         if (uiState.showUninstall) {
@@ -130,8 +133,8 @@ fun HomeScreen(
         }
     }
     LaunchedEffect(uiState.showManagerInstall) {
-        if (uiState.showManagerInstall) {
-            showManagerDialog = true
+        uiState.showManagerInstall?.let {
+            managerUpdate = it
             viewModel.onManagerInstallConsumed()
         }
     }
@@ -150,41 +153,32 @@ fun HomeScreen(
         }
     }
 
+    LoadingDialog(visible = uiState.showLoading)
+
     if (showUninstallDialog) {
         UninstallComposableDialog(
             onDismiss = { showUninstallDialog = false },
-            onCompleteUninstall = {
+            // Drop taps while a screen transition runs, so a quick second tap can't push again
+            onCompleteUninstall = dropUnlessResumed {
                 showUninstallDialog = false
-                val intent = Intent(context, context.javaClass).apply {
-                    action = FlashUtils.INTENT_FLASH
-                    putExtra(FlashUtils.EXTRA_FLASH_ACTION, Const.Value.UNINSTALL)
-                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-                }
-                context.startActivity(intent)
+                navigator.push(Route.Flash(Const.Value.UNINSTALL))
             },
             onRestoreImage = {
                 showUninstallDialog = false
-                scope.launch {
-                    val success = loadingDialog.withLoading {
-                        MagiskInstaller.Restore().exec()
-                    }
-                    context.toast(
-                        if (success) CoreR.string.restore_done else CoreR.string.restore_fail,
-                        Toast.LENGTH_SHORT
-                    )
-                }
+                viewModel.restoreImages()
             }
         )
     }
 
-    if (showManagerDialog) {
+    managerUpdate?.let { update ->
         ManagerInstallComposableDialog(
+            update = update,
             cacheDir = context.cacheDir,
-            onDismiss = { showManagerDialog = false },
+            onDismiss = { managerUpdate = null },
             onInstall = {
-                showManagerDialog = false
+                managerUpdate = null
                 (context as? MainActivity)?.let {
-                    DownloadEngine.startWithActivity(it, Subject.App())
+                    DownloadEngine.startWithActivity(it, Subject.App(update))
                 }
             }
         )
@@ -200,20 +194,7 @@ fun HomeScreen(
             },
             onFixEnv = {
                 showEnvFixDialog = false
-                scope.launch {
-                    val success = loadingDialog.withLoading {
-                        MagiskInstaller.FixEnv().exec()
-                    }
-                    context.toast(
-                        if (success) CoreR.string.reboot_delay_toast else CoreR.string.setup_fail,
-                        Toast.LENGTH_LONG
-                    )
-                    if (success) {
-                        @Suppress("DEPRECATION")
-                        Handler(Looper.getMainLooper())
-                            .postDelayed({ reboot() }, 5000)
-                    }
-                }
+                viewModel.fixEnv()
             }
         )
     }
@@ -223,11 +204,7 @@ fun HomeScreen(
             onDismiss = { showHideDialog = false },
             onConfirm = { name ->
                 showHideDialog = false
-                scope.launch {
-                    loadingDialog.withLoading {
-                        AppMigration.patchAndHide(context, name)
-                    }
-                }
+                viewModel.hideApp(name)
             }
         )
     }
@@ -237,11 +214,7 @@ fun HomeScreen(
             onDismiss = { showRestoreDialog = false },
             onConfirm = {
                 showRestoreDialog = false
-                scope.launch {
-                    loadingDialog.withLoading {
-                        AppMigration.restoreApp(context)
-                    }
-                }
+                viewModel.restoreApp()
             }
         )
     }
@@ -277,10 +250,22 @@ fun HomeScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .nestedScroll(scrollBehavior.nestedScrollConnection)
-                .padding(padding)
-                .verticalScrollbar(scrollState, contentPadding = PaddingValues(vertical = 12.dp))
+                .consumeWindowInsets(padding)
+                .padding(padding.onlyHorizontal())
+                .verticalScrollbar(
+                    scrollState,
+                    contentPadding = PaddingValues(
+                        top = padding.calculateTopPadding() + 12.dp,
+                        bottom = padding.calculateBottomPadding() + 12.dp,
+                    ),
+                )
                 .verticalScroll(scrollState)
-                .padding(horizontal = 16.dp, vertical = 12.dp),
+                .padding(
+                    start = 16.dp,
+                    top = padding.calculateTopPadding() + 12.dp,
+                    end = 16.dp,
+                    bottom = padding.calculateBottomPadding() + 12.dp,
+                ),
             spacing = 12.dp,
             first = {
                 if (uiState.isNoticeVisible) {
@@ -389,6 +374,10 @@ private fun RebootButton(
                     )
                 }
                 DropdownMenuItem(
+                    // The check mark is the only sign of the safe mode state, so expose it
+                    modifier = if (isSafeMode) {
+                        Modifier.semantics { toggleableState = ToggleableState(safeModeEnabled >= 2) }
+                    } else Modifier,
                     text = {
                         Text(
                             text = stringResource(item.labelRes),
@@ -900,6 +889,7 @@ private fun UninstallComposableDialog(
 
 @Composable
 private fun ManagerInstallComposableDialog(
+    update: UpdateInfo,
     cacheDir: File,
     onDismiss: () -> Unit,
     onInstall: () -> Unit,
@@ -916,8 +906,8 @@ private fun ManagerInstallComposableDialog(
         scrollable = true,
     ) {
         MarkdownTextAsync {
-            val text = Info.update.note
-            File(cacheDir, "${Info.update.versionCode}.md").writeText(text)
+            val text = update.note
+            File(cacheDir, "${update.versionCode}.md").writeText(text)
             text
         }
     }

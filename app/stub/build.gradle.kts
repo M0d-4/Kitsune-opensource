@@ -13,11 +13,11 @@ android {
     namespace = "com.topjohnwu.magisk"
     enableKotlin = false
 
-    val base = "https://github.com/M0d-4/Kitsune-opensource/releases/download/"
+    val base = "https://github.com/topjohnwu/Magisk/releases/download/"
     val url = base + "v${Config.version}/Magisk-v${Config.version}.apk"
 
     defaultConfig {
-        applicationId = "io.github.x0eg0.magisk"
+        applicationId = "com.topjohnwu.magisk"
         versionCode = 1
         versionName = "1.0"
         buildConfigField("String", "APK_URL", "\"$url\"")

@@ -52,7 +52,7 @@ fun Project.setupCommon() {
         ndkVersion = "30.0.15729638"
 
         defaultConfig.apply {
-            minSdk = 23
+            minSdk = 24
         }
 
         compileOptions.apply {
@@ -179,15 +179,15 @@ fun Project.setupCoreLib() {
                         "app_functions.sh", "uninstaller.sh", "module_installer.sh",
                         "bootloop_protector.sh")
                 }
-                from(stubTask) {
-                    include { it.name.endsWith(".apk") }
-                    rename { "stub.apk" }
-                }
                 // App-list hiding payload, built by ./build.py (app/applist is a separate build)
                 rootFile("app/applist/zygote/build/outputs/magisk/release").let { dir ->
                     if (dir.exists()) {
                         from(dir) { include("applist_payload.zip") }
                     }
+                }
+                from(stubTask) {
+                    include { it.name.endsWith(".apk") }
+                    rename { "stub.apk" }
                 }
                 filesMatching("**/util_functions.sh") {
                     filter {
