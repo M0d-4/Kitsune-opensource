@@ -93,6 +93,7 @@ Continue?"</string>
     <string name="menuSaveLog">Save log</string>
     <string name="menuClearLog">Clear log now</string>
     <string name="logs_cleared">Log successfully cleared</string>
+    <string name="log_save_failed">Failed to save the log</string>
     <string name="pid">PID: %1$d</string>
     <string name="target_uid">Target UID: %1$d</string>
     <string name="target_pid">Target PID: %s</string>
@@ -254,5 +255,6 @@ Continue?"</string>
     <string name="add_shortcut_msg">After hiding this app, its name and icon might become difficult to recognize. Do you want to add a pretty shortcut to the home screen?</string>
     <string name="app_not_found">No app found to handle this action</string>
     <string name="reboot_apply_change">Reboot to apply changes</string>
-    <string name="restore_app_confirmation">This will restore the hidden app back to the original app. Do you really want to do this?</string>
+    <string name="running_exit_title">Execution in progress</string>
+    <string name="running_exit_msg">Are you sure you want to exit? The running operation may not complete.</string>
 </resources>

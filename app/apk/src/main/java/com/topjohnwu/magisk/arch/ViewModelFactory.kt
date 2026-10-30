@@ -1,6 +1,7 @@
 package com.topjohnwu.magisk.arch
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.topjohnwu.magisk.core.di.ServiceLocator
@@ -27,9 +28,9 @@ val VMFactory: ViewModelProvider.Factory = viewModelFactory {
     initializer { DenyListViewModel() }
     initializer { SuListViewModel() }
     initializer { AppListViewModel() }
-    initializer { FlashViewModel() }
+    initializer { FlashViewModel(createSavedStateHandle()) }
     initializer { BulkFlashViewModel() }
-    initializer { ActionViewModel() }
+    initializer { ActionViewModel(createSavedStateHandle()) }
     initializer { ModuleViewModel() }
     initializer { SettingsViewModel() }
 }

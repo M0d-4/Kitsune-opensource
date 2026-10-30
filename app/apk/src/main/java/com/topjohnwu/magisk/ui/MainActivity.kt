@@ -7,13 +7,19 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.res.Resources
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.CancellationSignal
+import android.provider.OpenableColumns
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -22,6 +28,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.net.toUri
@@ -44,6 +51,7 @@ import com.topjohnwu.magisk.core.isRunningAsStub
 import com.topjohnwu.magisk.core.ktx.toast
 import com.topjohnwu.magisk.core.tasks.AppMigration
 import com.topjohnwu.magisk.core.wrap
+import com.topjohnwu.magisk.ui.component.ConfirmResult
 import com.topjohnwu.magisk.ui.component.rememberConfirmDialog
 import com.topjohnwu.magisk.ui.deny.DenyListScreen
 import com.topjohnwu.magisk.ui.deny.DenyListViewModel
@@ -66,11 +74,18 @@ import com.topjohnwu.magisk.ui.superuser.SuperuserDetailScreen
 import com.topjohnwu.magisk.ui.superuser.SuperuserGrantScreen
 import com.topjohnwu.magisk.ui.superuser.SuperuserGrantViewModel
 import com.topjohnwu.magisk.ui.superuser.SuperuserViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import com.topjohnwu.magisk.view.Shortcuts
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import java.io.File
+import kotlinx.coroutines.withTimeoutOrNull
 import com.topjohnwu.magisk.core.R as CoreR
+
+private const val MAX_DISPLAY_NAME_LENGTH = 100
+private const val DISPLAY_NAME_QUERY_TIMEOUT_MS = 3000L
 
 class MainActivity : ComponentActivity(), SplashScreenHost {
 
@@ -78,6 +93,8 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
     override val splashController = SplashController(this)
 
     private val intentState = MutableStateFlow(0)
+    // A tab requested by a new intent while the activity is running (it's singleTask)
+    private val tabRequest = MutableStateFlow<Int?>(null)
     internal val showInvalidState = MutableStateFlow(false)
     internal val showUnsupported = MutableStateFlow<List<Pair<Int, Int>>>(emptyList())
     internal val showShortcutPrompt = MutableStateFlow(false)
@@ -87,6 +104,7 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        applySystemBarStyle()
         extension.onCreate(savedInstanceState)
         splashController.preOnCreate()
         super.onCreate(savedInstanceState)
@@ -113,19 +131,18 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
         showUnsupportedMessage()
         askForHomeShortcut()
 
-        if (Config.checkUpdate) {
+        // Only ask on startup, not every time the activity is recreated
+        if (savedInstanceState == null && Config.checkUpdate) {
             extension.withPermission(Manifest.permission.POST_NOTIFICATIONS) {
                 Config.checkUpdate = it
             }
         }
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
-
-        val initialTab = getInitialTab(intent)
+        val initialTab = getRequestedTab(intent) ?: Tab.HOME.ordinal
 
         setContent {
             MagiskTheme {
-                Box(modifier = Modifier.fillMaxSize()) {
+                Surface(modifier = Modifier.fillMaxSize()) {
                     val navigator = rememberNavigator(Route.Main)
                     CompositionLocalProvider(LocalNavigator provides navigator) {
                         HandleFlashIntent(navigator)
@@ -137,17 +154,30 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
                                 rememberSaveableStateHolderNavEntryDecorator(),
                                 rememberViewModelStoreNavEntryDecorator<Any>()
                             ),
+                            // Start/End follow the layout direction, so RTL slides the other way
+                            transitionSpec = {
+                                slideIntoContainer(SlideDirection.Start) togetherWith
+                                    slideOutOfContainer(SlideDirection.Start)
+                            },
+                            popTransitionSpec = {
+                                slideIntoContainer(SlideDirection.End) togetherWith
+                                    slideOutOfContainer(SlideDirection.End)
+                            },
+                            predictivePopTransitionSpec = {
+                                slideIntoContainer(SlideDirection.End) togetherWith
+                                    slideOutOfContainer(SlideDirection.End)
+                            },
                             entryProvider = entryProvider {
                                 entry<Route.Main> {
                                     val superuserVm: SuperuserViewModel = viewModel(
                                         viewModelStoreOwner = this@MainActivity, factory = VMFactory
                                     )
+                                    val requestedTab by tabRequest.collectAsStateWithLifecycle()
                                     MainScreen(
                                         initialTab = initialTab,
+                                        requestedTab = requestedTab,
+                                        onTabRequestHandled = { tabRequest.value = null },
                                         superuserViewModel = superuserVm,
-                                        onAuthenticate = { action ->
-                                            extension.withAuthentication { if (it) action() }
-                                        }
                                     )
                                 }
                                 entry<Route.DenyList> { _ ->
@@ -171,6 +201,11 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
                                 }
                                 entry<Route.Flash> { key ->
                                     val vm: FlashViewModel = viewModel(factory = VMFactory)
+                                    if (vm.isInterrupted) {
+                                        // Restored after process death: nothing is left to show
+                                        LeaveInterruptedScreen(navigator, key)
+                                        return@entry
+                                    }
                                     LaunchedEffect(key) {
                                         if (vm.flashAction.isEmpty()) {
                                             vm.flashAction = key.action
@@ -199,26 +234,15 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
                                     val vm: SuperuserViewModel = viewModel(
                                         viewModelStoreOwner = this@MainActivity, factory = VMFactory
                                     )
-                                    LaunchedEffect(Unit) {
-                                        vm.authenticate = { onSuccess ->
-                                            extension.withAuthentication { if (it) onSuccess() }
-                                        }
-                                    }
                                     SuperuserDetailScreen(
                                         uid = key.uid,
                                         viewModel = vm,
                                         onBack = { navigator.pop() },
-                                        onAuthenticate = { action ->
-                                            extension.withAuthentication { if (it) action() }
-                                        }
                                     )
                                 }
                                 entry<Route.SuperuserGrant> { _ ->
                                     val vm: SuperuserGrantViewModel = viewModel(factory = VMFactory)
                                     LaunchedEffect(Unit) {
-                                        vm.authenticate = { onSuccess ->
-                                            extension.withAuthentication { if (it) onSuccess() }
-                                        }
                                         vm.startLoading()
                                     }
                                     SuperuserGrantScreen(
@@ -228,9 +252,14 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
                                 }
                                 entry<Route.Action> { key ->
                                     val vm: ActionViewModel = viewModel(factory = VMFactory)
+                                    if (vm.isInterrupted) {
+                                        // Restored after process death: nothing is left to show
+                                        LeaveInterruptedScreen(navigator, key)
+                                        return@entry
+                                    }
                                     LaunchedEffect(key) {
-                                        if (vm.actionId.isEmpty()) {
-                                            vm.actionId = key.id
+                                        if (vm.actionDir.isEmpty()) {
+                                            vm.actionDir = key.dir
                                             vm.actionName = key.name
                                             vm.startRunAction()
                                         }
@@ -263,32 +292,129 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
 
     @Composable
     private fun HandleFlashIntent(navigator: Navigator) {
+        val confirmDialog = rememberConfirmDialog()
+        val context = LocalContext.current
+        val resources = LocalResources.current
         val intentVersion by intentState.collectAsStateWithLifecycle()
+
         LaunchedEffect(intentVersion) {
             val currentIntent = intent ?: return@LaunchedEffect
-            if (currentIntent.action == FlashUtils.INTENT_FLASH) {
-                val action = currentIntent.getStringExtra(FlashUtils.EXTRA_FLASH_ACTION)
-                    ?: return@LaunchedEffect
-                val uri = currentIntent.getStringExtra(FlashUtils.EXTRA_FLASH_URI)
-                navigator.push(Route.Flash(action, uri))
-                currentIntent.action = null
-            } else if (currentIntent.action == FlashUtils.INTENT_MODULE_ACTION) {
+            if (currentIntent.action == FlashUtils.INTENT_MODULE_ACTION) {
                 val id = currentIntent.getStringExtra(FlashUtils.EXTRA_MODULE_ID)
                     ?: return@LaunchedEffect
                 val name = currentIntent.getStringExtra(FlashUtils.EXTRA_MODULE_NAME) ?: id
-                navigator.push(Route.Action(id, name))
                 currentIntent.action = null
+                navigator.push(Route.Action(id, name))
+                return@LaunchedEffect
             }
+            if (currentIntent.action != FlashUtils.INTENT_FLASH) return@LaunchedEffect
+            val action = currentIntent.getStringExtra(FlashUtils.EXTRA_FLASH_ACTION)
+            val uriString = currentIntent.getStringExtra(FlashUtils.EXTRA_FLASH_URI)
+
+            val route = when (action) {
+                Const.Value.FLASH_ZIP -> {
+                    if (uriString.isNullOrEmpty()) {
+                        null
+                    } else if (FlashUtils.isTrusted(currentIntent)) {
+                        // Sent by our own module download, which the user already chose to install
+                        Route.Flash(action, uriString)
+                    } else {
+                        val uri = uriString.toUri()
+                        val name = queryDisplayName(context, uri)?.sanitizeDisplayName()?.ifEmpty { null }
+                            ?: uri.lastPathSegment?.sanitizeDisplayName()?.ifEmpty { null }
+                            ?: "module.zip"
+                        // The name is chosen by the app that sent the intent, so also show where it comes from
+                        val authority = uri.authority?.sanitizeDisplayName()?.ifEmpty { null }
+                        val displayName = authority?.let { "$name ($it)" } ?: name
+
+                        // This confirmation is the only safeguard, so don't let other apps draw over it
+                        setHideOverlayWindows(true)
+                        val result = try {
+                            confirmDialog.awaitConfirm(
+                                title = resources.getString(CoreR.string.confirm_install_title),
+                                content = resources.getString(CoreR.string.confirm_install, displayName)
+                            )
+                        } finally {
+                            setHideOverlayWindows(false)
+                        }
+                        if (result == ConfirmResult.Confirmed) Route.Flash(action, uriString) else null
+                    }
+                }
+                // Only installing modules can be requested through this intent (our module
+                // downloads use it too); drop any other action, e.g. uninstalling Magisk
+                else -> null
+            }
+
+            // Only consume the intent once the request is resolved. If a configuration change
+            // cancels this effect while the confirmation is showing, the new Activity replays it.
+            currentIntent.action = null
+            route?.let { navigator.push(it) }
+        }
+    }
+
+    /**
+     * Names from external apps are untrusted: drop control and formatting characters
+     * (e.g. bidi overrides that can reorder the text) and cap the length.
+     */
+    private fun String.sanitizeDisplayName(): String {
+        val sb = StringBuilder()
+        var count = 0
+        var i = 0
+        // Work on code points, so supplementary characters (e.g. invisible tag characters)
+        // are recognized and never split
+        while (i < length && count < MAX_DISPLAY_NAME_LENGTH) {
+            val cp = codePointAt(i)
+            i += Character.charCount(cp)
+            val type = Character.getType(cp)
+            if (Character.isISOControl(cp) || type == Character.FORMAT.toInt() ||
+                type == Character.SURROGATE.toInt()) continue
+            sb.appendCodePoint(cp)
+            count++
+        }
+        return sb.toString().trim()
+    }
+
+    /**
+     * Query the display name from the provider of an external URI. The provider is controlled
+     * by another app, so never block on it indefinitely: give up after a timeout and cancel it.
+     */
+    private suspend fun queryDisplayName(context: Context, uri: Uri): String? {
+        val signal = CancellationSignal()
+        // Not a child of the caller, so giving up doesn't have to wait for the provider
+        val query = CoroutineScope(Dispatchers.IO).async {
+            runCatching {
+                context.contentResolver.query(
+                    uri, arrayOf(OpenableColumns.DISPLAY_NAME), null, null, null, signal
+                )?.use { cursor ->
+                    val idx = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+                    if (cursor.moveToFirst() && idx >= 0) cursor.getString(idx) else null
+                }
+            }.getOrNull()
+        }
+        return try {
+            withTimeoutOrNull(DISPLAY_NAME_QUERY_TIMEOUT_MS) { query.await() }
+        } finally {
+            if (!query.isCompleted) {
+                signal.cancel()
+                query.cancel()
+            }
+        }
+    }
+
+    private fun setHideOverlayWindows(hide: Boolean) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            window.setHideOverlayWindows(hide)
         }
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
+        getRequestedTab(intent)?.let { tabRequest.value = it }
         intentState.value += 1
     }
 
-    private fun getInitialTab(intent: Intent?): Int {
+    private fun getRequestedTab(intent: Intent?): Int? {
         val section = when {
             intent?.action == Intent.ACTION_APPLICATION_PREFERENCES -> Const.Nav.SETTINGS
             intent?.action == FlashUtils.INTENT_FLASH &&
@@ -296,14 +422,14 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
             else -> intent?.getStringExtra(Const.Key.OPEN_SECTION)
         }
         return when (section) {
+            Const.Nav.HOME -> Tab.HOME.ordinal
             Const.Nav.SUPERUSER -> Tab.SUPERUSER.ordinal
             Const.Nav.MODULES -> Tab.MODULES.ordinal
             Const.Nav.SETTINGS -> Tab.SETTINGS.ordinal
-            else -> Tab.HOME.ordinal
+            else -> null
         }
     }
 
-    @SuppressLint("InlinedApi")
     override fun showInvalidStateMessage() {
         showInvalidState.value = true
     }
@@ -353,6 +479,17 @@ class MainActivity : ComponentActivity(), SplashScreenHost {
             Config.askedHome = true
             showShortcutPrompt.value = true
         }
+    }
+}
+
+/**
+ * Leave a flash or action screen restored after process death. Its job and output only lived
+ * in memory, and running the job again may not be safe, so there is nothing left to show.
+ */
+@Composable
+private fun LeaveInterruptedScreen(navigator: Navigator, key: Route) {
+    LaunchedEffect(key) {
+        if (navigator.current() == key) navigator.pop()
     }
 }
 

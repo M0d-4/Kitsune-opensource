@@ -29,38 +29,6 @@ interface LocaleSetting {
     fun setLocale(tag: String)
     fun updateResource(res: Resources)
 
-    private class Api23Impl : LocaleSetting {
-
-        private val systemLocale: Locale = Locale.getDefault()
-
-        override var appLocale: Locale? = null
-        override var currentLocale: Locale = systemLocale
-
-        init {
-            setLocale(Config.locale)
-        }
-
-        override fun setLocale(tag: String) {
-            val locale = when {
-                tag.isEmpty() -> null
-                else -> Locale.forLanguageTag(tag)
-            }
-            currentLocale = locale ?: systemLocale
-            appLocale = locale
-            Locale.setDefault(currentLocale)
-            updateResource(AppContext.resources)
-            AppContext.foregroundActivity?.relaunch()
-        }
-
-        @Suppress("DEPRECATION")
-        override fun updateResource(res: Resources) {
-            val config = res.configuration
-            config.setLocale(currentLocale)
-            res.updateConfiguration(config, null)
-        }
-    }
-
-    @RequiresApi(24)
     private class Api24Impl : LocaleSetting {
 
         private val systemLocaleList = LocaleList.getDefault()
@@ -82,7 +50,9 @@ interface LocaleSetting {
             appLocale = localeList?.get(0)
             LocaleList.setDefault(currentLocaleList)
             updateResource(AppContext.resources)
-            AppContext.foregroundActivity?.relaunch()
+            // Recreate instead of starting a new instance: MainActivity is singleTask, so
+            // starting it again would deliver the intent to this instance, which is then finished
+            AppContext.foregroundActivity?.recreate()
         }
 
         @Suppress("DEPRECATION")
@@ -185,8 +155,6 @@ interface LocaleSetting {
             available
             if (useLocaleManager) {
                 Api33Impl()
-            } else if (Build.VERSION.SDK_INT <= 23) {
-                Api23Impl()
             } else {
                 Api24Impl()
             }

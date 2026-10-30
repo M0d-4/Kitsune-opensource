@@ -176,7 +176,7 @@ impl MagiskD {
             let cfg = self.get_db_settings()?;
 
             // Check multiuser settings
-            let eval_uid = match cfg.multiuser_mode {
+            let mut eval_uid = match cfg.multiuser_mode {
                 MultiuserMode::OwnerOnly => {
                     if to_user_id(uid) != 0 {
                         return Ok(Arc::new(SuInfo::deny(uid)));
@@ -186,14 +186,17 @@ impl MagiskD {
                 MultiuserMode::OwnerManaged => to_app_id(uid),
                 _ => uid,
             };
+            if to_app_id(eval_uid) < AID_APP_START {
+                eval_uid = to_app_id(eval_uid);
+            }
 
             let mut settings = RootSettings::default();
             self.get_root_settings(eval_uid, &mut settings)?;
 
-            let (mut mgr_uid, mut mgr_pkg) = self.get_manager(to_user_id(eval_uid), true);
+            let (mut mgr_uid, mut mgr_pkg) = self.get_manager(to_user_id(eval_uid));
             if mgr_pkg.is_empty() && to_app_id(eval_uid) < AID_APP_START {
                 for user in self.get_users() {
-                    let (id, pkg) = self.get_manager(user, true);
+                    let (id, pkg) = self.get_manager(user);
                     if !pkg.is_empty() {
                         mgr_uid = id;
                         mgr_pkg = pkg;
@@ -202,8 +205,11 @@ impl MagiskD {
                 }
             }
 
-            // If it's the manager, allow it silently
-            if to_app_id(uid) == to_app_id(mgr_uid) {
+            if mgr_uid < 0 {
+                settings.log = false;
+                settings.notify = false;
+            } else if to_app_id(uid) == to_app_id(mgr_uid) {
+                // If it's the manager, allow it silently
                 return Ok(Arc::new(SuInfo::allow(uid)));
             }
 
