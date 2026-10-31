@@ -70,6 +70,7 @@ fun SettingsScreen(
     modifier: Modifier = Modifier,
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val suListEnabled by viewModel.suListEnabled.collectAsStateWithLifecycle()
     val context = LocalContext.current
     val requireAuth = rememberBiometricAuth()
     val enableCheckUpdate = rememberNotificationPermissionLauncher { viewModel.setCheckUpdate(true) }
@@ -81,6 +82,11 @@ fun SettingsScreen(
 
     SettingsContent(
         uiState = uiState,
+        suListEnabled = suListEnabled,
+        onToggleSuList = viewModel::toggleSuList,
+        onNavigateToSuList = dropUnlessResumed { viewModel.navigateToSuList() },
+        onNavigateToAppList = dropUnlessResumed { viewModel.navigateToAppList() },
+        onNavigateToModuleReview = dropUnlessResumed { viewModel.navigateToModuleReview() },
         onOpenSystemLocale = {
             context.startActivity(LocaleSetting.localeSettingsIntent)
         },
@@ -121,6 +127,11 @@ fun SettingsScreen(
 @Composable
 fun SettingsContent(
     uiState: SettingsUiState,
+    suListEnabled: Boolean,
+    onToggleSuList: (Boolean) -> Unit,
+    onNavigateToSuList: () -> Unit,
+    onNavigateToAppList: () -> Unit,
+    onNavigateToModuleReview: () -> Unit,
     onOpenSystemLocale: () -> Unit,
     onLanguageSelected: (Int) -> Unit,
     onColorModeSelected: (Int) -> Unit,
@@ -223,6 +234,11 @@ fun SettingsContent(
                     Column {
                         MagiskSection(
                             uiState = uiState,
+                            suListEnabled = suListEnabled,
+                            onToggleSuList = onToggleSuList,
+                            onNavigateToSuList = onNavigateToSuList,
+                            onNavigateToAppList = onNavigateToAppList,
+                            onNavigateToModuleReview = onNavigateToModuleReview,
                             onCreateHosts = onCreateHosts,
                             onToggleZygisk = onToggleZygisk,
                             onToggleDenyList = onToggleDenyList,
@@ -456,6 +472,11 @@ private fun AppSettingsSection(
 @Composable
 private fun MagiskSection(
     uiState: SettingsUiState,
+    suListEnabled: Boolean,
+    onToggleSuList: (Boolean) -> Unit,
+    onNavigateToSuList: () -> Unit,
+    onNavigateToAppList: () -> Unit,
+    onNavigateToModuleReview: () -> Unit,
     onCreateHosts: () -> Unit,
     onToggleZygisk: (Boolean) -> Unit,
     onToggleDenyList: (Boolean) -> Unit,
@@ -523,12 +544,11 @@ private fun MagiskSection(
             )
 
             // SuList: only the listed apps can see/use root
-            val suListEnabled by viewModel.suListEnabled.collectAsStateWithLifecycle()
             SettingsSwitch(
                 title = stringResource(CoreR.string.settings_sulist_title),
                 summary = stringResource(CoreR.string.settings_sulist_enabled),
                 checked = suListEnabled,
-                onCheckedChange = { viewModel.toggleSuList(it) }
+                onCheckedChange = onToggleSuList
             )
 
             if (suListEnabled) {
@@ -545,7 +565,7 @@ private fun MagiskSection(
                 SettingsArrow(
                     title = stringResource(CoreR.string.settings_configure_sulist),
                     summary = stringResource(CoreR.string.settings_sulist_summary),
-                    onClick = { viewModel.navigateToSuList() }
+                    onClick = onNavigateToSuList
                 )
             }
 
@@ -558,7 +578,7 @@ private fun MagiskSection(
             SettingsArrow(
                 title = stringResource(CoreR.string.applist_hide_title),
                 summary = stringResource(CoreR.string.applist_hide_desc),
-                onClick = { viewModel.navigateToAppList() }
+                onClick = onNavigateToAppList
             )
 
             HorizontalDivider(
@@ -569,7 +589,7 @@ private fun MagiskSection(
             SettingsArrow(
                 title = stringResource(CoreR.string.module_review_title),
                 summary = stringResource(CoreR.string.module_review_open),
-                onClick = { viewModel.navigateToModuleReview() }
+                onClick = onNavigateToModuleReview
             )
 
             HorizontalDivider(
