@@ -375,7 +375,11 @@ def build_applist():
     cwd = Path.cwd()
     os.chdir(Path("app", "applist"))
     try:
-        proc = execv([str(Path("gradlew").resolve()), ":zygote:assembleRelease"])
+        gradlew = str(Path("gradlew").resolve())
+        # The wrapper may have lost its executable bit (e.g. after zip/unzip), so on
+        # non-Windows hosts run it through sh instead of executing it directly.
+        cmds = [gradlew] if is_windows else ["sh", gradlew]
+        proc = execv(cmds + [":zygote:assembleRelease"])
     finally:
         os.chdir(cwd)
     if proc.returncode != 0:
