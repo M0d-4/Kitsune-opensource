@@ -53,4 +53,5 @@
     <string name="applist_whitelist_desc">Whitelisted apps always see every installed app (e.g. launchers, stores).</string>
     <string name="applist_whitelist_title">Whitelist</string>
     <string name="applist_stage_failed">Could not stage the app-list hiding payload (root required)</string>
+    <string name="applist_hide_desc">Hide chosen apps from other apps' package queries</string>
 </resources>
