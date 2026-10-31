@@ -1,4 +1,6 @@
 import com.android.build.gradle.BaseExtension
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     alias(libs.plugins.kotlin) apply false
@@ -52,6 +54,10 @@ fun Project.configureBaseExtension() {
 }
 
 subprojects {
+    // Keep Kotlin and Java on the same JVM target regardless of the JDK running Gradle
+    tasks.withType<KotlinCompile>().configureEach {
+        compilerOptions.jvmTarget.set(JvmTarget.JVM_21)
+    }
     plugins.withId("com.android.application") { configureBaseExtension() }
     plugins.withId("com.android.library") { configureBaseExtension() }
 }
