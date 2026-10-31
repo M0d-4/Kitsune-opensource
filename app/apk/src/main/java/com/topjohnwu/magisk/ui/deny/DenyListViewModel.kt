@@ -56,7 +56,7 @@ class SuListViewModel : DenyListViewModel(sulist = true)
 
 open class DenyListViewModel(sulist: Boolean = false) : AsyncLoadViewModel() {
 
-    private val cli = if (sulist) "$cli sulist" else "magisk --denylist"
+    private val cli = if (sulist) "magisk --denylist sulist" else "magisk --denylist"
 
 
     private val _loading = MutableStateFlow(true)
