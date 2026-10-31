@@ -82,10 +82,14 @@ class WebViewInterface(
 
         val shell = newRootShell()
         val stdout = object : CallbackList<String>() {
-            override fun onAddElement(e: String) = emitData("stdout", e)
+            override fun onAddElement(e: String) {
+                emitData("stdout", e)
+            }
         }
         val stderr = object : CallbackList<String>() {
-            override fun onAddElement(e: String) = emitData("stderr", e)
+            override fun onAddElement(e: String) {
+                emitData("stderr", e)
+            }
         }
         shell.newJob().add(script).to(stdout, stderr).submit { result ->
             val code = result.code
