@@ -28,7 +28,7 @@ object ManagerInfo {
 
     /** (Re)read the property. Returns true when a manager identity is available. */
     fun reload(): Boolean {
-        val value = runCatching { SystemProperties.get(PROP, "") }.getOrDefault("")
+        val value = runCatching { SystemProperties.get(PROP) }.getOrDefault("")
         val idx = value.indexOf(':')
         if (idx != 32 || idx == value.length - 1) {
             packageName = ""
