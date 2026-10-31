@@ -48,16 +48,21 @@ runs:
         SCCACHE_DIR: ${{ github.workspace }}/.sccache
         SCCACHE_CACHE_SIZE: ${{ inputs.is-asset-build == 'true' && '2G' || '300M'  }}
         SCCACHE_IDLE_TIMEOUT: 0
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
         bash $GITHUB_ACTION_PATH/sccache.sh
-        sccache --start-server
-        sccache -z
+        if command -v sccache >/dev/null 2>&1 && sccache --version >/dev/null 2>&1; then
+          sccache --start-server
+          sccache -z
+        else
+          echo "::warning::sccache unavailable, building without it"
+        fi
 
     - name: Show sccache stats
       uses: gacts/run-and-post-run@v1
       with:
-        run: sccache -s
-        post: sccache -s
+        run: command -v sccache >/dev/null 2>&1 && sccache -s || true
+        post: command -v sccache >/dev/null 2>&1 && sccache -s || true
 
     - name: Set GRADLE_USER_HOME
       shell: bash
