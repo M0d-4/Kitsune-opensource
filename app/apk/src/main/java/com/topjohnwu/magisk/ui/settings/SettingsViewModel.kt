@@ -14,7 +14,6 @@ import com.topjohnwu.magisk.core.model.ColorMode
 import com.topjohnwu.magisk.core.utils.LocaleSetting
 import com.topjohnwu.magisk.core.utils.MediaStoreUtils
 import com.topjohnwu.magisk.core.utils.RootUtils
-import com.topjohnwu.magisk.view.Shortcuts
 import com.topjohnwu.magisk.ui.component.PendingRebootState
 import com.topjohnwu.magisk.ui.ThemeState
 import com.topjohnwu.magisk.ui.navigation.Route
@@ -209,10 +208,6 @@ class SettingsViewModel : BaseViewModel() {
         _uiState.update { it.copy(randomPackageNameEnabled = enabled) }
     }
 
-    fun requestAddShortcut() {
-        Shortcuts.addHomeIcon(AppContext)
-    }
-
     fun createHosts() {
         viewModelScope.launch {
             RootUtils.addSystemlessHosts()
@@ -253,7 +248,7 @@ class SettingsViewModel : BaseViewModel() {
     fun notifyZygiskChange() {
         if (zygiskMismatch) {
             PendingRebootState.mark()
-            showSnackbar(R.string.reboot_apply_change)
+            showToast(CoreR.string.reboot_apply_change)
         }
     }
 
