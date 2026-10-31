@@ -88,7 +88,7 @@ class AppListViewModel : AsyncLoadViewModel() {
     fun setEnabled(on: Boolean) {
         viewModelScope.launch {
             val ok = withContext(Dispatchers.IO) { AppListEngine.setEnabled(context, on) }
-            if (!ok) showSnackbar(CoreR.string.applist_stage_failed) else PendingRebootState.mark()
+            if (!ok) showToast(CoreR.string.applist_stage_failed) else PendingRebootState.mark()
             refreshState()
             if (ok && on) pushConfig()
         }
