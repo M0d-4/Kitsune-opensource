@@ -11,11 +11,12 @@ on:
           - debug
         default: release
       publish:
-        description: "Publish the APK as a GitHub release? (nightly = one rolling pre-release that is updated in place)"
+        description: "Publish as a GitHub release? nightly = rolling pre-release of a release build, beta = rolling pre-release of a debug build (both updated in place), release = normal versioned release"
         type: choice
         options:
           - none
           - nightly
+          - beta
           - release
         default: none
       version:
@@ -49,8 +50,12 @@ jobs:
           BUILD_TYPE: ${{ inputs.build_type }}
           PUBLISH: ${{ inputs.publish }}
         run: |
-          if [ "$PUBLISH" != "none" ] && [ "$BUILD_TYPE" != "release" ]; then
-            echo "::error::Only release builds can be published (publish=$PUBLISH, build_type=$BUILD_TYPE)"
+          if { [ "$PUBLISH" = "nightly" ] || [ "$PUBLISH" = "release" ]; } && [ "$BUILD_TYPE" != "release" ]; then
+            echo "::error::publish=$PUBLISH needs build_type=release (got $BUILD_TYPE)"
+            exit 1
+          fi
+          if [ "$PUBLISH" = "beta" ] && [ "$BUILD_TYPE" != "debug" ]; then
+            echo "::error::publish=beta needs build_type=debug (got $BUILD_TYPE)"
             exit 1
           fi
 
@@ -66,8 +71,8 @@ jobs:
           INPUT_VERSION: ${{ inputs.version }}
         run: |
           SHORT=$(git rev-parse --short=8 HEAD)
-          if [ "$PUBLISH" = "nightly" ]; then
-            VERSION="nightly-$SHORT"
+          if [ "$PUBLISH" = "nightly" ] || [ "$PUBLISH" = "beta" ]; then
+            VERSION="$PUBLISH-$SHORT"
           elif [ -n "$INPUT_VERSION" ]; then
             VERSION="${INPUT_VERSION#v}"
           else
@@ -157,44 +162,53 @@ jobs:
           path: ${{ steps.apk.outputs.path }}
           if-no-files-found: error
 
-      # One rolling pre-release: the tag, title, notes and APK are updated in place,
-      # no new release is ever created after the first run.
-      - name: Publish nightly release
-        if: inputs.publish == 'nightly'
+      # Rolling pre-releases: "nightly" (release build) and "beta" (debug build). The tag,
+      # title, notes and APK are updated in place, no new release is created after the first run.
+      - name: Publish rolling pre-release (nightly / beta)
+        if: inputs.publish == 'nightly' || inputs.publish == 'beta'
         env:
+          CHANNEL: ${{ inputs.publish }}
+          BUILD_TYPE: ${{ inputs.build_type }}
           REPO: ${{ github.repository }}
           SHA: ${{ github.sha }}
           SHORT: ${{ steps.ver.outputs.short }}
           VERSION: ${{ steps.ver.outputs.version }}
+          SIGNED: ${{ steps.signing.outputs.signed }}
           APK: ${{ steps.apk.outputs.path }}
         run: |
-          ASSET="Kitsune-nightly.apk"
+          ASSET="Kitsune-$CHANNEL.apk"
           cp "$APK" "$ASSET"
-          TITLE="Nightly ($SHORT)"
+          CAP="$(echo "${CHANNEL:0:1}" | tr a-z A-Z)${CHANNEL:1}"
+          TITLE="$CAP ($SHORT)"
+          if [ "$SIGNED" = "true" ]; then SIGN_TXT="signed with the project key"; else SIGN_TXT="signed with the default debug key"; fi
           {
-            echo "Automated nightly build. This release is updated in place on every nightly run."
+            echo "Automated $CHANNEL build. This release is updated in place on every $CHANNEL run."
             echo
             echo "- Version: \`$VERSION\`"
             echo "- Commit: [\`$SHORT\`](https://github.com/$REPO/commit/$SHA)"
             echo "- Built: $(date -u '+%Y-%m-%d %H:%M UTC')"
-            echo "- Build type: release (signed)"
+            echo "- Build type: $BUILD_TYPE ($SIGN_TXT)"
+            if [ "$CHANNEL" = "beta" ]; then
+              echo
+              echo "> Debug build for testing: it is slower, unminified and may be unstable."
+            fi
             echo
             echo "### Recent changes"
             git log -n 15 --no-merges --pretty='- %s (%h)'
-          } > nightly-notes.md
+          } > rolling-notes.md
 
-          if gh release view nightly >/dev/null 2>&1; then
+          if gh release view "$CHANNEL" >/dev/null 2>&1; then
             # move the tag to this commit
-            gh api -X PATCH "repos/$REPO/git/refs/tags/nightly" -f sha="$SHA" -F force=true >/dev/null \
-              || gh api -X POST "repos/$REPO/git/refs" -f ref="refs/tags/nightly" -f sha="$SHA" >/dev/null
-            gh release edit nightly --title "$TITLE" --notes-file nightly-notes.md --prerelease
-            for a in $(gh release view nightly --json assets -q '.assets[].name'); do
-              gh release delete-asset nightly "$a" --yes
+            gh api -X PATCH "repos/$REPO/git/refs/tags/$CHANNEL" -f sha="$SHA" -F force=true >/dev/null \
+              || gh api -X POST "repos/$REPO/git/refs" -f ref="refs/tags/$CHANNEL" -f sha="$SHA" >/dev/null
+            gh release edit "$CHANNEL" --title "$TITLE" --notes-file rolling-notes.md --prerelease
+            for a in $(gh release view "$CHANNEL" --json assets -q '.assets[].name'); do
+              gh release delete-asset "$CHANNEL" "$a" --yes
             done
-            gh release upload nightly "$ASSET" --clobber
+            gh release upload "$CHANNEL" "$ASSET" --clobber
           else
-            gh release create nightly "$ASSET" --target "$SHA" --title "$TITLE" \
-              --notes-file nightly-notes.md --prerelease
+            gh release create "$CHANNEL" "$ASSET" --target "$SHA" --title "$TITLE" \
+              --notes-file rolling-notes.md --prerelease
           fi
 
       # Normal release: tag v<version>. Re-running with the same version updates that
