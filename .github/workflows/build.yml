@@ -10,16 +10,33 @@ on:
           - release
           - debug
         default: release
+      publish:
+        description: "Publish the APK as a GitHub release? (nightly = one rolling pre-release that is updated in place)"
+        type: choice
+        options:
+          - none
+          - nightly
+          - release
+        default: none
+      version:
+        description: "Version name for a normal release, e.g. 1.2.0 (tag becomes v1.2.0). Empty = date + commit"
+        type: string
+        required: false
 
 concurrency:
-  group: build-${{ github.ref }}-${{ inputs.build_type }}
+  group: build-${{ github.ref }}-${{ inputs.build_type }}-${{ inputs.publish }}
   cancel-in-progress: true
+
+permissions:
+  contents: write
 
 jobs:
   build:
-    name: Build ${{ inputs.build_type }} APK
+    name: Build ${{ inputs.build_type }} APK (publish ${{ inputs.publish }})
     runs-on: ubuntu-24.04
     timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Check out
         uses: actions/checkout@v6
@@ -27,15 +44,41 @@ jobs:
           submodules: "recursive"
           fetch-depth: 0
 
+      - name: Validate inputs
+        env:
+          BUILD_TYPE: ${{ inputs.build_type }}
+          PUBLISH: ${{ inputs.publish }}
+        run: |
+          if [ "$PUBLISH" != "none" ] && [ "$BUILD_TYPE" != "release" ]; then
+            echo "::error::Only release builds can be published (publish=$PUBLISH, build_type=$BUILD_TYPE)"
+            exit 1
+          fi
+
       - name: Setup environment
         uses: ./.github/actions/setup
         with:
           is-asset-build: true
 
-      # Signing key (release builds require it, debug builds use it when it is set).
+      - name: Compute version
+        id: ver
+        env:
+          PUBLISH: ${{ inputs.publish }}
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          SHORT=$(git rev-parse --short=8 HEAD)
+          if [ "$PUBLISH" = "nightly" ]; then
+            VERSION="nightly-$SHORT"
+          elif [ -n "$INPUT_VERSION" ]; then
+            VERSION="${INPUT_VERSION#v}"
+          else
+            VERSION="$(date -u +%Y%m%d)-$SHORT"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "short=$SHORT" >> "$GITHUB_OUTPUT"
+
       # The native daemon embeds the signing certificate at build time, so the key
       # has to be available before the native code is compiled.
-      - name: Prepare signing config
+      - name: Prepare config and signing
         id: signing
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
@@ -43,7 +86,10 @@ jobs:
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           BUILD_TYPE: ${{ inputs.build_type }}
+          VERSION: ${{ steps.ver.outputs.version }}
         run: |
+          echo "version=$VERSION" > config.prop
+
           missing=0
           for v in KEYSTORE_BASE64 KEYSTORE_PASSWORD KEY_ALIAS KEY_PASSWORD; do
             if [ -z "${!v}" ]; then
@@ -68,7 +114,7 @@ jobs:
             echo "keyStorePass=$KEYSTORE_PASSWORD"
             echo "keyAlias=$KEY_ALIAS"
             echo "keyPass=$KEY_PASSWORD"
-          } > config.prop
+          } >> config.prop
           echo "signed=true" >> "$GITHUB_OUTPUT"
 
       - name: Build native binaries
@@ -104,9 +150,70 @@ jobs:
         if: always()
         run: rm -f "$RUNNER_TEMP/release.jks" config.prop
 
-      - name: Upload APK
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v7
         with:
           name: kitsune-${{ inputs.build_type }}-${{ github.sha }}
           path: ${{ steps.apk.outputs.path }}
           if-no-files-found: error
+
+      # One rolling pre-release: the tag, title, notes and APK are updated in place,
+      # no new release is ever created after the first run.
+      - name: Publish nightly release
+        if: inputs.publish == 'nightly'
+        env:
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          SHORT: ${{ steps.ver.outputs.short }}
+          VERSION: ${{ steps.ver.outputs.version }}
+          APK: ${{ steps.apk.outputs.path }}
+        run: |
+          ASSET="Kitsune-nightly.apk"
+          cp "$APK" "$ASSET"
+          TITLE="Nightly ($SHORT)"
+          {
+            echo "Automated nightly build. This release is updated in place on every nightly run."
+            echo
+            echo "- Version: \`$VERSION\`"
+            echo "- Commit: [\`$SHORT\`](https://github.com/$REPO/commit/$SHA)"
+            echo "- Built: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo "- Build type: release (signed)"
+            echo
+            echo "### Recent changes"
+            git log -n 15 --no-merges --pretty='- %s (%h)'
+          } > nightly-notes.md
+
+          if gh release view nightly >/dev/null 2>&1; then
+            # move the tag to this commit
+            gh api -X PATCH "repos/$REPO/git/refs/tags/nightly" -f sha="$SHA" -F force=true >/dev/null \
+              || gh api -X POST "repos/$REPO/git/refs" -f ref="refs/tags/nightly" -f sha="$SHA" >/dev/null
+            gh release edit nightly --title "$TITLE" --notes-file nightly-notes.md --prerelease
+            for a in $(gh release view nightly --json assets -q '.assets[].name'); do
+              gh release delete-asset nightly "$a" --yes
+            done
+            gh release upload nightly "$ASSET" --clobber
+          else
+            gh release create nightly "$ASSET" --target "$SHA" --title "$TITLE" \
+              --notes-file nightly-notes.md --prerelease
+          fi
+
+      # Normal release: tag v<version>. Re-running with the same version updates that
+      # release instead of creating a duplicate.
+      - name: Publish release
+        if: inputs.publish == 'release'
+        env:
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          VERSION: ${{ steps.ver.outputs.version }}
+          APK: ${{ steps.apk.outputs.path }}
+        run: |
+          TAG="v$VERSION"
+          ASSET="Kitsune-$TAG.apk"
+          cp "$APK" "$ASSET"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$ASSET" --clobber
+          else
+            gh release create "$TAG" "$ASSET" --target "$SHA" --title "Kitsune $VERSION" \
+              --generate-notes
+          fi
